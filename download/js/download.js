@@ -34,7 +34,7 @@ $(function () {
 
   //点击下载
   $(".download-btn").on("click", function (e) {
-    e.preventDefault();
+    // e.preventDefault();
     $(this).addClass('btn-press');
     // if (isWeixin()) {
     //     //是微信
