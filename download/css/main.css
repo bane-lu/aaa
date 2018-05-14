@@ -1,0 +1,151 @@
+html, div, ul, li, dl, dt, dd, p, h1, h2, h3, h4, h5, h6, img, form, embed, label {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: normal;
+}
+
+body {
+  background: #FFF;
+  overflow: hidden;
+}
+
+/*html, body{*/
+  /*width: 100%;*/
+  /*height: 100%;*/
+/*}*/
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box; /* Firefox 1, probably can drop this */
+  -webkit-box-sizing: border-box; /* Safari 3-4, also probably droppable */
+  box-sizing: border-box; /* Everything else */
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  outline: 0;
+}
+
+img {
+  border: none;
+  display: block;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.pos-rel {
+  position: relative;
+}
+
+.cls {
+  clear: both;
+  line-height: 0px !important;
+  height: 0px !important;
+  font-size: 0px !important;
+}
+
+.section img {
+  position: absolute;
+}
+
+/******设置背景*********/
+
+/**********第一屏**************/
+.pg_bg {
+  width: 100%;
+  height: 10.06rem;
+  background-color: #fff2d0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.pg_bg img {
+  width: 100%;
+  height: 100%;
+}
+
+/*********按钮*********/
+.download-btn {
+  width: 6.4rem;
+  height: 1.14rem;
+  background: url(../img/btn_nor@2x.png) no-repeat;
+  background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  position: absolute;
+  bottom: 0.62rem;
+  left: 50%;
+  margin-left: -3.2rem;
+  z-index: 99;
+}
+
+.btn-press{
+  background: url(../img/btn_press@2x.png) no-repeat;
+  background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+}
+
+.download-btn a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  line-height: 1.14rem;
+  text-align: center;
+  color: #fff;
+  font-size: 0.4rem;
+  position: relative;
+  top: -0.34rem;
+}
+
+/*****next*****/
+.next {
+  width: 0.44rem;
+  height: 0.28rem;
+  background: url(../img/btn2@2x.png) no-repeat;
+  background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  margin-left: -0.2rem;
+
+}
+
+/*!**********第二屏**************!*/
+/*#page2 .pg2_wrapper{ position: absolute; left: 25px; top: 0.5rem;}*/
+/*#page3 .pg3_wrapper{ position: absolute; left: 25px; top: 0.5rem;}*/
+/*#page4 .pg4_wrapper{ position: absolute; left: 25px; top: 0.5rem;}*/
+
+/*#page2 .pg2_wrapper .title{ font-size: 0.56rem; color: #f8c92c; }*/
+/*#page3 .pg3_wrapper .title{ font-size: 0.56rem; color: #f8c92c; }*/
+/*#page4 .pg4_wrapper .title{ font-size: 0.56rem; color: #f8c92c; }*/
+
+/*#page2 .pg2_wrapper .desc{ margin-top: 0.2rem; font-size: 0.32rem; color: #8f8b88;}*/
+/*#page3 .pg3_wrapper .desc{ margin-top: 0.2rem; font-size: 0.32rem; color: #8f8b88;}*/
+/*#page4 .pg4_wrapper .desc{ margin-top: 0.2rem; font-size: 0.32rem; color: #8f8b88;}*/
+
+/*.pg_mid{*/
+/*width: 3.2rem;*/
+/*left: 50%;*/
+/*top:20%;*/
+/*-webkit-transform: translate(-50%, 0);*/
+/*-moz-transform: translate(-50%, 0);*/
+/*-ms-transform: translate(-50%, 0);*/
+/*-o-transform: translate(-50%, 0);*/
+/*transform: translate(-50%, 0);*/
+/*}*/
