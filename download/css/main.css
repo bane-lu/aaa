@@ -71,7 +71,9 @@ ul {
 .page-wrapper{
   width: 100%;
   flex-grow: 1;
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .btn-wrapper{
   width: 100%;
@@ -83,10 +85,6 @@ ul {
   width: 6.8rem;
   height: 8.86rem;
   background-color: #fff2d0;
-  position: absolute;
-  top:50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
 }
 
 .pg_bg img {
