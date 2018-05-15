@@ -148,7 +148,7 @@ ul {
   background-color: rgba(0, 0, 0,0.5);
   top: 0;
   left: 0;
-  z-index: 8;
+  z-index: 100;
 }
 /*弹窗*/
 .popup{
@@ -156,7 +156,7 @@ ul {
   position: fixed;
   top: 0;/*图片位置，单位rem*/
   right: 2rem;/*图片位置，单位rem*/
-  z-index: 9;
+  z-index: 101;
 }
 
 /*!**********第二屏**************!*/
