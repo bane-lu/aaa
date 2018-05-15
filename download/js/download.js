@@ -1,6 +1,6 @@
 $(function () {
   // var DEVICE = phonetype();
-  var CHANNEL = getUrlParam("channel");
+  var CHANNEL = 'channel=downloadTest' //getUrlParam("channel");
 
   //window.location.href = 'meetyou://'; 
   setpoint("visitor");
