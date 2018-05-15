@@ -75,7 +75,8 @@ function setpoint(type) {
   // url:'http://rcsoa-nopay.zone139.com/versionmanager/download/meetyou-record',
   $.ajax({
     type: "get",
-    url: "http://rcsoa-nopay.zone139.com/versionmanager/download/meetyou-record",
+    // url: "http://rcsoa-nopay.zone139.com/versionmanager/download/meetyou-record",
+    url:'http://221.176.34.113:9000/versionmanager/download/meetyou-record',
     data: $.param(paramData),
     dataType: 'json',
     success: function (res) {
