@@ -70,7 +70,7 @@ ul {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 0.08rem;
+  top: 0.2rem;
 }
 
 .pg_bg img {
@@ -87,7 +87,7 @@ ul {
   background-size: 100% 100%;
   -webkit-background-size: 100% 100%;
   position: absolute;
-  bottom: 0.62rem;
+  bottom: 0.54rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 99;
@@ -117,7 +117,7 @@ ul {
   background-size: 100% 100%;
   -webkit-background-size: 100% 100%;
   position: absolute;
-  bottom: 10px;
+  bottom: 0.24rem;
   left: 50%;
   margin-left: -0.2rem;
   -webkit-animation: up 1.8s ease 0s infinite normal;
