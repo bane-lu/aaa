@@ -72,8 +72,6 @@ ul {
   width: 100%;
   flex-grow: 1;
   position: relative;
-  left: 0;
-  top: 0;
 }
 .btn-wrapper{
   width: 100%;
