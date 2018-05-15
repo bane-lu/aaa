@@ -17,7 +17,7 @@ $(function () {
       $(".download-btn a").attr('href', url);
     } else if (isiOS) {
       $(".download-btn a").attr("href", 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"');
-      setpoint("download");
+      // setpoint("download");
     }
   }
 
@@ -32,7 +32,12 @@ $(function () {
       return false;
     }
   }
-
+  if (isWeixin()) {
+    //是微信
+    $('.pg_bg').css({
+      top: 0.6 + 'rem'
+    })
+  }
   //点击下载
   $(".download-btn").on("click", function (e) {
     // e.preventDefault();
@@ -42,7 +47,14 @@ $(function () {
         e.preventDefault();
         $(".popup").show();
         $(".popup,.mask").fadeIn();
+    } else {
+      var u = navigator.userAgent;
+      var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+      if (isiOS) {
+        setpoint("download");
+      }
     }
+
   })
 
 });
