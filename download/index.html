@@ -43,29 +43,48 @@
 <body>
 <div id="fullpage">
   <div class="section" id="page1">
-    <div class="pg_bg">
-      <img src="img/pic_1@2x.png" class="pg_img" alt="">
+    <div class="container">
+      <div class="page-wrapper">
+        <div class="pg_bg">
+          <img src="img/pic_1@2x.png" class="pg_img" alt="">
+        </div>
+      </div>
+      <div class="btn-wrapper">
+        <div class="download-btn">
+          <a href="#">下载额外领8G流量</a>
+        </div>
+        <div class="next"></div>
+      </div>
     </div>
-    <div class="download-btn">
-      <a href="#">下载额外领8G流量</a>
-    </div>
-    <div class="next"></div>
   </div>
   <div class="section" id="page2">
-    <div class="pg_bg">
-      <img src="img/pic_2@2x.png" class="pg_img" alt="">
+    <div class="container">
+      <div class="page-wrapper">
+        <div class="pg_bg">
+          <img src="img/pic_2@2x.png" class="pg_img" alt="">
+        </div>
+      </div>
+      <div class="btn-wrapper">
+        <div class="download-btn">
+          <a href="#">下载额外领8G流量</a>
+        </div>
+        <div class="next"></div>
+      </div>
     </div>
-    <div class="download-btn">
-      <a href="#">下载额外领8G流量</a>
-    </div>
-    <div class="next"></div>
   </div>
   <div class="section" id="page3">
-    <div class="pg_bg">
-      <img src="img/pic_3@2x.png" class="pg_img" alt="">
-    </div>
-    <div class="download-btn">
-      <a href="#">下载额外领8G流量</a>
+    <div class="container">
+      <div class="page-wrapper">
+        <div class="pg_bg">
+          <img src="img/pic_3@2x.png" class="pg_img" alt="">
+        </div>
+      </div>
+      <div class="btn-wrapper">
+        <div class="download-btn">
+          <a href="#">下载额外领8G流量</a>
+        </div>
+        <div class="next"></div>
+      </div>
     </div>
   </div>
 </div>
@@ -78,9 +97,9 @@
 </div>
 <script src="js/download.js"></script>
 <script>
-//  var w = document.documentElement.clientWidth || document.body.clientWidth;
-//  var h = document.documentElement.clientHeight || document.body.clientHeight;
-//  $(".pg_bg").height((443 / 600) * h + 'px') ;
+  //  var w = document.documentElement.clientWidth || document.body.clientWidth;
+  //  var h = document.documentElement.clientHeight || document.body.clientHeight;
+  //  $(".pg_bg").height((443 / 600) * h + 'px') ;
   $("#fullpage").fullpage({
     afterLoad: function (anchorLink, index) {
       if (index == 1) {
@@ -88,7 +107,7 @@
       }
     }
   })
-  window.location.href="meetyou://";
+  window.location.href = "meetyou://";
 </script>
 </body>
 </html>
