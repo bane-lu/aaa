@@ -32,6 +32,7 @@ $(function () {
       return false;
     }
   }
+
   if (isWeixin()) {
     //是微信
     $('.pg_bg').css({
@@ -43,10 +44,15 @@ $(function () {
     // e.preventDefault();
     $(".download-btn").addClass('btn-press');
     if (isWeixin()) {
-        //是微信
-        e.preventDefault();
-        $(".popup").show();
-        $(".popup,.mask").fadeIn();
+      //是微信
+      e.preventDefault();
+      $(".popup").show();
+      $(".popup,.mask").fadeIn();
+      document.addEventListener('touchmove', function (event) {
+
+        event.preventDefault();
+
+      })
     } else {
       var u = navigator.userAgent;
       var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
@@ -76,7 +82,7 @@ function setpoint(type) {
   $.ajax({
     type: "get",
     // url: "http://rcsoa-nopay.zone139.com/versionmanager/download/meetyou-record",
-    url:'http://221.176.34.113:9000/versionmanager/download/meetyou-record',
+    url: 'http://221.176.34.113:9000/versionmanager/download/meetyou-record',
     data: $.param(paramData),
     dataType: 'json',
     success: function (res) {
