@@ -68,9 +68,9 @@ ul {
   height: 8.86rem;
   background-color: #fff2d0;
   position: absolute;
-  top: 0.72rem;
   left: 50%;
   transform: translateX(-50%);
+  top: 0.08rem;
 }
 
 .pg_bg img {
