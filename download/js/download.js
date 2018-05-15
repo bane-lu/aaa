@@ -36,12 +36,12 @@ $(function () {
   $(".download-btn").on("click", function (e) {
     // e.preventDefault();
     $(".download-btn").addClass('btn-press');
-    // if (isWeixin()) {
-    //     //是微信
-    //     e.preventDefault();
-    //     $(".popup").show();
-    //     $(".popup,.mask").fadeIn();
-    // }
+    if (isWeixin()) {
+        //是微信
+        e.preventDefault();
+        $(".popup").show();
+        $(".popup,.mask").fadeIn();
+    }
   })
 
 });
