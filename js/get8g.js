@@ -32,9 +32,11 @@
     }
     var token = theRequest.token;
     alert("token:"+token)
+    var hasToken = 2;    // 0 拿到token 且为广东用户     1  拿到token 非广东用户        2没拿到token
     if(!token){
       $(".wrapper").show();
       $(".phone").show();
+      $(".bottom").show();
       $(".loading").hide();
     }else{
         // 通过检验token测试是否为广东号码
@@ -47,9 +49,11 @@
             },
             crossDomain: true,
             success:function (res) {
-                console.log(res);
-                $(".wrapper").show();
-                $(".loading").hide();
+                if(res.flag == true){
+                    hasToken = 0
+                }else if(res.flag == false){
+                    hasToken = 1
+                }
             },
             error:function (res) {
                 window.location.href= "http://117.136.240.59:8080/miyoufm/error/error_timeout.html";
@@ -106,6 +110,13 @@ const get_btn = document.getElementsByClassName("get_btn")[0]
 get_btn.addEventListener(clickEvent, e => {
   if(!navigator.onLine){
       tip("无网络链接，请检查网络设置");
+  }else if(hasToken == 0){
+      $(".success").show();
+      $(".success").find(".content").animate({
+          transform : 'translate(-50%,-50%) scale(0.8,0.8)'
+      },1000);
+  }else if(hasToken == 1){
+      tip("本活动仅限广东移动用户参加");
   }else if(flag == true){
       $(".get_btn").addClass("get_btn_press");
       var number = $(".phone").val()
@@ -127,7 +138,7 @@ get_btn.addEventListener(clickEvent, e => {
               },
               crossDomain: true,
               success:function (res) {
-                if(res.flag){
+                if(res.flag == true){
                   $(".success").show();
                   $(".success").find(".content").animate({
                       transform : 'translate(-50%,-50%) scale(0.8,0.8)'
