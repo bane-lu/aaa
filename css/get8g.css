@@ -117,17 +117,21 @@ a:active{
 }
 .tip{
   display: none;
-  width: 8.25rem;
-  height: 1.8rem;
-  border-radius: 2.5rem;
-  background-color: rgba(0, 0, 0, 0.6);
+
   text-align: center;
   vertical-align: middle;
 
-  margin: auto;
-  margin-bottom: 0.075rem;
+
 }
 .tip > i{
+  display: inline-block;
+  height: 1.8rem;
+  border-radius: 2.5rem;
+  margin: auto;
+  margin-bottom: 0.075rem;
+  padding: 0rem 0.75rem;
+
+  background-color: rgba(0, 0, 0, 0.6);
   font-size: 0.75rem;
   line-height: 1.8rem;
   font-style: normal;
