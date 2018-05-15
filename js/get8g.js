@@ -17,6 +17,8 @@
   }
    // alert("basePath:"+basePath);
 
+   //token状态
+   var hasToken = 2;    // 0 拿到token 且为广东用户     1  拿到token 非广东用户        2没拿到token
   // 客户端token的拿取 */
   function getToken(){
     var url = window.location.href; //获取url中"?"符后的字串
@@ -32,7 +34,6 @@
     }
     var token = theRequest.token;
     alert("token:"+token)
-    var hasToken = 2;    // 0 拿到token 且为广东用户     1  拿到token 非广东用户        2没拿到token
     if(!token){
       $(".wrapper").show();
       $(".phone").show();
@@ -125,10 +126,6 @@ get_btn.addEventListener(clickEvent, e => {
           tip("请输入正确的手机号");
       }else{
           flag = false;
-          // 点击“点击领取8G”按钮，传递用户手机号码参数，等待接口结果返回；
-          // 判断号码归属地是否为广东移动号码，
-          // 当手机号码不为广东移动号码则弹出下方弹框提示“本活动仅限广东移动用户参加”，
-          // 当该号码为广东移动号码则弹出右方的弹框提示。
           $.ajax({
               type:"get",
               contentType:"application/json",
