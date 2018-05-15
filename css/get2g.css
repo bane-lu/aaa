@@ -148,7 +148,8 @@ a:active{
   text-align: center;
   font-size: 0.9rem;
   font-family: "PingFangSC-Regular";
-  line-height: 2.5rem;
+  font-weight: lighter;
+  line-height: 2.625rem;
   color: #8e8e8e;
   /* background-color: #bfa; */
 
@@ -182,7 +183,7 @@ a:active{
 
 }
 .bottom{
-  display: none;
+  display: inline-block;
   left: 50%;
   transform: translateX(-50%);
   position: absolute;

@@ -9,6 +9,7 @@
        return basePath;
   }
   var basePath = getBasePath()
+  alert(basePath)
   // basePath = '//221.176.34.113:8080'
   var api = {
     submitMobile: '/check_mobile/app/submitMobile/',
@@ -19,6 +20,7 @@
   // 客户端token的拿取 */
   function getToken(){
     var url = window.location.href; //获取url中"?"符后的字串
+    alert('getToken')
     var theRequest = new Object();
     var n = url.indexOf("?")
     if (n != -1) {
@@ -29,10 +31,12 @@
         }
     }
     var token = theRequest.token;
-    // alert("token:"+token)
+    alert("token:"+token)
+    var hasToken = 2;    // 0 拿到token 且为广东用户     1  拿到token 非广东用户        2没拿到token
     if(!token){
       $(".wrapper").show();
       $(".phone").show();
+      $(".bottom").show();
       $(".loading").hide();
     }else{
         // 通过检验token测试是否为广东号码
@@ -45,14 +49,17 @@
             },
             crossDomain: true,
             success:function (res) {
-                console.log(res);
-                $(".wrapper").show();
-                $(".loading").hide();
+                if(res.flag == true){
+                    hasToken = 0
+                }else if(res.flag == false){
+                    hasToken = 1
+                }
             },
             error:function (res) {
-                console.log(res);
-                $(".wrapper").show();
-                $(".loading").hide();
+                window.location.href= "http://117.136.240.59:8080/miyoufm/error/error_timeout.html";
+                // console.log(res);
+                // $(".wrapper").show();
+                // $(".loading").hide();
             }
         });
     }
@@ -89,56 +96,79 @@ function tip(msg){
 }
 
 // touchstart 点击事件
-const Button = document.getElementsByClassName("get_btn")[0]
 const clickEvent = (function() {
  if ('ontouchstart' in document.documentElement === true)
     return 'touchstart';
  else
     return 'click';
 })();
-
+//防多次点击
 var flag = true;
-Button.addEventListener(clickEvent, e => {
-  if(flag == true){
-    $(".get_btn").addClass("get_btn_press");
-    var number = $(".phone").val()
-    var length = $(".phone").val().length
-    if(!number || length < 11){
-        tip("请输入正确的手机号");
-    }else{
-        flag = false;
-        // 点击“点击领取8G”按钮，传递用户手机号码参数，等待接口结果返回；
-        // 判断号码归属地是否为广东移动号码，
-        // 当手机号码不为广东移动号码则弹出下方弹框提示“本活动仅限广东移动用户参加”，
-        // 当该号码为广东移动号码则弹出右方的弹框提示。
-        $.ajax({
-            type:"get",
-            contentType:"application/json",
-            url:basePath + api.submitMobile + number,
-            xhrFields: {
-                withCredentials: true
-            },
-            crossDomain: true,
-            success:function (res) {
-              if(res.code == 0){
-                $(".success").show();
-                $(".success").find(".content").animate({
-                    transform : 'translate(-50%,-50%) scale(0.8,0.8)'
-                },1000);
-              }else{
-                tip("本活动仅限广东移动用户参加");
-              }
-              flag = true;
-            },
-            error:function (res) {
-              // 跳异常页面
-              flag = true;
-            }
-        });
-  }
+const get_btn = document.getElementsByClassName("get_btn")[0]
 
-    }
+// 验证号码领8G
+get_btn.addEventListener(clickEvent, e => {
+  if(!navigator.onLine){
+      tip("无网络链接，请检查网络设置");
+  }else if(hasToken == 0){
+      $(".success").show();
+      $(".success").find(".content").animate({
+          transform : 'translate(-50%,-50%) scale(0.8,0.8)'
+      },1000);
+  }else if(hasToken == 1){
+      tip("本活动仅限广东移动用户参加");
+  }else if(flag == true){
+      $(".get_btn").addClass("get_btn_press");
+      var number = $(".phone").val()
+      var length = $(".phone").val().length
+      if(!number || length < 11){
+          tip("请输入正确的手机号");
+      }else{
+          flag = false;
+          // 点击“点击领取8G”按钮，传递用户手机号码参数，等待接口结果返回；
+          // 判断号码归属地是否为广东移动号码，
+          // 当手机号码不为广东移动号码则弹出下方弹框提示“本活动仅限广东移动用户参加”，
+          // 当该号码为广东移动号码则弹出右方的弹框提示。
+          $.ajax({
+              type:"get",
+              contentType:"application/json",
+              url:basePath + api.submitMobile + number,
+              xhrFields: {
+                  withCredentials: true
+              },
+              crossDomain: true,
+              success:function (res) {
+                if(res.flag == true){
+                  $(".success").show();
+                  $(".success").find(".content").animate({
+                      transform : 'translate(-50%,-50%) scale(0.8,0.8)'
+                  },1000);
+                }else{
+                  tip("本活动仅限广东移动用户参加");
+                }
+                flag = true;
+              },
+              error:function (res) {
+                // 跳异常页面
+                flag = true;
+                window.location.href= "http://117.136.240.59:8080/miyoufm/error/error_timeout.html";
+              }
+          });
+      }
+
+  }
 })
-Button.addEventListener('touchend', e => {
+get_btn.addEventListener('touchend', e => {
     $(".get_btn").removeClass("get_btn_press");
+})
+
+// 前往
+const goto = document.getElementsByClassName("goto")[0]
+goto.addEventListener(clickEvent, e => {
+    document.location = '../download/index.html'
+})
+// 取消
+const cancel = document.getElementsByClassName("cancel")[0]
+cancel.addEventListener(clickEvent, e => {
+    $(".success").hide();
 })
