@@ -9,6 +9,7 @@
        return basePath;
   }
   var basePath = getBasePath()
+  alert(basePath)
   // basePath = '//221.176.34.113:8080'
   var api = {
     submitMobile: '/check_mobile/app/submitMobile/',
@@ -19,6 +20,7 @@
   // 客户端token的拿取 */
   function getToken(){
     var url = window.location.href; //获取url中"?"符后的字串
+    alert('getToken')
     var theRequest = new Object();
     var n = url.indexOf("?")
     if (n != -1) {
