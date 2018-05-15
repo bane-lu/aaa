@@ -67,17 +67,20 @@
     <div class="download-btn">
       <a href="#">下载额外领8G流量</a>
     </div>
-    <div class="next"></div>
   </div>
+</div>
+<!--遮罩层-->
+<div class="mask"></div>
+
+<!--弹窗-->
+<div class="popup" style="display: none">
+  <img src="img/popup.png" alt="">
 </div>
 <script src="js/download.js"></script>
 <script>
-  var w = document.documentElement.clientWidth || document.body.clientWidth;
-  var h = document.documentElement.clientHeight || document.body.clientHeight;
-  // alert("网页可见区域宽--"+w);
-  // alert("网页可见区域高--"+h);
-  document.getElementsByClassName("pg_bg")[0].style.height = (425 / 603) * h + 'px';
-  document.getElementsByClassName("pg_img")[0].style.height = (500 / 603) * h + 'px';
+//  var w = document.documentElement.clientWidth || document.body.clientWidth;
+//  var h = document.documentElement.clientHeight || document.body.clientHeight;
+//  $(".pg_bg").height((443 / 600) * h + 'px') ;
   $("#fullpage").fullpage({
     afterLoad: function (anchorLink, index) {
       if (index == 1) {
