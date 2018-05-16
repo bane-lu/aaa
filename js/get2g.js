@@ -9,7 +9,7 @@
        return basePath;
   }
   var basePath = getBasePath()
-  // alert(basePath)
+  alert(basePath)
 
 // 上方tip 弹窗提示
 function tip(msg){

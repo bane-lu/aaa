@@ -14,7 +14,7 @@
     submitMobile: '/check_mobile/app/submitMobile/',
     checkMobile: '/check_mobile/app/checkMobile/'
   }
-   alert("basePath:"+basePath);
+  alert("version:15:04")
 
    //token状态
    var hasToken = 2;    // 0 拿到token 且为广东用户     1  拿到token 非广东用户        2没拿到token
@@ -31,7 +31,7 @@
         }
     }
     var token = theRequest.token;
-    if(!token){
+    if(!token || token == undefined){
       $(".loading").hide();
       $(".wrapper").show();
       $(".phone").show();
