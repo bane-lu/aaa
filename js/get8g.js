@@ -14,7 +14,7 @@
     submitMobile: '/check_mobile/app/submitMobile/',
     checkMobile: '/check_mobile/app/checkMobile/'
   }
-   // alert("basePath:"+basePath);
+   alert("basePath:"+basePath);
 
    //token状态
    var hasToken = 2;    // 0 拿到token 且为广东用户     1  拿到token 非广东用户        2没拿到token
@@ -163,7 +163,7 @@ get_btn.addEventListener('touchend', e => {
 const goto = document.getElementsByClassName("goto")[0]
 goto.addEventListener(clickEvent, e => {
     // document.location = '../download/index.html'
-    window.location.href= "http://221.176.34.113:8080/advertises/download/index.html"
+    window.location.href= basePath + "/advertises/download/index.html"
 })
 // 取消
 const cancel = document.getElementsByClassName("cancel")[0]
