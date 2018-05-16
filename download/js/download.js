@@ -32,13 +32,7 @@ $(function () {
       return false;
     }
   }
-
-  if (isWeixin()) {
-    //是微信
-    $('.pg_bg').css({
-      top: 0.6 + 'rem'
-    })
-  }
+  
   //点击下载
   $(".download-btn").on("click", function (e) {
     // e.preventDefault();
@@ -56,9 +50,9 @@ $(function () {
       }
     }
   })
-  $(window).resize(function () {
-    window.location.reload();
-  })
+  // $(window).resize(function () {
+  //   window.location.reload();
+  // })
 
 });
 var DEVICE = phonetype();
