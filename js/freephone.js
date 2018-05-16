@@ -9,14 +9,6 @@ function getBasePath(){
      return basePath;
 }
 var basePath = getBasePath()
-// alert(basePath)
-// basePath = '//221.176.34.113:8080'
-var api = {
-  submitMobile: '/check_mobile/app/submitMobile/',
-  checkMobile: '/check_mobile/app/checkMobile/'
-}
- // alert("basePath:"+basePath);
-
 // 上方tip 弹窗提示
 function tip(msg){
   $(".tip").find("i").text(msg);
