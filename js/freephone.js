@@ -10,7 +10,7 @@ function getBasePath(){
 }
 var basePath = getBasePath()
 // 上方tip 弹窗提示
-alert("version:15:26")
+alert("version:16:41")
 function tip(msg){
   $(".tip").find("i").text(msg);
   $(".tip").show();
@@ -35,5 +35,5 @@ get_btn.addEventListener(clickEvent, e => {
 })
 get_btn.addEventListener('touchend', e => {
     $(".get_btn").removeClass("get_btn_press");
-    window.location.href= basePath + "/advertises/download/index.html"
+    window.location.href= "http://feixin.10086.cn/miyou/"
 })
