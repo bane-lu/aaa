@@ -38,4 +38,5 @@ const clickEvent = (function() {
 const get_btn = document.getElementsByClassName("get_btn")[0]
 get_btn.addEventListener(clickEvent, e => {
     document.location = '../download/index.html'
+    alert(document.location);
 })

@@ -162,15 +162,16 @@ a:active{
 
 }
 .bottom{
-  display: inline-block;
+  width: 100%;
   left: 50%;
   transform: translateX(-50%);
   position: absolute;
   bottom: 0.8rem;
-
+  /* background-color: #bfa; */
+}
+.bottom > p{
   font-size: 0.6rem;
   color: rgb(255, 255, 255);
-  /* background-color: #bfa; */
 }
 /* loading */
 .loading{

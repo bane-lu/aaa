@@ -30,7 +30,7 @@ html,body,header,section,footer,div,ul,ol,li,img,a,span,em,del,legend,center,str
 * {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    -webkit-user-select: none;
+    -webkit-user-select: auto;
     -webkit-tap-highlight-color: transparent;
     outline: none;
 }

@@ -31,7 +31,6 @@
         }
     }
     var token = theRequest.token;
-    alert("token:"+token)
     if(!token){
       $(".loading").hide();
       $(".wrapper").show();
@@ -164,6 +163,7 @@ get_btn.addEventListener('touchend', e => {
 const goto = document.getElementsByClassName("goto")[0]
 goto.addEventListener(clickEvent, e => {
     document.location = '../download/index.html'
+    console.log(document.location);
 })
 // 取消
 const cancel = document.getElementsByClassName("cancel")[0]
