@@ -60,7 +60,9 @@ $(function () {
         setpoint("download");
       }
     }
-
+  })
+  $(window).resize(function () {
+    window.location.reload();
   })
 
 });
