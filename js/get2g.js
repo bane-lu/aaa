@@ -9,7 +9,7 @@
        return basePath;
   }
   var basePath = getBasePath()
-  // alert(basePath)
+  alert("version:15:26")
 
 // 上方tip 弹窗提示
 function tip(msg){
@@ -31,6 +31,10 @@ const clickEvent = (function() {
 // 立即参与
 const get_btn = document.getElementsByClassName("get_btn")[0]
 get_btn.addEventListener(clickEvent, e => {
+    $(".get_btn").addClass("get_btn_press");
     // document.location = '../download/index.html'
-    window.location.href= "http://221.176.34.113:8080/advertises/download/index.html"
+});
+get_btn.addEventListener('touchend', e => {
+    $(".get_btn").removeClass("get_btn_press");
+    window.location.href= basePath + "/advertises/download/index.html"
 })
