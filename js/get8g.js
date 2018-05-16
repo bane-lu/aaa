@@ -9,7 +9,6 @@
        return basePath;
   }
   var basePath = getBasePath()
-  alert(basePath)
   // basePath = '//221.176.34.113:8080'
   var api = {
     submitMobile: '/check_mobile/app/submitMobile/',
@@ -22,7 +21,6 @@
   // 客户端token的拿取 */
   function getToken(){
     var url = window.location.href; //获取url中"?"符后的字串
-    alert('getToken')
     var theRequest = new Object();
     var n = url.indexOf("?")
     if (n != -1) {
@@ -35,10 +33,10 @@
     var token = theRequest.token;
     alert("token:"+token)
     if(!token){
+      $(".loading").hide();
       $(".wrapper").show();
       $(".phone").show();
       $(".bottom").show();
-      $(".loading").hide();
     }else{
         // 通过检验token测试是否为广东号码
         $.ajax({
@@ -55,6 +53,9 @@
                 }else if(res.flag == false){
                     hasToken = 1
                 }
+                $(".loading").hide();
+                $(".wrapper").show();
+                $(".bottom").show();
             },
             error:function (res) {
                 window.location.href= "http://117.136.240.59:8080/miyoufm/error/error_timeout.html";
