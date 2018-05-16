@@ -66,18 +66,27 @@ ul {
   width: 100%;
   height: 100%;
   flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.head-wrapper{
+  width: 6.7rem;
+  height: 0.84rem;
+}
+.head-wrapper img {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .page-wrapper{
-  width: 100%;
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 6.7rem;
+  height: 7.5rem;
 }
 .btn-wrapper{
-  width: 100%;
-  height: 1.8rem;
+  width: 5.2rem;
+  height: 1.52rem;
 }
 
 /**********第一屏**************/
@@ -87,7 +96,7 @@ ul {
   background-color: #fff2d0;
 }
 
-.pg_bg img {
+.page-wrapper img {
   display: block;
   width: 100%;
   height: 100%;
@@ -95,20 +104,15 @@ ul {
 
 /*********按钮*********/
 .download-btn {
-  width: 6.2rem;
-  height: 1.2rem;
-  background: url(../img/btn_nor@2x.png) no-repeat;
+  width: 5.2rem;
+  height: 1rem;
+  background: url(../img/btn_nor.png) no-repeat;
   background-size: 100% 100%;
   -webkit-background-size: 100% 100%;
-  position: absolute;
-  bottom: 0.54rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 99;
 }
 
 .btn-press{
-  background: url(../img/btn_press@2x.png) no-repeat;
+  background: url(../img/btn_press.png) no-repeat;
   background-size: 100% 100%;
   -webkit-background-size: 100% 100%;
 }
@@ -117,7 +121,7 @@ ul {
   display: block;
   width: 100%;
   height: 100%;
-  line-height: 1.2rem;
+  line-height: 1rem;
   text-align: center;
   color: #fff;
   font-size: 0.4rem;
@@ -130,9 +134,10 @@ ul {
   background: url(../img/btn2@2x.png) no-repeat;
   background-size: 100% 100%;
   -webkit-background-size: 100% 100%;
-  position: absolute;
-  bottom: 0.24rem;
+  position: relative;
+  top: 0.24rem;
   left: 50%;
+  transform: translateX(-50%);
   margin-left: -0.2rem;
   -webkit-animation: up 1.8s ease 0s infinite normal;
   -ms-animation: up 1.8s ease 0s infinite normal;
