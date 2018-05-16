@@ -162,7 +162,8 @@ get_btn.addEventListener('touchend', e => {
 // 前往
 const goto = document.getElementsByClassName("goto")[0]
 goto.addEventListener(clickEvent, e => {
-    document.location = '../download/index.html'
+    // document.location = '../download/index.html'
+    window.location.href= "http://221.176.34.113:8080/advertises/download/index.html"
     console.log(document.location);
 })
 // 取消

@@ -29,5 +29,6 @@ else
 // 立即参与
 const get_btn = document.getElementsByClassName("get_btn")[0]
 get_btn.addEventListener(clickEvent, e => {
-  document.location = '../download/index.html'
+  // document.location = '../download/index.html'
+  window.location.href= "http://221.176.34.113:8080/advertises/download/index.html"
 })
