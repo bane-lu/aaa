@@ -9,7 +9,6 @@
        return basePath;
   }
   var basePath = getBasePath()
-  alert(basePath)
   // basePath = '//221.176.34.113:8080'
   var api = {
     submitMobile: '/check_mobile/app/submitMobile/',
@@ -17,10 +16,11 @@
   }
    // alert("basePath:"+basePath);
 
+   //token状态
+   var hasToken = 2;    // 0 拿到token 且为广东用户     1  拿到token 非广东用户        2没拿到token
   // 客户端token的拿取 */
   function getToken(){
     var url = window.location.href; //获取url中"?"符后的字串
-    alert('getToken')
     var theRequest = new Object();
     var n = url.indexOf("?")
     if (n != -1) {
@@ -31,13 +31,11 @@
         }
     }
     var token = theRequest.token;
-    alert("token:"+token)
-    var hasToken = 2;    // 0 拿到token 且为广东用户     1  拿到token 非广东用户        2没拿到token
     if(!token){
+      $(".loading").hide();
       $(".wrapper").show();
       $(".phone").show();
       $(".bottom").show();
-      $(".loading").hide();
     }else{
         // 通过检验token测试是否为广东号码
         $.ajax({
@@ -54,6 +52,9 @@
                 }else if(res.flag == false){
                     hasToken = 1
                 }
+                $(".loading").hide();
+                $(".wrapper").show();
+                $(".bottom").show();
             },
             error:function (res) {
                 window.location.href= "http://117.136.240.59:8080/miyoufm/error/error_timeout.html";
@@ -125,10 +126,6 @@ get_btn.addEventListener(clickEvent, e => {
           tip("请输入正确的手机号");
       }else{
           flag = false;
-          // 点击“点击领取8G”按钮，传递用户手机号码参数，等待接口结果返回；
-          // 判断号码归属地是否为广东移动号码，
-          // 当手机号码不为广东移动号码则弹出下方弹框提示“本活动仅限广东移动用户参加”，
-          // 当该号码为广东移动号码则弹出右方的弹框提示。
           $.ajax({
               type:"get",
               contentType:"application/json",
@@ -166,6 +163,7 @@ get_btn.addEventListener('touchend', e => {
 const goto = document.getElementsByClassName("goto")[0]
 goto.addEventListener(clickEvent, e => {
     document.location = '../download/index.html'
+    console.log(document.location);
 })
 // 取消
 const cancel = document.getElementsByClassName("cancel")[0]
