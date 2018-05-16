@@ -60,18 +60,17 @@ $(function () {
         setpoint("download");
       }
     }
-
   })
+  $(window).resize(function () {
+    if (!isWeixin()) {
+      window.location.reload();
+    }
+    return ;
+  });
 });
 var DEVICE = phonetype();
 var CHANNEL = getUrlParam("channel");
 
-$(window).resize(function () {
-  if (!isWeixin()) {
-    window.location.reload();
-  }
-  return ;
-});
 //埋点
 function setpoint(type) {
   var device = DEVICE;
