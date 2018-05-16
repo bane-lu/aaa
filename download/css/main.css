@@ -11,8 +11,8 @@ body {
 }
 
 /*html, body{*/
-  /*width: 100%;*/
-  /*height: 100%;*/
+/*width: 100%;*/
+/*height: 100%;*/
 /*}*/
 
 *, *:before, *:after {
@@ -61,16 +61,30 @@ ul {
 
 
 /******设置背景*********/
+.container{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+}
+
+.page-wrapper{
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-wrapper{
+  width: 100%;
+  height: 1.8rem;
+}
 
 /**********第一屏**************/
 .pg_bg {
   width: 6.8rem;
   height: 8.86rem;
   background-color: #fff2d0;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 0.2rem;
 }
 
 .pg_bg img {
