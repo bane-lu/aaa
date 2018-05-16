@@ -1,185 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, user-scalable=no" name="viewport" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style,content=black" />
-    <title></title>
-    <style type="text/css">
-        *{font-family: "Microsoft YaHei";padding: 0px;margin: 0px;}
-        /*分享弹出层*/
-        .shareMask-wrap{ position:fixed; z-index:100; width:100%; height:100%;  left:0; top:0; display:none; }
-        .shareMask{ position:absolute; z-index:101; width:100%; height:100%; left:0; top:0; background:#000;  filter:alpha(opacity=0.5); -moz-opacity:0.5; -khtml-opacity: 0.5; opacity: 0.5; }
-        #shareplatform{ position:absolute; z-index:102; width:238px; height:95px; left:50%; top:50%; display:none; margin:-25px 0 0 -119px; }
-        .shareplatform-title{ float:left; width:100%; text-align:center; font-size:0.875rem; font-weight:900; color:#fff; padding-bottom:15px; display:inline; }
-        .shareplatform-list{ float:left; width:100%; height:70px;  }
-        .shareplatform-list li{ float:left; width:70px; height:70px; margin-left:5px; display:inline; }
-        .shareplatform-list li img{ width:70px; height:70px; }
-
-        p{font-size: 18px;color: red}
-    </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>密友之间电话不限量</title>
+    <link rel="stylesheet" type="text/css" href="../css/freephone.css?version=0516"/>
 </head>
+
 <body>
-<p>注：以下功能只能在我们10086客户端上才生效，请放到10086客户端中进行测试</p>
-<div onclick="gotoOnline()">在线客服</div>
-<br/>
-<div onclick="gotoRecharge()">在线充值</div>
-<br/>
-<div onclick="gotoyouhui()">某一优惠详情</div>
-<br/>
-<div onclick="share()">分享</div>
-<br/><br/>
-<div onclick="shareNew()">新版分享(510版本开始)</div>
-<div class="p0"></div>
-<div class="p"></div>
-<br/>
-<div class="positioning">
-  <div onclick="getPosition()">获取经纬度</div>
-  <div class="result"></div>
-  <div class="result1"></div>
-</div>
-<div class="shareMask-wrap" id="biddingPromptWrap" onClick="exitPrompt()">
-    <div class="shareMask" id="shareMask"></div>
-    <!--<div class="contentPromptLoading" id="biddingPromptLoading"><img src="images/loading.jpg" alt="loading..." /></div>-->
-    <!-- 分享 -->
-    <div id="shareplatform" onClick="exitPrompt()">
-        <div class="shareplatform-title">马上派红包，分享给周围的小伙伴吧！</div>
-        <ul class="shareplatform-list">
-            <li><img src="../images/share_sina.png" alt="" onClick="doShareplatform(0)" /></li>
-            <!--<li><img src="images/share_tx.png" alt="" onClick="doShareplatform(1)"  /></li>-->
-            <li><img src="../images/share_weixin.png" alt=""  onClick="doShareplatform(2)" /></li>
-            <li><img src="../images/share_pyq.png" alt="" onClick="doShareplatform(3)"  /></li>
-        </ul>
+    <!-- 上方tip弹窗提示 -->
+    <div class="wrapper">
+      <div class="tip">
+        <i></i>
+      </div>
+      <div class="get_btn">立即参与</div>
     </div>
-    <!-- 分享end -->
-</div>
+    <span class="bottom">非广东移动用户按标准资费收取通话费</span>
+    <script src="../js/jquery-2.1.4.min.js"></script>
+    <script src="../js/freephone.js"></script>
 </body>
-<script type="text/javascript" src="../jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="../TGJSBridge.js"></script>
-<script type="text/javascript" src="../gmccapp.js"></script>
-<script type="text/javascript">
-    /**
-     * 跳转客户端在线客服功能
-     * */
-    function gotoOnline(){
-        var repData = '{"servicename":"GMCCJS_000_000_000_001","reqData":{"code":"GMCCAPP_001_009"}}';
-        gmccapp(repData);
-    }
-    /**
-     * 跳转客户端在线充值功能
-     * */
-    function gotoRecharge(){
-        var repData = '{"servicename":"GMCCJS_000_000_000_001","reqData":{"code":"GMCCAPP_001_015"}}';
-        gmccapp(repData);
-    }
-    /**
-     * 跳转客户端优惠详情--某一详情
-     * */
-    function gotoyouhui(){
-        var repData = '{"servicename":"GMCCJS_000_000_000_001","reqData":{"code":"GMCCAPP_002_013","id":"http://gd.10086.cn/g3esop/webpage/youhui406/index.html?code=6f5fbd97"}}';
-        gmccapp(repData);
-    }
-    /**
-     * 分享，弹出分享框
-     * */
-    function share(){
-        $(".shareMask-wrap").show();
-        $("#shareplatform").show();
-    }
-    /**
-     *  分享平台渠道  shareType(分享类型)：0(微博)、2(微信)、3(朋友圈)
-     */
-    function doShareplatform(shareType){
-        var shareTitle = "nini我是分享标题跟分享描述内容";        //分享标题跟分享描述内容相同
-        var shareUrl = "https://www.baidu.com/";  //要分享的链接
-        var shareImgUrl = "http://h.hiphotos.baidu.com/image/h%3D200/sign=cb9df026ffedab646b724ac0c737af81/622762d0f703918fcf7eb327553d269758eec4b4.jpg"; //分享的图片链接
-        gmccappShare(shareType,shareTitle,shareImgUrl,shareUrl);
-    }
-
-    /**
-     *  隐藏分享模态
-     */
-    function exitPrompt(){
-        $(".shareMask-wrap").hide();
-        $("#shareplatform").hide();
-    }
-
-    var shareCallback = {
-      doSuccess:function(data){
-        if("android"==appType){
-          data = eval("("+ data +")");
-          $(".p0").html("android分享，内容为"+jQstringifyes(data));
-        }else{
-          $(".p0").html("ios分享，内容为"+jQstringifyes(data));
-        }
-        var respData = data;
-        var result = respData.result;
-        var desc = respData.desc;
-        if("1"==result){
-          $(".p").html("分享成功，result为："+result+" 描述为："+desc);
-        }else if("2"==result){
-          $(".p").html("分享失败，result为："+result+" 描述为："+desc);
-        }else if("3"==result){
-          $(".p").html("取消分享，result为："+result+" 描述为："+desc);
-        }else{
-          $(".p").html("其他情况，result为："+result+" 描述为："+desc);
-        }
-      },
-      doError:function(){
-        $(".p").html("分享调起失败doError");
-      }
-    }
-  /**
-   * 新版分享
-   * */
-  function shareNew() {
-    var json = {
-      "shareTitle": "分享标题",
-      "shareDesc": "分享描述",
-      "sharePic": "http://h.hiphotos.baidu.com/image/h%3D200/sign=cb9df026ffedab646b724ac0c737af81/622762d0f703918fcf7eb327553d269758eec4b4.jpg",
-      "shareUrl": "https://www.baidu.com/",
-      "alertTitle": "分享弹框标题"
-    };
-    var repData = '{"servicename":"GMCCJS_510_001_001_001","reqData":'+JSON.stringify(json)+'}';
-    gmccapp(repData,shareCallback);
-  }
-
-
-    /**
-     * 获取经纬度
-     * */
-    function getPosition() {
-      var reqJson ='{"servicename":"GMCCJS_540_001_001_001","reqData":""} ';
-      //alert(reqData);
-      var appDataCallbackObj = getPositionCallback;
-      gmccapp(reqJson,appDataCallbackObj); // 与客户端交互
-    }
-    var getPositionCallback = {
-
-      doSuccess: function (data) {
-        if("android"==appType){
-          data = eval("("+ data +")");
-          $(".result").html("android，内容为"+jQstringifyes(data));
-        }else{
-          $(".result").html("ios，内容为"+jQstringifyes(data));
-        }
-        var respData = data;
-        var result = respData.result;
-        var desc = respData.desc;
-        if ("000" == result) {
-          var latitude = respData.latitude;
-          var longitude = respData.longitude;
-          $(".result1").html("纬度："+latitude+"&nbsp;&nbsp;&nbsp;&nbsp;经度："+longitude  );
-        }else {
-          $(".result1").html(desc);
-        }
-      },
-
-      doError: function () {
-        $(".result1").html("手机定位失败doError");
-      }
-    };
-
-</script>
 </html>

@@ -100,14 +100,13 @@ body{
   position: relative;
   text-align: center;
   overflow: hidden;
-  background: url(../images/8g@2x.png) center no-repeat;
+  background: url(../images/100g@2x.png) center no-repeat;
   background-size: 100% 100%;
 }
 a:active{
     opacity: 0.7;
 }
 .wrapper{
-  display: none;
   text-align: center;
 
   left: 50%;
@@ -117,11 +116,8 @@ a:active{
 }
 .tip{
   display: none;
-
   text-align: center;
   vertical-align: middle;
-
-
 }
 .tip > i{
   display: inline-block;
@@ -137,27 +133,10 @@ a:active{
   font-style: normal;
   color:rgb(255, 255, 255);
 }
-.phone{
-  display: none;
-  width: 14.375rem;
-  height: 2.825rem;
-  box-sizing: border-box;
-  background: url(../images/8ginput@2x.png) center no-repeat;
-  background-size: 100% 100%;
-
-  text-align: center;
-  font-size: 0.9rem;
-  font-family: "PingFangSC-Regular";
-  font-weight: lighter;
-  line-height: 2.625rem;
-  color: #8e8e8e;
-  /* background-color: #bfa; */
-
-}
 .get_btn{
   width: 14.375rem;
   height: 2.825rem;
-  background: url(../images/8gbtn@2x.png) center no-repeat;
+  background: url(../images/100gbtn@2x.png) center no-repeat;
   background-size: 100% 100%;
 
   font-size: 0.9rem;
@@ -171,7 +150,7 @@ a:active{
 .get_btn_press{
   width: 14.375rem;
   height: 2.825rem;
-  background: url(../images/8gbtn_press@2x.png) center no-repeat;
+  background: url(../images/100gbtn_press@2x.png) center no-repeat;
   background-size: 100% 100%;
 
   font-size: 0.9rem;
@@ -183,15 +162,16 @@ a:active{
 
 }
 .bottom{
-  display: inline-block;
+  width: 100%;
   left: 50%;
   transform: translateX(-50%);
   position: absolute;
-  bottom: 1.7rem;
-
-  font-size: 0.6rem;
-  color: rgb(246, 190, 198);
+  bottom: 0.8rem;
   /* background-color: #bfa; */
+}
+.bottom > p{
+  font-size: 0.6rem;
+  color: rgb(255, 255, 255);
 }
 /* loading */
 .loading{
