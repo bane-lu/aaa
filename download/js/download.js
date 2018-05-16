@@ -48,11 +48,6 @@ $(function () {
       e.preventDefault();
       $(".popup").show();
       $(".popup,.mask").fadeIn();
-      document.addEventListener('touchmove', function (event) {
-
-        event.preventDefault();
-
-      })
     } else {
       var u = navigator.userAgent;
       var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
@@ -136,3 +131,19 @@ function phonetype() {
   }
   return DEVICE;
 }
+
+/**
+ * 图片进行预加载
+ * **/
+// var images = new Array();
+// function preload() {
+//   for (var i = 0; i < preload.arguments.length; i++) {
+//     images[i] = new Image()
+//     images[i].src = preload.arguments[i]
+//   }
+// }
+//    preload(
+//      'img/pic_1@2x.png',
+//      'img/pic_2@2x.png',
+//      'img/pic_3@2x.png'
+//    )
