@@ -62,10 +62,14 @@ $(function () {
     }
 
   })
-
 });
 var DEVICE = phonetype();
 var CHANNEL = getUrlParam("channel");
+
+$(window).resize(function () {
+  window.location.reload();
+  return ;
+});
 //埋点
 function setpoint(type) {
   var device = DEVICE;
