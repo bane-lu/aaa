@@ -109,6 +109,7 @@ const get_btn = document.getElementsByClassName("get_btn")[0]
 
 // 验证号码领8G
 get_btn.addEventListener(clickEvent, e => {
+  $(".get_btn").addClass("get_btn_press");
   if(!navigator.onLine){
       tip("无网络链接，请检查网络设置");
   }else if(hasToken == 0){
@@ -119,7 +120,6 @@ get_btn.addEventListener(clickEvent, e => {
   }else if(hasToken == 1){
       tip("本活动仅限广东移动用户参加");
   }else if(flag == true){
-      $(".get_btn").addClass("get_btn_press");
       var number = $(".phone").val()
       var length = $(".phone").val().length
       if(!number || length < 11){
@@ -164,7 +164,6 @@ const goto = document.getElementsByClassName("goto")[0]
 goto.addEventListener(clickEvent, e => {
     // document.location = '../download/index.html'
     window.location.href= "http://221.176.34.113:8080/advertises/download/index.html"
-    console.log(document.location);
 })
 // 取消
 const cancel = document.getElementsByClassName("cancel")[0]
