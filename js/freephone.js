@@ -10,7 +10,7 @@ function getBasePath(){
 }
 var basePath = getBasePath()
 // 上方tip 弹窗提示
-alert("version:15:04")
+alert("version:15:26")
 function tip(msg){
   $(".tip").find("i").text(msg);
   $(".tip").show();
