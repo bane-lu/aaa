@@ -88,13 +88,11 @@ ul {
   width: 5.2rem;
   height: 1.52rem;
 }
+.btn-wrapper-last{
+  height: 1.2rem;
+}
 
 /**********第一屏**************/
-.pg_bg {
-  width: 6.8rem;
-  height: 8.86rem;
-  background-color: #fff2d0;
-}
 
 .page-wrapper img {
   display: block;

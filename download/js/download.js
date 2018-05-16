@@ -32,7 +32,7 @@ $(function () {
       return false;
     }
   }
-  
+
   //点击下载
   $(".download-btn").on("click", function (e) {
     // e.preventDefault();
