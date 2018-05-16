@@ -30,10 +30,12 @@ else
 // 立即参与
 const get_btn = document.getElementsByClassName("get_btn")[0]
 get_btn.addEventListener(clickEvent, e => {
-  $(".get_btn").addClass("get_btn_press");
+  $(".get_btn").hide();
+  $(".get_btn_press").show();
   // document.location = '../download/index.html'
 })
 get_btn.addEventListener('touchend', e => {
-    $(".get_btn").removeClass("get_btn_press");
+    $(".get_btn_press").hide();
+    $(".get_btn").show();
     window.location.href= basePath + "/advertises/download/index.html"
 })

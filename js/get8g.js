@@ -107,7 +107,8 @@ const get_btn = document.getElementsByClassName("get_btn")[0]
 
 // 验证号码领8G
 get_btn.addEventListener(clickEvent, e => {
-  $(".get_btn").addClass("get_btn_press");
+  $(".get_btn").hide();
+  $(".get_btn_press").show();
   if(!navigator.onLine){
       tip("无网络链接，请检查网络设置");
   }else if(hasToken == 0){
@@ -155,7 +156,8 @@ get_btn.addEventListener(clickEvent, e => {
   }
 })
 get_btn.addEventListener('touchend', e => {
-    $(".get_btn").removeClass("get_btn_press");
+    $(".get_btn_press").hide();
+    $(".get_btn").show();
 })
 
 // 前往
