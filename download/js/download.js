@@ -67,7 +67,9 @@ var DEVICE = phonetype();
 var CHANNEL = getUrlParam("channel");
 
 $(window).resize(function () {
-  window.location.reload();
+  if (!isWeixin()) {
+    window.location.reload();
+  }
   return ;
 });
 //埋点
