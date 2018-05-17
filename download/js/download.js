@@ -56,6 +56,9 @@ $(function () {
 });
 var DEVICE = phonetype();
 var CHANNEL = getUrlParam("channel");
+if (CHANNEL) {
+  alert(CHANNEL)
+}
 //埋点
 function setpoint(type) {
   var device = DEVICE;
