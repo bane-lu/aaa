@@ -32,12 +32,19 @@
         }
     }
     var token = theRequest.token;
-    if(!token || token == undefined){
+
+    if(!token){
       $(".loading").hide();
       $(".wrapper").show();
       $(".phone").show();
       $(".bottom").show();
     }else{
+        var timeout_status = true;   //超时判断
+        setTimeout(function(){
+            if(timeout_status){
+                window.location.href= "http://117.136.240.59:8080/miyoufm/error/error_timeout.html";
+            }
+        },10000)
         // 通过检验token测试是否为广东号码
         $.ajax({
             type:"get",
@@ -56,8 +63,10 @@
                 $(".loading").hide();
                 $(".wrapper").show();
                 $(".bottom").show();
+                timeout_status = false;
             },
             error:function (res) {
+                timeout_status = false;
                 window.location.href= "http://117.136.240.59:8080/miyoufm/error/error_timeout.html";
             }
         });
