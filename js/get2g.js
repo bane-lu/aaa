@@ -17,6 +17,9 @@
       if (r != null) return r[2]; return null; //返回参数值
   }
   var channel = getUrlParam("channel")
+  if(channel == null){
+      channel = '10086app'
+  }
 // 上方tip 弹窗提示
 function tip(msg){
     $(".tip").find("i").text(msg);

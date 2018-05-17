@@ -17,7 +17,7 @@
   // alert("version:16:41")
 
    //token状态
-   var hasToken = 2;    // 0 拿到token 且为广东用户    
+   var hasToken = 2;    // 0 拿到token 且为广东用户
    var channel = '';
   // 客户端token的拿取 */
   function getToken(){
@@ -29,6 +29,9 @@
 
     var token = getUrlParam("net_token")
     channel = getUrlParam("channel")
+    if(channel == null){
+        channel = '10086app'
+    }
 
     if(!token){
       $(".loading").hide();
