@@ -62,74 +62,47 @@ ul {
 
 /******设置背景*********/
 .container{
-  position: relative;
+  display: flex;
   width: 100%;
   height: 100%;
-  background: url("../img/1bg@2x.png") no-repeat;
-  background-size: 100% 100%;
-}
-
-.page2{
-  background: url("../img/2bg@2x.png") no-repeat;
-  background-size: 100% 100%;
-}
-
-.page3{
-  background: url("../img/3bg@2x.png") no-repeat;
-  background-size: 100% 100%;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #f5f5f6;
 }
 
 .head-wrapper{
-  position: absolute;
-  width: 0.5rem;
-  height: 0.5rem;
-  left: 0.3rem;
-  top: 0.3rem;
+  width: 6.7rem;
+  height: 0.84rem;
 }
 .head-wrapper img {
+  display: block;
+  width: 1.34rem;
+  height: 0.5rem;
+}
+
+.page-wrapper{
+  width: 100%;
+  height: 8.86rem;
+}
+.btn-wrapper{
+  width: 5.6rem;
+  height: 1.66rem;
+}
+.btn-wrapper-last{
+  height: 1.2rem;
+}
+
+/**********第一屏**************/
+
+.page-wrapper img {
   display: block;
   width: 100%;
   height: 100%;
 }
 
-.head-wrapper-miyou{
-  height: 0.5rem;
-  line-height: 0.5rem;
-  position: absolute;
-  left: 0.94rem;
-  top: 0.3rem;
-  font-size: 0.24rem;
-  color: rgb(250, 182, 4);
-}
-
-
-/**********第二屏**************/
-.rt-txt {
-  width: 1.02rem;
-  height: 4.16rem;
-  position: absolute;
-  right: 0.88rem;
-  top: 2.32rem;
-  background: url("../img/2txt@2x.png") no-repeat;
-  background-size: 100% 100%;
-}
-
-/**********第三屏**************/
-.lf-txt {
-  width: 1.07rem;
-  height: 4.84rem;
-  position: absolute;
-  left: 0.88rem;
-  top: 2.26rem;
-  background: url("../img/3txt@2x.png") no-repeat;
-  background-size: 100% 100%;
-}
-
 /*********按钮*********/
 .download-btn {
-  position: absolute;
-  left: 0.95rem;
-  bottom: 1.3rem;
   width: 5.6rem;
   height: 0.9rem;
   background: url(../img/btn@2x.png) no-repeat;
@@ -155,13 +128,13 @@ ul {
 
 /*****next*****/
 .next {
-  width: 0.44rem;
-  height: 0.28rem;
+  width: 0.36rem;
+  height: 0.22rem;
   background: url(../img/xiala@2x.png) no-repeat;
   background-size: 100% 100%;
   -webkit-background-size: 100% 100%;
-  position: absolute;
-  bottom: 0.54rem;
+  position: relative;
+  top: 0.24rem;
   left: 50%;
   transform: translateX(-50%);
   margin-left: -0.2rem;
