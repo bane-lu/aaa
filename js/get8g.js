@@ -27,11 +27,8 @@
         if (r != null) return r[2]; return null; //返回参数值
     }
 
-    var token = getUrlParam(token)
-    channel = getUrlParam(channel)
-    alert(window.location.href)
-    alert(token)
-    alert(channel)
+    var token = getUrlParam("net_token")
+    channel = getUrlParam("channel")
 
     if(!token){
       $(".loading").hide();
@@ -183,8 +180,8 @@ get_btn.addEventListener('touchend', e => {
 const goto = document.getElementsByClassName("goto")[0]
 goto.addEventListener(clickEvent, e => {
     // document.location = '../download/index.html'
-    // window.location.href= basePath + "/advertises/download/index.html?channel"+ channel
-    window.location.href= "http://feixin.10086.cn/miyou?channel"+ channel
+    window.location.href= basePath + "/advertises/download/index.html?channel"+ channel
+    // window.location.href= "http://feixin.10086.cn/miyou?channel"+ channel
 })
 // 取消
 const cancel = document.getElementsByClassName("cancel")[0]
