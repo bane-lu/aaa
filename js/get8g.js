@@ -56,15 +56,22 @@
                     if(res.flag == 0){
                         //广东号码
                         hasToken = 0
+                        $(".loading").hide();
+                        $(".wrapper").show();
+                        $(".bottom").show();
                     }else if(res.flag == 1){
                         //非广东号码
                         hasToken = 1
+                        $(".loading").hide();
+                        $(".wrapper").show();
+                        $(".bottom").show();
+                    }else {
+                        $(".loading").hide();
+                        $(".wrapper").show();
+                        $(".phone").show();
+                        $(".bottom").show();
                     }
                 }
-
-                $(".loading").hide();
-                $(".wrapper").show();
-                $(".bottom").show();
                 timeout_status = false;
             },
             error:function (res) {
