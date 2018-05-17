@@ -55,11 +55,16 @@
             },
             crossDomain: true,
             success:function (res) {
-                if(res.flag == true){
-                    hasToken = 0
-                }else if(res.flag == false){
-                    hasToken = 1
+                if(res.code == 0){
+                    if(res.flag == 0){
+                        //广东号码
+                        hasToken = 0
+                    }else if(res.flag == 1){
+                        //非广东号码
+                        hasToken = 1
+                    }
                 }
+
                 $(".loading").hide();
                 $(".wrapper").show();
                 $(".bottom").show();
@@ -143,14 +148,19 @@ get_btn.addEventListener(clickEvent, e => {
               },
               crossDomain: true,
               success:function (res) {
-                if(res.flag == true){
-                  $(".success").show();
-                  $(".success").find(".content").animate({
-                      transform : 'translate(-50%,-50%) scale(0.8,0.8)'
-                  },1000);
-                }else{
-                  tip("本活动仅限广东移动用户参加");
-                }
+                  if(res.code == 0){
+                      if(res.flag == 0){
+                          $(".success").show();
+                          $(".success").find(".content").animate({
+                              transform : 'translate(-50%,-50%) scale(0.8,0.8)'
+                          },1000);
+                      }else if(res.flag == 1){
+                          tip("本活动仅限广东移动用户参加");
+                      }else if(res.flag == 3){
+                          tip("系统开小差，请稍后再试");
+                      }
+                  }
+
                 flag = true;
               },
               error:function (res) {
