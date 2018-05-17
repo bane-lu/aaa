@@ -17,7 +17,7 @@
   // alert("version:16:41")
 
    //token状态
-   var hasToken = 2;    // 0 拿到token 且为广东用户     1  拿到token 非广东用户        2没拿到token
+   var hasToken = 2;    // 0 拿到token 且为广东用户    
    var channel = '';
   // 客户端token的拿取 */
   function getToken(){
@@ -59,13 +59,7 @@
                         $(".loading").hide();
                         $(".wrapper").show();
                         $(".bottom").show();
-                    }else if(res.flag == 1){
-                        //非广东号码
-                        hasToken = 1
-                        $(".loading").hide();
-                        $(".wrapper").show();
-                        $(".bottom").show();
-                    }else {
+                    }else{
                         $(".loading").hide();
                         $(".wrapper").show();
                         $(".phone").show();
@@ -134,8 +128,6 @@ get_btn.addEventListener(clickEvent, e => {
       $(".success").find(".content").animate({
           transform : 'translate(-50%,-50%) scale(0.8,0.8)'
       },1000);
-  }else if(hasToken == 1){
-      tip("本活动仅限广东移动用户参加");
   }else if(flag == true){
       var number = $(".phone").val()
       var length = $(".phone").val().length
