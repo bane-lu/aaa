@@ -27,8 +27,8 @@
         if (r != null) return r[2]; return null; //返回参数值
     }
 
-    var token = getUrlParam(token)
-    channel = getUrlParam(channel)
+    var token = getUrlParam("net_token")
+    channel = getUrlParam("channel")
     alert(window.location.href)
     alert(token)
     alert(channel)
