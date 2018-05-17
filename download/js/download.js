@@ -59,7 +59,6 @@ var CHANNEL = getUrlParam("channel");
 if (CHANNEL) {
   alert(CHANNEL)
 }
-alert(window.location.href)
 //埋点
 function setpoint(type) {
   var device = DEVICE;
