@@ -17,6 +17,9 @@
       if (r != null) return r[2]; return null; //返回参数值
   }
   var channel = getUrlParam("channel")
+  if(channel == null){
+      channel = '10086app'
+  }
 // 上方tip 弹窗提示
 function tip(msg){
     $(".tip").find("i").text(msg);
@@ -44,6 +47,6 @@ get_btn.addEventListener(clickEvent, e => {
 get_btn.addEventListener('touchend', e => {
     $(".get_btn_press").hide();
     $(".get_btn").show();
-    window.location.href= basePath + "/advertises/download/index.html?channel"+ channel
+    window.location.href= basePath + "/advertises/download/index.html?channel="+ channel
     // window.location.href= "http://feixin.10086.cn/miyou?channel"+ channel
 })
