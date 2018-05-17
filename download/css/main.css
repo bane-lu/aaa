@@ -62,17 +62,29 @@ ul {
 
 /******设置背景*********/
 .container{
-  display: flex;
+  position: relative;
   width: 100%;
   height: 100%;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+  background: url("../img/1bg@2x.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.page2{
+  background: url("../img/2bg@2x.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.page3{
+  background: url("../img/3bg@2x.png") no-repeat;
+  background-size: 100% 100%;
 }
 
 .head-wrapper{
-  width: 6.7rem;
-  height: 0.84rem;
+  position: absolute;
+  width: 0.5rem;
+  height: 0.5rem;
+  left: 0.3rem;
+  top: 0.3rem;
 }
 .head-wrapper img {
   display: block;
@@ -80,46 +92,62 @@ ul {
   height: 100%;
 }
 
-.page-wrapper{
-  width: 6.7rem;
-  height: 7.5rem;
-}
-.btn-wrapper{
-  width: 5.2rem;
-  height: 1.52rem;
-}
-.btn-wrapper-last{
-  height: 1.2rem;
+.head-wrapper-miyou{
+  height: 0.5rem;
+  line-height: 0.5rem;
+  position: absolute;
+  left: 0.94rem;
+  top: 0.3rem;
+  font-size: 0.24rem;
+  color: rgb(250, 182, 4);
 }
 
-/**********第一屏**************/
 
-.page-wrapper img {
-  display: block;
-  width: 100%;
-  height: 100%;
+/**********第二屏**************/
+.rt-txt {
+  width: 1.02rem;
+  height: 4.16rem;
+  position: absolute;
+  right: 0.88rem;
+  top: 2.32rem;
+  background: url("../img/2txt@2x.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+/**********第三屏**************/
+.lf-txt {
+  width: 1.07rem;
+  height: 4.84rem;
+  position: absolute;
+  left: 0.88rem;
+  top: 2.26rem;
+  background: url("../img/3txt@2x.png") no-repeat;
+  background-size: 100% 100%;
 }
 
 /*********按钮*********/
 .download-btn {
-  width: 5.2rem;
-  height: 1rem;
-  background: url(../img/btn_nor.png) no-repeat;
+  position: absolute;
+  left: 0.95rem;
+  bottom: 1.3rem;
+  width: 5.6rem;
+  height: 0.9rem;
+  background: url(../img/btn@2x.png) no-repeat;
   background-size: 100% 100%;
   -webkit-background-size: 100% 100%;
 }
 
-.btn-press{
-  background: url(../img/btn_press.png) no-repeat;
-  background-size: 100% 100%;
-  -webkit-background-size: 100% 100%;
-}
+/*.btn-press{*/
+  /*background: url(../img/btn_press.png) no-repeat;*/
+  /*background-size: 100% 100%;*/
+  /*-webkit-background-size: 100% 100%;*/
+/*}*/
 
 .download-btn a {
   display: block;
   width: 100%;
   height: 100%;
-  line-height: 1rem;
+  line-height: 0.9rem;
   text-align: center;
   color: #fff;
   font-size: 0.4rem;
@@ -129,11 +157,11 @@ ul {
 .next {
   width: 0.44rem;
   height: 0.28rem;
-  background: url(../img/btn2@2x.png) no-repeat;
+  background: url(../img/xiala@2x.png) no-repeat;
   background-size: 100% 100%;
   -webkit-background-size: 100% 100%;
-  position: relative;
-  top: 0.24rem;
+  position: absolute;
+  bottom: 0.54rem;
   left: 50%;
   transform: translateX(-50%);
   margin-left: -0.2rem;
