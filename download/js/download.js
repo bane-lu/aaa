@@ -1,6 +1,6 @@
 $(function () {
   // var DEVICE = phonetype();
-  // var CHANNEL = getUrlParam("channel");
+  var CHANNEL = getUrlParam("channel");
 
   //window.location.href = 'meetyou://'; 
   setpoint("visitor");
@@ -12,7 +12,7 @@ $(function () {
     var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
     if (isAndroid) {
       console.log("sdf");
-      var url = 'http://221.176.34.113:9000/versionmanager/download/meetyou-release/channel=downloadTest';
+      var url = 'http://221.176.34.113:9000/versionmanager/download/meetyou-release/' + CHANNEL;
       // var url = 'http://rcsoa-nopay.zone139.com/versionmanager/download/meetyou-release/' + CHANNEL;
       $(".download-btn a").attr('href', url);
     } else if (isiOS) {
@@ -56,9 +56,6 @@ $(function () {
 });
 var DEVICE = phonetype();
 var CHANNEL = getUrlParam("channel");
-if (CHANNEL) {
-  alert(CHANNEL)
-}
 //埋点
 function setpoint(type) {
   var device = DEVICE;
