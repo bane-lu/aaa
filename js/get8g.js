@@ -18,20 +18,17 @@
 
    //token状态
    var hasToken = 2;    // 0 拿到token 且为广东用户     1  拿到token 非广东用户        2没拿到token
+   var channel = '';
   // 客户端token的拿取 */
   function getToken(){
-    var url = window.location.href; //获取url中"?"符后的字串
-    alert(url)
-    var theRequest = new Object();
-    var n = url.indexOf("?")
-    if (n != -1) {
-        var str = url.substr(n+1);
-        var strs = str.split("&");
-        for(var i = 0; i < strs.length; i ++) {
-            theRequest[strs[i].split("=")[0]]=strs[i].split("=")[1];
-        }
+    function getUrlParam(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+        var r = window.location.search.substr(1).match(reg); //匹配目标参数
+        if (r != null) return r[2]; return null; //返回参数值
     }
-    var token = theRequest.token;
+
+    var token = getUrlParam(token)
+    channel = getUrlParam(channel)
 
     if(!token){
       $(".loading").hide();
@@ -183,7 +180,8 @@ get_btn.addEventListener('touchend', e => {
 const goto = document.getElementsByClassName("goto")[0]
 goto.addEventListener(clickEvent, e => {
     // document.location = '../download/index.html'
-    window.location.href= basePath + "/advertises/download/index.html"
+    // window.location.href= basePath + "/advertises/download/index.html?channel"+ channel
+    window.location.href= "http://feixin.10086.cn/miyou?channel"+ channel
 })
 // 取消
 const cancel = document.getElementsByClassName("cancel")[0]
