@@ -29,9 +29,6 @@
 
     var token = getUrlParam("net_token")
     channel = getUrlParam("channel")
-    alert(window.location.href)
-    alert(token)
-    alert(channel)
 
     if(!token){
       $(".loading").hide();
