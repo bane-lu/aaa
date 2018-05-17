@@ -32,12 +32,19 @@
         }
     }
     var token = theRequest.token;
-    if(!token || token == undefined){
+
+    if(!token){
       $(".loading").hide();
       $(".wrapper").show();
       $(".phone").show();
       $(".bottom").show();
     }else{
+        var timeout_status = true;   //超时判断
+        setTimeout(function(){
+            if(timeout_status){
+                window.location.href= "http://117.136.240.59:8080/miyoufm/error/error_timeout.html";
+            }
+        },10000)
         // 通过检验token测试是否为广东号码
         $.ajax({
             type:"get",
@@ -48,16 +55,23 @@
             },
             crossDomain: true,
             success:function (res) {
-                if(res.flag == true){
-                    hasToken = 0
-                }else if(res.flag == false){
-                    hasToken = 1
+                if(res.code == 0){
+                    if(res.flag == 0){
+                        //广东号码
+                        hasToken = 0
+                    }else if(res.flag == 1){
+                        //非广东号码
+                        hasToken = 1
+                    }
                 }
+
                 $(".loading").hide();
                 $(".wrapper").show();
                 $(".bottom").show();
+                timeout_status = false;
             },
             error:function (res) {
+                timeout_status = false;
                 window.location.href= "http://117.136.240.59:8080/miyoufm/error/error_timeout.html";
             }
         });
@@ -134,14 +148,19 @@ get_btn.addEventListener(clickEvent, e => {
               },
               crossDomain: true,
               success:function (res) {
-                if(res.flag == true){
-                  $(".success").show();
-                  $(".success").find(".content").animate({
-                      transform : 'translate(-50%,-50%) scale(0.8,0.8)'
-                  },1000);
-                }else{
-                  tip("本活动仅限广东移动用户参加");
-                }
+                  if(res.code == 0){
+                      if(res.flag == 0){
+                          $(".success").show();
+                          $(".success").find(".content").animate({
+                              transform : 'translate(-50%,-50%) scale(0.8,0.8)'
+                          },1000);
+                      }else if(res.flag == 1){
+                          tip("本活动仅限广东移动用户参加");
+                      }else if(res.flag == 3){
+                          tip("系统开小差，请稍后再试");
+                      }
+                  }
+
                 flag = true;
               },
               error:function (res) {
