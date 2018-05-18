@@ -49,5 +49,5 @@ get_btn.addEventListener('touchend', e => {
     $(".get_btn_press").hide();
     $(".get_btn").show();
     // window.location.href= basePath + "/advertises/download/index.html?channel="+ channel
-    window.location.href= "http://feixin.10086.cn/miyou?channel="+ channel
+    window.location.href= "./../download/index.html?channel="+ channel
 })
