@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>通话送话费</title>
+    <link rel="stylesheet" type="text/css" href="./css/seedFee.css?version=0612"/>
+</head>
+
+<body>
+    <!--遮罩层-->
+    <div class="mask"></div>
+
+    <!--弹窗-->
+    <div class="popup" style="display: none">
+      <img src="./images/popup.png" alt="">
+    </div>
+    <img src="./images/bg.png" alt="" class="bg">
+    <!-- 上方tip弹窗提示 -->
+    <div class="wrapper">
+      <ul>
+          <li><span>在密友圈</span><span>免费打电话！</span></li>
+          <li><span>每天打给三个好友，额外获赠</span><span>10元话费！</span></li>
+          <li><span>活动期间最高可获赠</span><span>100元</span></li>
+      </ul>
+      <img src="./images/10fee.png" alt="" class="fee-img">
+      <a class="get_btn">前往领取话费券</a>
+
+    </div>
+    <script src="./js/jquery-2.1.4.min.js"></script>
+    <script src="./js/seedFee.js"></script>
+    <script>
+        window.location.href = "meetyou://"
+    </script>
+</body>
+</html>
