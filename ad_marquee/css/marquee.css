@@ -241,6 +241,23 @@ a:active{
   letter-spacing: 0rem;
   color: #ffffff;
 }
+.download_btn:active{
+  margin: auto;
+  margin-top: 0.68rem;
+
+  width: 16.3rem;
+  height: 2.03rem;
+  border-radius: 1.01rem;
+  background-color: #d8382b;
+  text-align: center;
+
+  font-size: 0.9rem;
+  font-weight: bold;
+  font-stretch: normal;
+  line-height: 2.03rem;
+  letter-spacing: 0rem;
+  color: #ffffff;
+}
 .more{
   margin: auto;
   margin-top: 1.38rem;
