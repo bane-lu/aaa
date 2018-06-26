@@ -10,9 +10,9 @@ $(function () {
     if (isAndroid) {
       // var url = 'http://221.176.34.113:9000/versionmanager/download/meetyou-release/' + CHANNEL;
       var url = 'http://rcsoa-nopay.zone139.com/versionmanager/download/meetyou-release/' + CHANNEL;
-      $(".get_btn").attr('href', url);
+      $(".download_btn").attr('href', url);
     } else if (isiOS) {
-      $(".get_btn").attr("href", 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"');
+      $(".download_btn").attr("href", 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"');
       // setpoint("download");
     }
   }
@@ -30,7 +30,7 @@ $(function () {
     });
     return phone;
   }
-  getDevice();
+
 
   //识别浏览器是否为微信
   function isWeixin() {
@@ -42,10 +42,6 @@ $(function () {
     }
   }
 
-  var DEVICE = phonetype();
-  var CHANNEL = 'm30100066';
-  // 下载包url
-  var url = ''
   //埋点
   function setpoint(type) {
     var device = DEVICE;
@@ -101,6 +97,12 @@ $(function () {
     return DEVICE;
   }
 
+  var DEVICE = phonetype();
+  var CHANNEL = 'm30100066';
+  // 下载包url
+  var url = ''
+  getDevice();
+
   // 禁止弹窗时背景图滚动
   $(".rule").click(function(){
     $(".black").show();
@@ -124,7 +126,7 @@ $(function () {
       //是微信
       e.preventDefault();
       $(".popup").show();
-      $(".popup,.mask").fadeIn();
+      $(".popup,.black").fadeIn();
     } else {
       var u = navigator.userAgent;
       var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端

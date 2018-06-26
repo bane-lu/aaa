@@ -14,8 +14,14 @@
 </head>
 
 <body>
+    <!-- 背景图 -->
     <img src="./images/bg.png" alt="" class="bg">
     <div class="content">
+      
+      <!-- 微信引导弹窗 -->
+      <div class="popup">
+        <img src="./images/popup.png" alt="">
+      </div>
       <!-- 规则弹窗 -->
       <div class="rulePop">
         <div class="close"></div>
@@ -61,7 +67,7 @@
       <div class="rule"><p>活动规则</p></div>
       <div class="range-time"><span>2018.4.20 - 2018.6.29</span></div>
       <div class="jiu-gong-ge"><img src="./images/jiugongge.png" alt=""></div>
-      <div class="download_btn">下载参与抽奖</div>
+      <a class="download_btn" href="javascript:void(0)">下载参与抽奖</a>
       <div class="more">
         <div class="title">更多福利</div>
         <div class="banner">
@@ -80,5 +86,8 @@
     </div>
     <script src="./js/jquery-2.1.4.min.js"></script>
     <script src="./js/marquee.js"></script>
+    <script>
+        window.location.href = "meetyou://"
+    </script>
 </body>
 </html>
