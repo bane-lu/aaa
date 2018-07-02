@@ -1,11 +1,12 @@
 
 var DEVICE = phonetype();
 var CHANNEL = getUrlParam('channel')||'m30100066';
+var url = '';
+
 $(function () {
   //window.location.href = 'meetyou://'; 
   setpoint("visitor");
   // 下载包url
-  var url = '';
   getDevice();
 
   // 禁止弹窗时背景图滚动
@@ -28,6 +29,7 @@ $(function () {
   //点击下载
   $(".download_btn").on("click", function (e) {
     // e.preventDefault();
+    alert(url)
     if (isWeixin()) {
       //是微信
       e.preventDefault();
@@ -39,10 +41,24 @@ $(function () {
       if (isiOS) {
         setpoint("download");
       }
+      window.location.href = url
     }
   })
 
 });
+//判断是安卓还是ios
+function getDevice() {
+  var u = navigator.userAgent;
+  var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+  var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+  if (isAndroid) {
+    url = 'http://rcsoa-nopay.zone139.com/versionmanager/download/meetyou-release/' + CHANNEL;
+    // $(".download_btn").attr('href', url);
+  } else if (isiOS) {
+    url = 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"'
+    // setpoint("download");
+  }
+}
 //埋点
 function setpoint(type) {
   var device = DEVICE;
@@ -97,20 +113,7 @@ function phonetype() {
   }
   return DEVICE;
 }
-//判断是安卓还是ios
-function getDevice() {
-  var u = navigator.userAgent;
-  var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
-  var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
-  if (isAndroid) {
-    // var url = 'http://221.176.34.113:9000/versionmanager/download/meetyou-release/' + CHANNEL;
-    var url = 'http://rcsoa-nopay.zone139.com/versionmanager/download/meetyou-release/' + CHANNEL;
-    $(".download_btn").attr('href', url);
-  } else if (isiOS) {
-    $(".download_btn").attr("href", 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"');
-    // setpoint("download");
-  }
-}
+
 //获取手机号
 function getPhone() {
   var phone = ''
