@@ -1,7 +1,7 @@
 
 var DEVICE = phonetype();
 var CHANNEL = getUrlParam('channel')||'m30100066';
-var url = '';
+var download_url = '';
 
 $(function () {
   //window.location.href = 'meetyou://'; 
@@ -41,7 +41,7 @@ $(function () {
         setpoint("download");
         // window.location.href = url
       }
-      window.location.href = url
+      window.location.href = download_url
     }
   })
 
@@ -52,10 +52,10 @@ function getDevice() {
   var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
   var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
   if (isAndroid) {
-    url = 'http://rcsoa-nopay.zone139.com/versionmanager/download/meetyou-release/' + CHANNEL;
+    download_url = 'http://rcsoa-nopay.zone139.com/versionmanager/download/meetyou-release/' + CHANNEL;
     // $(".download_btn").attr('href', url);
   } else if (isiOS) {
-    url = 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"'
+    download_url = 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"'
     // setpoint("download");
   }
 }
