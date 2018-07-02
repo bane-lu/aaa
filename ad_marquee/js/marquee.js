@@ -28,7 +28,6 @@ $(function () {
   //点击下载
   $(".download_btn").on("click", function (e) {
     // e.preventDefault();
-    // alert($(this).attr("href"))
     if (isWeixin()) {
       //是微信
       e.preventDefault();

@@ -241,7 +241,8 @@ a:active{
 .download_btn{
   margin: auto;
   margin-top: 0.68rem;
-
+  
+  display: block;
   width: 16.3rem;
   height: 2.03rem;
   border-radius: 1.01rem;
@@ -258,7 +259,8 @@ a:active{
 .download_btn:active{
   margin: auto;
   margin-top: 0.68rem;
-
+  
+  display: block;
   width: 16.3rem;
   height: 2.03rem;
   border-radius: 1.01rem;
