@@ -39,6 +39,7 @@ $(function () {
       var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
       if (isiOS) {
         setpoint("download");
+        // window.location.href = url
       }
       window.location.href = url
     }
