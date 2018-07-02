@@ -248,7 +248,8 @@ a:active{
   border-radius: 1.01rem;
   background-color: #fd4334;
   text-align: center;
-
+  
+  cursor: pointer;
   font-size: 0.9rem;
   font-weight: bold;
   font-stretch: normal;
@@ -266,7 +267,8 @@ a:active{
   border-radius: 1.01rem;
   background-color: #d8382b;
   text-align: center;
-
+  
+  cursor: pointer;
   font-size: 0.9rem;
   font-weight: bold;
   font-stretch: normal;
