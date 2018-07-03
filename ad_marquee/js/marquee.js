@@ -39,7 +39,7 @@ $(function () {
       var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
       if (isiOS) {
         setpoint("download");
-        window.location.href = url
+        // window.location.href = download_url
       }
       window.location.href = download_url
     }
@@ -71,7 +71,6 @@ function setpoint(type) {
     "operatorType": type,
     "mobileNumber": phone
   };
-  // url:'http://rcsoa-nopay.zone139.com/versionmanager/download/meetyou-record',
   $.ajax({
     type: "get",
     url: "http://rcsoa-nopay.zone139.com/versionmanager/download/meetyou-record",
@@ -79,11 +78,8 @@ function setpoint(type) {
     data: $.param(paramData),
     dataType: 'json',
     success: function (res) {
-      // alert("success")
-      console.log(res);
     },
     error: function (res) {
-      console.log(res);
       // alert("error")
     }
   });

@@ -261,14 +261,14 @@ a:active{
   margin: auto;
   margin-top: 0.68rem;
   
+  cursor: pointer; 
   display: block;
   width: 16.3rem;
   height: 2.03rem;
   border-radius: 1.01rem;
   background-color: #d8382b;
   text-align: center;
-  
-  cursor: pointer;
+
   font-size: 0.9rem;
   font-weight: bold;
   font-stretch: normal;
