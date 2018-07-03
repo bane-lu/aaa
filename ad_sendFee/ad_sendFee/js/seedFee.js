@@ -1,3 +1,26 @@
+// PV跟踪 插码
+function pv_set(){
+  var appid = "300011860393";
+  var label = "13501@@65338@@22245";
+  var event = "AdExposed";
+  var src="http://120.197.233.121/udata/u.gif?h="+document.body.clientHeight+"&w="+document.body.clientWidth+"&ct="+new Date().getTime()+"&si="+appid+"&cu="+encodeURIComponent(window.location.host)+"&v=1.0&s=1500347894640218363&f=3&c=1428456744583&et="+event+"&lv="+ encodeURIComponent(label)+"&cp="+encodeURIComponent(window.location.href); 
+
+  $("#PV").html("<script type='text/javascript' src='"+src+"' />");  
+}
+pv_set()
+
+// 点击事件跟踪
+function pv_btn_set(){
+  var appid = "300011860393";
+  var label = "13501@@65338@@22245";
+  var event = "ADClick";
+  var ru = "http://mywx.zone139.com/miyoufm/advertises/ad_sendFee/index.html?activity=MMH5";
+  var src="http://120.197.233.121/udata/u.gif?h="+document.body.clientHeight+"&w="+document.body.clientWidth+"&ct="+new Date().getTime()+"&si="+appid+"&cu="+encodeURIComponent(window.location.host)+"&v=1.0&s=1500347894640218363&f=4&c=1428456744583&et="+event+"&lv="+ encodeURIComponent(label)+"&cp="+ encodeURIComponent(window.location.href)+"&ru="+ encodeURIComponent(ru); 
+  return src
+}
+
+
+
 var DEVICE = phonetype();
 var CHANNEL = getUrlParam('channel')||'m30100087';
 $(function () {
@@ -8,7 +31,11 @@ $(function () {
   getDevice();
   //点击下载
   $(".get_btn").on("click", function (e) {
-    // e.preventDefault();
+    // console.log(pv_btn_set())
+    $(".pv_btn").remove();
+    console.log(121)
+    $(this).parent().append('<div class="pv_btn" style="visibility: hidden"></div>')
+    $(".wrapper").find(".pv_btn").html("<script type='text/javascript' src='"+pv_btn_set()+"' />")
     if (isWeixin()) {
       //是微信
       e.preventDefault();
@@ -45,10 +72,10 @@ function setpoint(type) {
     dataType: 'json',
     success: function (res) {
       // alert("success")
-      console.log(res);
+      // console.log(res);
     },
     error: function (res) {
-      console.log(res);
+      // console.log(res);
       // alert("error")
     }
   });
