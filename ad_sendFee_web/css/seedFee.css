@@ -111,5 +111,6 @@ a:active{
   background-color: #ccc;
 }
 img{
+  display: block;
   width: 100%;
 }
