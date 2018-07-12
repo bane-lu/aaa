@@ -1,4 +1,14 @@
-// 
+// PV跟踪 插码
+function pv_set(){
+  var appid = "300011860393";
+  var label = "13542@@65338@@22733";
+  var event = "AdExposed";
+  var src="http://120.197.233.121/udata/u.gif?h="+document.body.clientHeight+"&w="+document.body.clientWidth+"&ct="+new Date().getTime()+"&si="+appid+"&cu="+encodeURIComponent(window.location.host)+"&v=1.0&s=1500347894640218363&f=3&c=1428456744583&et="+event+"&lv="+ encodeURIComponent(label)+"&cp="+encodeURIComponent(window.location.href);
+
+  $("#PV").html("<script type='text/javascript' src='"+src+"' />");  
+  // alert(src)
+}
+pv_set()
 
 var DEVICE = phonetype();
 var CHANNEL = getUrlParam('channel')||'m30100087';
