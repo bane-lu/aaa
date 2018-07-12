@@ -1,21 +1,22 @@
 // PV跟踪 插码
-function pv_set(){
-  var appid = "300011860393";
-  var label = "13501@@65338@@22245";
+function pv_set(pd){
+  var appid = pd.appid;
+  var label = pd.label;
   var event = "AdExposed";
-  var src="http://120.197.233.121/udata/u.gif?h="+document.body.clientHeight+"&w="+document.body.clientWidth+"&ct="+new Date().getTime()+"&si="+appid+"&cu="+encodeURIComponent(window.location.host)+"&v=1.0&s=1500347894640218363&f=3&c=1428456744583&et="+event+"&lv="+ encodeURIComponent(label)+"&cp="+encodeURIComponent(window.location.href); 
+  var src="http://120.197.233.121/udata/u.gif?h="+document.body.clientHeight+"&w="+document.body.clientWidth+"&ct="+new Date().getTime()+"&si="+appid+"&cu="+encodeURIComponent(window.location.host)+"&v=1.0&s=1500347894640218363&f=3&c=1428456744583&et="+event+"&lv="+ encodeURIComponent(label)+"&cp="+encodeURIComponent(window.location.href);
 
   $("#PV").html("<script type='text/javascript' src='"+src+"' />");  
+  // alert(src)
 }
-pv_set()
 
 // 点击事件跟踪
-function pv_btn_set(){
-  var appid = "300011860393";
-  var label = "13501@@65338@@22245";
+function pv_btn_set(pd){
+  var appid = pd.appid;
+  var label = pd.label;
   var event = "ADClick";
-  var ru = "http://mywx.zone139.com/miyoufm/advertises/ad_sendFee/index.html?activity=MMH5";
+  var ru = pd.ru;
   var src="http://120.197.233.121/udata/u.gif?h="+document.body.clientHeight+"&w="+document.body.clientWidth+"&ct="+new Date().getTime()+"&si="+appid+"&cu="+encodeURIComponent(window.location.host)+"&v=1.0&s=1500347894640218363&f=4&c=1428456744583&et="+event+"&lv="+ encodeURIComponent(label)+"&cp="+ encodeURIComponent(window.location.href)+"&ru="+ encodeURIComponent(ru); 
+  // alert(src)
   return src
 }
 
@@ -23,6 +24,19 @@ function pv_btn_set(){
 
 var DEVICE = phonetype();
 var CHANNEL = getUrlParam('channel')||'m30100087';
+var PDD = {};
+var ACTIVITY = getUrlParam('activity') || '';
+// 判断插码页面
+function differPV(){
+  for(var i=0; i < pv_data.length; i ++){
+    if(pv_data[i].activity == ACTIVITY){
+      PDD = pv_data[i]
+      pv_set(PDD)
+    }
+  }
+}
+differPV()
+
 $(function () {
   //window.location.href = 'meetyou://'; 
   setpoint("visitor");
@@ -33,9 +47,8 @@ $(function () {
   $(".get_btn").on("click", function (e) {
     // console.log(pv_btn_set())
     $(".pv_btn").remove();
-    console.log(121)
     $(this).parent().append('<div class="pv_btn" style="visibility: hidden"></div>')
-    $(".wrapper").find(".pv_btn").html("<script type='text/javascript' src='"+pv_btn_set()+"' />")
+    $(".wrapper").find(".pv_btn").html("<script type='text/javascript' src='"+pv_btn_set(PDD)+"' />")
     if (isWeixin()) {
       //是微信
       e.preventDefault();
