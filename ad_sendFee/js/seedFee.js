@@ -13,7 +13,7 @@ function pv_set(pd){
 function pv_btn_set(pd){
   var appid = pd.appid;
   var label = pd.label;
-  var event = "ADClick";
+  var event = pd.adEvent;
   var ru = pd.ru;
   var src="http://120.197.233.121/udata/u.gif?h="+document.body.clientHeight+"&w="+document.body.clientWidth+"&ct="+new Date().getTime()+"&si="+appid+"&cu="+encodeURIComponent(window.location.host)+"&v=1.0&s=1500347894640218363&f=4&c=1428456744583&et="+event+"&lv="+ encodeURIComponent(label)+"&cp="+ encodeURIComponent(window.location.href)+"&ru="+ encodeURIComponent(ru); 
   // alert(src)
