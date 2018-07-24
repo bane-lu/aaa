@@ -20,12 +20,20 @@ function pv_btn_set(pd){
   return src
 }
 
-
+// 添加渠道号
+function add_channel(){
+  for(var i=0; i < channel_data.length; i ++){
+    if(channel_data[i].activity == ACTIVITY){
+      return channel_data[i].channel
+    }
+  }
+}
 
 var DEVICE = phonetype();
-var CHANNEL = getUrlParam('channel')||'m30100087';
 var PDD = {};
 var ACTIVITY = getUrlParam('activity') || '';
+var CHANNEL = add_channel()||'m30100087';
+
 // 判断插码页面
 function differPV(){
   for(var i=0; i < pv_data.length; i ++){
