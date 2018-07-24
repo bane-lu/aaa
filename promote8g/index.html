@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <title>福利详情</title>
+    <link rel="stylesheet" type="text/css" href="./css/index.css"/>
+</head>
+
+<body>
+    <div class="main">
+        <div class="header">
+            <span class="activity-rule">活动规则</span>
+        </div>
+        <div class="content">
+            <div class="content-info">
+                <p class="title">很遗憾，来晚了,活动奖励已发完</p>
+                <img src="./image/toast_img.png">
+                <p class="tip">请继续关注密友圈活动，更多奖励等你领取</p>
+            </div>
+        </div>
+        <div class="rule">  
+            <img src="./image/del.png" />
+            <div class="title">业务规则</div>
+            <div class="line"></div>
+            <div class="details">
+                <div class="p1">一、活动时间：</div>
+                <div>即日起至2018年7月31日（奖励先到先得，领完即止）</div>
+                <div class="p1">二、活动对象：</div>
+                <div>广东移动受邀用户（不包括4G随心王、万花筒套餐、任我用套餐、非密友圈用户、和多号副号、万能副卡移动用户、GPRS无限量套餐客户、2/3G无限量套餐用户）</div>
+                <div class="p1">三、活动内容：</div>
+                <div>（1）广东移动密友圈新客户登录即有8G国内通用流量领取资格，每个号码仅可领取一次（曾领取成功的广东移动用户无法再次领取）。</div>
+                <div>（2）成功领取后流量立即生效（以短信为准），流量有效期为30天，到期自动失效。</div>
+                <div>（3）禁止通过非正常技术手段，将卡券进行转售获利，一经发现即对转售的号码进行封号处理（无法登录使用密友圈）。</div>
+            </div>
+        </div>
+        <div class="mask"></div>
+    </div>
+</body>
+<script>
+    (function (doc, win) {// 动态修改root 的 font-size
+        var docEl = doc.documentElement,
+            resizeEvt = 'onorientationchange' in window ? 'onorientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                if (clientWidth >= 750) {
+                    docEl.style.fontSize = '100px';
+                } else {
+                    docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                }
+            };
+
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+
+</script>
+<script src="./js/zepto.min.js"></script>
+<script src="./js/index.js"></script>
+</html>

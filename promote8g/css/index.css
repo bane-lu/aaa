@@ -1,0 +1,272 @@
+/*****************************初始化样式*************************/
+
+a,
+article,
+aside,
+b,
+body,
+button,
+dd,
+div,
+dl,
+dt,
+figcaption,
+figure,
+footer,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+i,
+input,
+li,
+nav,
+p,
+section,
+select,
+span,
+em,
+textarea,
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-style: normal;
+    font-family: "SourceHanSansSC-Medium", "PingFangSC-Regular", "PingFang SC", "MicrosoftYaHei";
+    text-decoration: none;
+    border: none;
+    font-weight: normal;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background-color: #F5F5F5;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+/*定义滑块 内阴影+圆角*/
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #555;
+}
+
+a:hover,
+button:hover,
+input:hover,
+textarea:hover {
+    outline: none;
+}
+
+input[type="button"],
+input[type="reset"],
+input[type="search"],
+input[type="submit"] {
+    -webkit-appearance: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+a:active {
+    color: #000;
+}
+
+textarea {
+    -webkit-appearance: none;
+}
+
+.clear:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.clear {
+    zoom: 1;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+body,
+html {
+    height: 100%;
+    width: 100%;
+    background: #FFFFFF;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.block-img {
+    display: block;
+    width: 100%;
+}
+
+/************************************首页样式******************************************/
+
+.main {
+    height: 100%;
+}
+
+.main .header {
+    width: 100%;
+    height: 6.8rem;
+    background: url("../image/8G_offline_bg.png") no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.main .header .activity-rule {
+    width: 1.36rem;
+    height: 0.56rem;
+    line-height: 0.56rem;
+    text-align: center;
+    font-size: 0.24rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: "SourceHanSansSC-Normal";
+    background-color: #e23e0a;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    padding-left: 0.04rem;
+    position: absolute;
+    right: 0;
+    top: 0.51rem;
+}
+.content{
+    padding-bottom: 1.04rem;
+}
+.content .content-info .title {
+    font-size: 0.35rem;
+    color: #fd4736;
+    text-align: center;
+    font-family: "SourceHanSansSC-Medium";
+    font-weight: bold;
+    margin-top: 0.8rem;
+}
+
+.content .content-info img {
+    width: 2.04rem;
+    display: block;
+    margin: 0 auto;
+    margin-top: 0.44rem;
+}
+
+.content .content-info .tip {
+    width: 100%;
+    height: 0.35rem;
+    font-family: "SourceHanSansSC-Medium";
+    font-size: 0.24rem;
+    color: #999999;
+    text-align: center;
+    margin-top: 0.45rem;
+    letter-spacing: -0.1px;
+}
+
+.main .rule {
+    display: none;
+    z-index: 666;
+    position: fixed;
+    top: 1.68rem;
+    left: 4%;
+    height: 8.48rem;
+    width: 6.89rem;
+    background-color: #fff;
+    border-radius: 0.2rem;
+    /*padding: 0 0.3rem 0.4rem 0.44rem;*/
+    padding-bottom: 0.4rem;
+}
+
+.main .rule img {
+    position: fixed;
+    right: 5%;
+    top: 0.7rem;
+    width: 0.76rem;
+}
+
+.main .rule .title {
+    font-size: .4rem;
+    line-height: .34rem;
+    color: #515151;
+    text-align: center;
+    margin-top: 0.6rem;
+    margin-bottom: 0.2rem;
+}
+
+.main .rule .line {
+    height: 0.5px;
+    width: 75%;
+    border-bottom: 1px dotted #515151;
+    margin: 0 auto;
+}
+
+.main .rule .details {
+    height: 7.02rem;
+    margin-left: 6.5%;
+    margin-right: 4.3%;
+    font-size: 0.26rem;
+    color: #515151;
+    line-height: 0.42rem;
+    /*max-height: 7.72rem;*/
+    /*overflow: scroll;*/
+}
+
+.main .rule .details .p1 {
+    font-weight: bold;
+    margin-top: 0.3rem;
+}
+
+.main .mask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    background-color: #696868;
+    display: none;
+}
+.hidden{
+    overflow: hidden;
+}
