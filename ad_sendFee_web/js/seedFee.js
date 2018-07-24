@@ -11,7 +11,7 @@ function pv_set(){
 pv_set()
 
 var DEVICE = phonetype();
-var CHANNEL = getUrlParam('channel')||'m30100087';
+var CHANNEL = getUrlParam('channel')||'m30100094';
 $(function () {
 
   setpoint("visitor");
