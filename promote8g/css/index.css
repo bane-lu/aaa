@@ -210,7 +210,7 @@ body {
     position: fixed;
     top: 1.68rem;
     left: 4%;
-    height: 8.48rem;
+    /*height: 8.48rem;*/
     width: 6.89rem;
     background-color: #fff;
     border-radius: 0.2rem;
@@ -242,7 +242,7 @@ body {
 }
 
 .main .rule .details {
-    height: 7.02rem;
+    height: 7.5rem;
     margin-left: 6.5%;
     margin-right: 4.3%;
     font-size: 0.26rem;
