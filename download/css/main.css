@@ -236,7 +236,7 @@ ul {
   display: none;
   position: fixed;
   top: 0;/*图片位置，单位rem*/
-  right: 2rem;/*图片位置，单位rem*/
+  right: 0.6rem;/*图片位置，单位rem*/
   z-index: 101;
 }
 
