@@ -174,9 +174,11 @@ body {
     right: 0;
     top: 0.51rem;
 }
-.content{
+
+.content {
     padding-bottom: 1.04rem;
 }
+
 .content .content-info .title {
     font-size: 0.35rem;
     color: #fd4736;
@@ -210,12 +212,13 @@ body {
     position: fixed;
     top: 1.68rem;
     left: 4%;
-    /*height: 8.48rem;*/
+    height: 8.5rem;
     width: 6.89rem;
     background-color: #fff;
     border-radius: 0.2rem;
     /*padding: 0 0.3rem 0.4rem 0.44rem;*/
-    padding-bottom: 0.4rem;
+    /*padding-bottom: 0.4rem;*/
+    border-bottom: 0.4rem solid #fff;
 }
 
 .main .rule img {
@@ -242,14 +245,15 @@ body {
 }
 
 .main .rule .details {
-    height: 7.5rem;
+    height: 7rem;
     margin-left: 6.5%;
     margin-right: 4.3%;
     font-size: 0.26rem;
     color: #515151;
     line-height: 0.42rem;
     /*max-height: 7.72rem;*/
-    /*overflow: scroll;*/
+    overflow: scroll;
+    /*border-bottom: 0.4rem solid #fff;*/
 }
 
 .main .rule .details .p1 {
@@ -267,6 +271,7 @@ body {
     background-color: #696868;
     display: none;
 }
-.hidden{
+
+.hidden {
     overflow: hidden;
 }
