@@ -184,7 +184,6 @@ ul {
     -webkit-transform: translate3d(0, 8px, 0);
   }
 }
-
 @-webkit-keyframes down {
   0% {
     opacity: 0;
@@ -236,7 +235,6 @@ ul {
     -webkit-transform: translate3d(0, -8px, 0) rotate(180deg);
   }
 }
-
 @-webkit-keyframes up {
   0% {
     opacity: 0;
@@ -254,7 +252,6 @@ ul {
     -webkit-transform: translate3d(0, -8px, 0) rotate(180deg);
   }
 }
-
 
 /*遮罩层*/
 .mask{
