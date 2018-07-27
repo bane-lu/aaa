@@ -185,6 +185,24 @@ ul {
   }
 }
 
+@-webkit-keyframes down {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -8px, 0);
+    -webkit-transform: translate3d(0, -8px, 0);
+  }
+  50% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 8px, 0);
+    -webkit-transform: translate3d(0, 8px, 0);
+  }
+}
+
 .prev {
   width: 0.4rem;
   height: 0.3rem;
@@ -202,6 +220,24 @@ ul {
 }
 /*箭头动画*/
 @keyframes up {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 8px, 0);
+    -webkit-transform: translate3d(0, 8px, 0) rotate(180deg);
+  }
+  50% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0) rotate(180deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, -8px, 0);
+    -webkit-transform: translate3d(0, -8px, 0) rotate(180deg);
+  }
+}
+
+@-webkit-keyframes up {
   0% {
     opacity: 0;
     transform: translate3d(0, 8px, 0);
