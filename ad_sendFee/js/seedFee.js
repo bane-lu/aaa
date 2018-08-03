@@ -4,7 +4,7 @@ var basePath = 'http://192.168.185.250:8385'
 function activityStatus(){
   $.ajax({
     type: "get",
-    url: basePath + "/cmic_adconfiguration/app/isStop/20",
+    url: basePath + "/cmic_adconfiguration/app/isStop/89",
     dataType: 'json',
     success: function (res) {
       if(res.isShow == 0){
