@@ -1,7 +1,6 @@
 // 
-// var basePath = 'http://192.168.185.250:' + '8385'
-var basePath = getBasePath() + ':8385'
-console.log(basePath)
+var basePath = 'http://192.168.185.250:8385'
+// var basePath = getBasePath() + ':8385'
 function activityStatus(){
   $.ajax({
     type: "get",
@@ -197,7 +196,7 @@ function getBasePath() {
   var pathName = window.document.location.pathname;
   var pos = curWwwPath.indexOf(pathName);
   var localhostPath = curWwwPath.substring(0, pos);
-  var projectName = pathName.substring(0, pathName.substr(1).indexOf('/') + 1);
+  var projectName = pathName.substring(0, pathName.substr(1).indexOf(':') + 1);
   var basePath=localhostPath;
   return basePath;
 }
