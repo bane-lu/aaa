@@ -1,3 +1,30 @@
+// 
+// var basePath = 'http://192.168.185.250:' + '8385'
+var basePath = getBasePath() + '8385'
+
+function activityStatus(){
+  $.ajax({
+    type: "get",
+    url: basePath + "/cmic_adconfiguration/app/isStop/20",
+    dataType: 'json',
+    success: function (res) {
+      if(res.isShow == 0){
+        document.getElementsByClassName("stop")[0].style.transform="translateY(0)"
+      }else if(res.isShow == 2){
+        document.getElementsByClassName("pause")[0].style.transform="translateY(0)"
+      }else{
+
+      }
+      // isShow  0/下架   1/正常   2/暂停
+    },
+    error: function (res) {
+      // console.log(res);
+      // alert("error")
+    }
+  });
+}
+activityStatus()
+
 // PV跟踪 插码
 function pv_set(pd){
   var appid = pd.appid;
@@ -163,4 +190,14 @@ function isWeixin() {
   } else {
     return false;
   }
+}
+
+function getBasePath() {
+  var curWwwPath = window.document.location.href;
+  var pathName = window.document.location.pathname;
+  var pos = curWwwPath.indexOf(pathName);
+  var localhostPath = curWwwPath.substring(0, pos);
+  var projectName = pathName.substring(0, pathName.substr(1).indexOf('/') + 1);
+  var basePath=localhostPath;
+  return basePath;
 }
