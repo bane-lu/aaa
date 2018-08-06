@@ -1,5 +1,5 @@
 // 
-var basePath = 'http://192.168.185.250:8385'
+var basePath = 'http://221.176.34.113:8180'
 // var basePath = getBasePath() + ':8385'
 function activityStatus(){
   $.ajax({
