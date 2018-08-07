@@ -227,6 +227,8 @@ a:active{
   top: 40%;
   left: 50%;
   transform: translate(-50%,-40%);
+  -webkit-transform: translate(-50%,-40%);
+  -o-transform: translate(-50%,-40%);
 }
 .content > img{
   display: block;
@@ -244,10 +246,4 @@ a:active{
   background-size: 100% 100%;
 
 
-}
-.get_btn:active{
-/*  display: block;
-  margin: auto;
-  width: 10.5rem;
-  height: 2rem;*/
 }
