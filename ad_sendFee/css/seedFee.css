@@ -95,79 +95,6 @@ html{
     height: 100%;
 }
 
-/*暂停页*/
-.pause{
-  /*display: none;*/
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #f7f7f7;
-  z-index: 99999; 
-
-  transform-origin: 0 0;
-  -moz-transform-origin: 0 0;
-  -webkit-transform-origin:0 0;
-  transform: translateY(-100%);
-  -webkit-transform: translateY(-100%);
-
-  transition: transform 0.3s;
-  -moz-transition: transform 0.3s;  /* Firefox 4 */
-  -webkit-transition: transform 0.3s; /* Safari 和 Chrome */
-  -o-transition: transform 0.3s;  /* Opera */
-}
-.pause >.content{
-  position: relative;
-  text-align: center;
-}
-.pause >.content > img{
-  display: block;
-  width: 12.7rem;
-  height: 9.125rem;
-}
-.pause >.content > p{
-  margin-top: 1rem;
-  font-size: 1rem;
-  color: #999;
-}
-
-/*下线页*/
-.stop{
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #f7f7f7;
-  z-index: 99999;
-
-  transform-origin: 0 0;
-  -moz-transform-origin: 0 0;
-  -webkit-transform-origin:0 0;
-  transform: translateY(-100%);
-  -webkit-transform: translateY(-100%);
-
-  transition: transform 0.3s;
-  -moz-transition: transform 0.3s;  /* Firefox 4 */
-  -webkit-transition: transform 0.3s; /* Safari 和 Chrome */
-  -o-transition: transform 0.3s;  /* Opera */
-}
-.stop >.content{
-  position: relative;
-  text-align: center;
-}
-.stop >.content > img{
-  display: block;
-  width: 12.7rem;
-  height: 9.125rem;
-}
-.stop >.content > p{
-  margin-top: 1rem;
-  font-size: 1rem;
-  color: #999;
-}
-
 body{
   margin: auto;
   width: 100%;
@@ -222,7 +149,7 @@ a:active{
   background: url(../images/bg2.png) center no-repeat;
   background-size: 100% 100%;
 }
-.content{
+.wrapper > .content{
   position: absolute;
   top: 40%;
   left: 50%;
@@ -230,10 +157,9 @@ a:active{
   -webkit-transform: translate(-50%,-40%);
   -o-transform: translate(-50%,-40%);
 }
-.content > img{
+.wrapper > .content > img{
   display: block;
   margin: auto;
-  /*margin-top: 16.4rem;*/
   width: 9.7rem;
   height: 4.2rem;
 }
@@ -244,6 +170,97 @@ a:active{
   margin-top: 1.2rem;
   background: url(../images/btn.png) center no-repeat;
   background-size: 100% 100%;
+}
 
+/*暂停页*/
+.pause{
+  /*display: none;*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f7f7f7;
+  z-index: 99999; 
 
+  transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -webkit-transform-origin:0 0;
+  transform: translateY(-100%);
+  -webkit-transform: translateY(-100%);
+
+  transition: transform 0.3s;
+  -moz-transition: transform 0.3s;  /* Firefox 4 */
+  -webkit-transition: transform 0.3s; /* Safari 和 Chrome */
+  -o-transition: transform 0.3s;  /* Opera */
+}
+.pause >.content{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  text-align: center;
+}
+.pause >.content > .center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+}
+.pause >.content > .center > img{
+  display: block;
+  width: 12.7rem;
+  height: 9.125rem;
+}
+.pause >.content > .center > p{
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #999;
+}
+
+/*下线页*/
+.stop{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f7f7f7;
+  z-index: 99999;
+
+  transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -webkit-transform-origin:0 0;
+  transform: translateY(-100%);
+  -webkit-transform: translateY(-100%);
+
+  transition: transform 0.3s;
+  -moz-transition: transform 0.3s;  /* Firefox 4 */
+  -webkit-transition: transform 0.3s; /* Safari 和 Chrome */
+  -o-transition: transform 0.3s;  /* Opera */
+}
+.stop >.content{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  text-align: center;
+}
+.stop >.content > .center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+}
+.stop >.content > .center > img{
+  display: block;
+  width: 12.7rem;
+  height: 9.125rem;
+}
+.stop >.content > .center > p{
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #999;
 }
