@@ -58,7 +58,7 @@ function add_channel(){
 var DEVICE = phonetype();
 var PDD = {};
 var ACTIVITY = getUrlParam('activity') || '';
-var CHANNEL = add_channel()||'m30100087';
+var CHANNEL = add_channel()||'m30100120';
 
 // 判断插码页面
 function differPV(){
