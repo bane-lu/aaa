@@ -22,7 +22,7 @@ function activityStatus(){
     }
   });
 }
-activityStatus()
+// activityStatus()
 
 // PV跟踪 插码
 function pv_set(pd){
