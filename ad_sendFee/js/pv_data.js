@@ -259,4 +259,113 @@ const channel_data = [
     activity: 'suiexingad',
     channel:'m30100129'
   },
+
+
+
+  // 佛山  佛山移动官微  微信公众号 m30106004
+  {
+    activity: 'fswx',
+    channel:'m30106004'
+  },
+  // 广州  广州移动官微  微信公众号 m30101002
+  {
+    activity: 'gzwx',
+    channel:'m30101002'
+  },  
+  // 惠州  10086APP  APP m30111003
+  {
+    activity: 'hz86',
+    channel:'m30111003'
+  },  
+  // 惠州  惠州移动官微  微信公众号 m30111002
+  {
+    activity: 'hzwx',
+    channel:'m30111002'
+  },  
+  // 江门  江门10086APP  APP m30107006
+  {
+    activity: 'jm86',
+    channel:'m30107006'
+  },  
+  // 江门  江门移动官微  微信公众号 m30107004
+  {
+    activity: 'jmwx',
+    channel:'m30107004'
+  },  
+  // 揭阳  揭阳移动官微  微信公众号 m30120001
+  {
+    activity: 'jywx',
+    channel:'m30120001'
+  },
+  // 茂名  茂名移动官微  微信公众号 m30109003
+  {
+    activity: 'mmwx',
+    channel:'m30109003'
+  },
+  // 茂名  茂名10086APP  APP m30109004
+  {
+    activity: 'mm86',
+    channel: 'm30109004'
+  },
+  // 梅州  梅州移动官微  微信公众号 m30112003
+  {
+    activity: 'mzwx',
+    channel: 'm30112003'
+  },
+  // 梅州  梅州10086APP  APP m30112005
+  {
+    activity: 'mz86',
+    channel: 'm30112005'
+  },
+  // 梅州  群发短信  短信  m30112000
+  {
+    activity: 'mzqf',
+    channel:'m30112000'
+  },
+  // 汕头  汕头移动官微  微信公众号 m30104001
+  {
+    activity: 'stwx',
+    channel: 'm30104001'
+  },
+  // 汕尾  汕尾移动官微  微信公众号 m30113001
+  {
+    activity: 'swwx',
+    channel: 'm30113001'
+  },
+  // 韶关  韶关移动官微  微信公众号 m30105002
+  {
+    activity: 'sgwx',
+    channel:'m30105002'
+  },
+  // 阳江  阳江移动官微  微信公众号 m301150001
+  {
+    activity: 'yjwx',
+    channel: 'm301150001'
+  },
+  // 云浮  云浮移动官微  微信公众号 m30121004
+  {
+    activity: 'yfwx',
+    channel:'m30121004'
+  },
+  // 云浮  云浮10086APP  APP m30121006
+  {
+    activity: 'yf86',
+    channel:'m30121006'
+  },
+  // 湛江  湛江移动官微  微信公众号 m30108004
+  {
+    activity: 'zjwx',
+    channel: 'm30108004'
+  },
+  // 肇庆  肇庆移动官微  微信公众号 m301100001
+  {
+    activity: 'zqwx',
+    channel: 'm301100001'
+  },
+  // 中山  中山移动官微  微信公众号 m30118004
+  {
+    activity: 'zswx',
+    channel:'m30118004'
+  },
+
 ]
