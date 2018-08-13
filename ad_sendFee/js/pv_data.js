@@ -98,6 +98,12 @@ const channel_data = [
     channel:'m30100093'
   },
 
+  // 酷版信息流1号位
+  {
+    activity: 'kbxxl1',
+    channel:'m30100121'
+  },
+
   // 酷版信息流3号位
   {
     activity: 'kbxxl3',
@@ -106,8 +112,8 @@ const channel_data = [
 
   // 广东超服投递推广邮件
   {
-    activity: 'bawang',
-    channel:'m30100096'
+    activity: 'cftd',
+    channel:'m30100122'
   },
 
   // 139邮箱微信服务号副标推文1期
@@ -119,7 +125,7 @@ const channel_data = [
   // 和留言广东用户漏电追尾短信
   {
     activity: 'hlyldzw',
-    channel:'m30100098'
+    channel:'m30100120'
   },
   
   // 和留言微信公众号副标推文
@@ -149,19 +155,19 @@ const channel_data = [
   // 活动广场互推专用4
   {
     activity: 'htxlhdgc',
-    channel:'m30100103'
+    channel:'m30100125'
   },
 
     // 防骚扰banner图
   {
     activity: 'htxlfsr',
-    channel:'m30100104'
+    channel:'m30100124'
   },
 
     // 官网轮播图
   {
     activity: 'htxlgw',
-    channel:'m30100105'
+    channel:'m30100126'
   },
 
     // 微信公众号推文
@@ -173,7 +179,7 @@ const channel_data = [
     // 客户端活动专区广告位
   {
     activity: 'hcyhdzq',
-    channel:'m30100107'
+    channel:'m30100127'
   },
 
   // 客户端软件频道banner（与和飞信共享资源）
@@ -228,5 +234,29 @@ const channel_data = [
   {
     activity: 'xhm',
     channel:'m30100116'
+  },
+
+  // 网址导航顶部横幅8.16~23
+  {
+    activity: 'wzdhdbhf',
+    channel:'m30100130'
+  },
+
+  // 门户首页-为您推荐banner01（8.24~31）
+  {
+    activity: 'wntj',
+    channel:'m30100131'
+  },
+
+  // 和生活 www首页广告2
+  {
+    activity: 'hshwww',
+    channel:'m30100128'
+  },
+
+  // 随E行 安卓发现页轮播默认广告
+  {
+    activity: 'suiexingad',
+    channel:'m30100129'
   },
 ]
