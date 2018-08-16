@@ -11,7 +11,7 @@ const pv_data = [
   { 
     activity: 'MMH5',
     appid: '300011860393',
-    label: '13612@@65338@@22245',
+    label: '100001006@@23942@@65338',
     adEvent: 'ADClick1',
     ru: 'http://mywx.zone139.com/miyoufm/advertises/ad_sendFee/index.html?activity=MMH5',
   },
@@ -43,24 +43,24 @@ const pv_data = [
   {
   	activity: 'htxlhdgc',
     appid: '300011860393',
-    label: '13550@@65338@@24483',
-    adEvent: 'ADClick',
+    label: '100001005@@24466@@65338',
+    adEvent: 'ADClick1',
     ru: 'http://mywx.zone139.com/miyoufm/advertises/ad_sendFee/index.html?activity=htxlhdgc',
   },
   // 防骚扰banner图
   {
   	activity: 'htxlfsr',
     appid: '300011860393',
-    label: '13543@@65338@@24470',
-    adEvent: 'ADClick',
+    label: '100001005@@24466@@65338',
+    adEvent: 'ADClick1',
    	ru: 'http://mywx.zone139.com/miyoufm/advertises/ad_sendFee/index.html?activity=htxlfsr', 
   },
   // 官网轮播图
   {	
   	activity: 'htxlgw',
     appid: '300011860393',
-    label: '13544@@65338@@24040',
-    adEvent: 'ADClick',
+    label: '100000994@@24040@@65338',
+    adEvent: 'ADClick1',
     ru: 'http://mywx.zone139.com/miyoufm/advertises/ad_sendFee/index.html?activity=htxlgw',
   },
   // 客户端软件频道banner（与和飞信共享资源）
@@ -70,7 +70,39 @@ const pv_data = [
     label: '13549@@65338@@22454',
     adEvent: 'ADClick',
     ru: 'http://mywx.zone139.com/miyoufm/advertises/ad_sendFee/index.html?activity=MMrjpd',
-  }
+  },
+    // MMH5  门户首页-为您推荐banner01（8.24~31）
+  {
+    activity: 'wntj',
+    appid: '300011860393',
+    label: '100001006@@23942@@65338',
+    adEvent: 'ADClick1',
+    ru: 'http://mywx.zone139.com/miyoufm/advertises/ad_sendFee/index.html?activity=wntj',
+  },
+    // 和生活 www首页广告2
+  {
+    activity: 'hshwww',
+    appid: '300011860393',
+    label: '13653@@22380@@65318',
+    adEvent: 'ADClick1',
+    ru: 'http://mywx.zone139.com/miyoufm/advertises/ad_sendFee/index.html?activity=hshwww',
+  },
+    // 随E行 安卓发现页轮播默认广告
+  {
+    activity: 'suiexingad',
+    appid: '300011860393',
+    label: '100000983@@24463@@65338',
+    adEvent: 'ADClick1',
+    ru: 'http://mywx.zone139.com/miyoufm/advertises/ad_sendFee/index.html?activity=suiexingad',
+  },
+  // 网址导航顶部横幅8.16~23
+  {
+    activity: 'wzdhdbhf',
+    appid: '300011860393',
+    label: '100000995@@24027@@65338',
+    adEvent: 'ADClick1',
+    ru: 'http://mywx.zone139.com/miyoufm/advertises/ad_sendFee/index.html?activity=wzdhdbhf'
+  },
 ]
 
 const channel_data = [
@@ -367,5 +399,9 @@ const channel_data = [
     activity: 'zswx',
     channel:'m30118004'
   },
-
+  // 七夕活动
+  {
+    activity: 'qixi',
+    channel:'m30100070'
+  }
 ]

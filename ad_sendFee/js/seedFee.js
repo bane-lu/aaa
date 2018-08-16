@@ -1,18 +1,25 @@
 // 
-var basePath = 'http://221.176.34.113:8180'
-// var basePath = getBasePath() + ':8385'
+var basePath = 'http://221.176.34.113:8080'
+// var basePath = 'http://221.176.34.113:8761'
+// var basePath = 'http://117.136.240.58:8080'
+
 function activityStatus(){
+  console.log(11)
   $.ajax({
     type: "get",
-    url: basePath + "/cmic_adconfiguration/app/isStop/101",
+    url: basePath + "/cmic_adconfiguration/app/isStop/36",
+    // url: basePath + "/cmic_adconfiguration/app/isStop/47",
     dataType: 'json',
     success: function (res) {
       if(res.isShow == 0){
         document.getElementsByClassName("stop")[0].style.transform="translateY(0)"
+        document.getElementsByClassName("pause")[0].style.display="none"
       }else if(res.isShow == 2){
         document.getElementsByClassName("pause")[0].style.transform="translateY(0)"
+        document.getElementsByClassName("stop")[0].style.display="none"
       }else{
-
+        document.getElementsByClassName("pause")[0].style.display="none"
+        document.getElementsByClassName("stop")[0].style.display="none"
       }
       // isShow  0/下架   1/正常   2/暂停
     },
@@ -22,7 +29,7 @@ function activityStatus(){
     }
   });
 }
-// activityStatus()
+activityStatus()
 
 // PV跟踪 插码
 function pv_set(pd){

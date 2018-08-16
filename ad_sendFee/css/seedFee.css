@@ -174,7 +174,6 @@ a:active{
 
 /*暂停页*/
 .pause{
-  /*display: none;*/
   position: fixed;
   top: 0;
   left: 0;
