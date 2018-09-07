@@ -2,9 +2,39 @@
 var DEVICE = phonetype();
 var CHANNEL = getUrlParam('channel')||'m30100066';
 var download_url = '';
+var basePath = 'http://221.176.34.113:8761'
+// var basePath = 'http://117.136.240.58:8080'
+
+// 活动暂停、下架
+function activityStatus(){
+  console.log(11)
+  $.ajax({
+    type: "get",
+    url: basePath + "/cmic_adconfiguration/app/isStop/43",
+    // url: basePath + "/cmic_adconfiguration/app/isStop/47",
+    dataType: 'json',
+    success: function (res) {
+      if(res.isShow == 0){
+        document.getElementsByClassName("stop")[0].style.transform="translateY(0)"
+        document.getElementsByClassName("pause")[0].style.display="none"
+      }else if(res.isShow == 2){
+        document.getElementsByClassName("pause")[0].style.transform="translateY(0)"
+        document.getElementsByClassName("stop")[0].style.display="none"
+      }else{
+        document.getElementsByClassName("pause")[0].style.display="none"
+        document.getElementsByClassName("stop")[0].style.display="none"
+      }
+      // isShow  0/下架   1/正常   2/暂停
+    },
+    error: function (res) {
+      // console.log(res);
+      // alert("error")
+    }
+  });
+}
+activityStatus()
 
 $(function () {
-  //window.location.href = 'meetyou://'; 
   setpoint("visitor");
   // 下载包url
   getDevice();
@@ -39,7 +69,6 @@ $(function () {
       var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
       if (isiOS) {
         setpoint("download");
-        // window.location.href = download_url
       }
       window.location.href = download_url
     }
@@ -53,10 +82,8 @@ function getDevice() {
   var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
   if (isAndroid) {
     download_url = 'http://rcsoa-nopay.zone139.com/versionmanager/download/meetyou-release/' + CHANNEL;
-    // $(".download_btn").attr('href', url);
   } else if (isiOS) {
     download_url = 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"'
-    // setpoint("download");
   }
 }
 //埋点
@@ -64,7 +91,6 @@ function setpoint(type) {
   var device = DEVICE;
   var channel = CHANNEL;
   var phone = getPhone();
-  // alert(phone);
   var paramData = {
     "systemType": device,
     "channel": channel,
@@ -74,13 +100,11 @@ function setpoint(type) {
   $.ajax({
     type: "get",
     url: "http://rcsoa-nopay.zone139.com/versionmanager/download/meetyou-record",
-    // url: 'http://221.176.34.113:9000/versionmanager/download/meetyou-record',
     data: $.param(paramData),
     dataType: 'json',
     success: function (res) {
     },
     error: function (res) {
-      // alert("error")
     }
   });
 
