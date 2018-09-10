@@ -39,23 +39,6 @@ $(function () {
   // 下载包url
   getDevice();
 
-  // 禁止弹窗时背景图滚动
-  $(".rule").click(function(){
-    $(".black").show();
-    $(".rulePop").animate({
-      opacity:1
-    },200).css("display","block")
-    $("body").css("position","fixed");
-  });
-
-  $(".content .rulePop .close").bind("click",function(){
-    $(".black").hide();
-    $(".rulePop").animate({
-      opacity:0
-    },200).css("display","none")
-    $("body").css("position","relative");
-  });
-
   //点击下载
   $(".download_btn").on("click", function (e) {
     // e.preventDefault();
