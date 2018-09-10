@@ -15,7 +15,7 @@ body {
     line-height: 1.5;
     font-size: 0.8rem;
     color: #212121;
-    /*background-color: #f5f5f5;*/
+    background-color: #690d65;
     outline: 0;
     -webkit-text-size-adjust: 100% !important;
     text-size-adjust: 100% !important;
@@ -92,6 +92,7 @@ html{
     font-family: arial, 'Microsoft Yahei', '微软雅黑', georgia, verdana, helvetica, sans-serif, '宋体';
     position: relative;
     width: 100%;
+    margin: auto;
     height: 100%;
 }
 body{
@@ -217,8 +218,17 @@ a:active{
   line-height: 1.4rem;
   color: #f7ccd3;
 }
+.top{
+  width: 100%;
+  /*margin-top: 1.4rem;*/
+}
+.top > img{
+  margin: auto;
+  display: block;
+  width: 17.175rem;
+  height: 6.65rem;
+}
 .range-time{
-  margin-top: 7.98rem;
   width: 100%;
 
   text-align: center;
