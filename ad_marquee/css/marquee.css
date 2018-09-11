@@ -146,10 +146,20 @@ a:active{
   z-index: 99;
 }
 
-
+.logo{
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 0.4rem;
+  padding-left: 0.8rem;
+}
+.logo > img{
+  display: block;
+  width: 5.85rem;
+  height: 1.23rem;
+}
 .top{
   width: 100%;
-  margin-top: 1.4rem;
+  /*margin-top: 1.4rem;*/
 }
 .top > img{
   margin: auto;
