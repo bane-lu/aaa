@@ -91,8 +91,20 @@ ul {
 
 .page-wrapper{
   margin: auto;
-  width: 5.4rem;
-  height: 7.6rem;
+  /*width: 5.4rem;
+  height: 7.6rem;*/
+}
+.page-wrapper-1{
+  width: 4.74rem;
+  height: 7.73rem;
+}
+.page-wrapper-2{
+  width: 5.99rem;
+  height: 7.7rem;
+}
+.page-wrapper-3{
+  width: 5.68rem;
+  height: 7.89rem;
 }
 .btn-wrapper{
   width: 6.2rem;
@@ -112,7 +124,7 @@ ul {
 .page-wrapper img {
   display: block;
   width: 100%;
-  height: 100%;
+  /*height: 100%;*/
 }
 
 /*********按钮*********/
