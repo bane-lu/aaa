@@ -7,7 +7,6 @@ var basePath = 'http://221.176.34.113:8761'
 
 // 活动暂停、下架
 function activityStatus(){
-  console.log(11)
   $.ajax({
     type: "get",
     url: basePath + "/cmic_adconfiguration/app/isStop/43",
@@ -27,8 +26,6 @@ function activityStatus(){
       // isShow  0/下架   1/正常   2/暂停
     },
     error: function (res) {
-      // console.log(res);
-      // alert("error")
     }
   });
 }
