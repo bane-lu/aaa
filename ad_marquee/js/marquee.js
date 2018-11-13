@@ -1,5 +1,7 @@
 
 var download_url = '';
+var CHANNEL = getUrlParam('channel') || ''
+
 var basePath = 'http://221.176.34.113:8761'
 // var basePath = 'http://117.136.240.58:8080'
 
@@ -33,7 +35,8 @@ function getDevice() {
   var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
   var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
   if (isAndroid) {
-    download_url = 'http://a.10086.cn/c/a/s.do?requestid=zndxzh&channelid=5410453499&cid=300011040393&gid=300011040393/';
+    download_url = 'http://rcsoa-nopay.zone139.com/versionmanager/download/meetyou-release/' + CHANNEL;
+    // download_url = 'http://a.10086.cn/c/a/s.do?requestid=zndxzh&channelid=5410453499&cid=300011040393&gid=300011040393/';
   } else if (isiOS) {
     download_url = 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"'
   }
@@ -61,7 +64,7 @@ $(function () {
   // 埋点
   sensors.track('marqueeOutclient_view');
 
-  activityStatus()
+  // activityStatus()
 
   getDevice();
 
