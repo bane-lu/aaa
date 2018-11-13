@@ -58,7 +58,6 @@ function isWeixin() {
 }
 
 $(function () {
-
   // 埋点
   sensors.track('marqueeOutclient_view');
 
