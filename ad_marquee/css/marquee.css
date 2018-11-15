@@ -15,7 +15,7 @@ body {
     line-height: 1.5;
     font-size: 0.8rem;
     color: #212121;
-    background-color: #260b5b;
+    background-color: #5c0b5f;
     outline: 0;
     -webkit-text-size-adjust: 100% !important;
     text-size-adjust: 100% !important;
@@ -189,7 +189,7 @@ a:active{
 }
 .download_btn{
   margin: auto;
-  margin-top: 0.68rem;
+  margin-top: 0.3rem;
   
   display: block;
   width: 16.3rem;
@@ -208,7 +208,7 @@ a:active{
 }
 .download_btn:active{
   margin: auto;
-  margin-top: 0.68rem;
+  margin-top: 0.3rem;
   
   cursor: pointer; 
   display: block;
@@ -226,7 +226,7 @@ a:active{
   color: #ffffff;
 }
 .more{
-  margin-top: 0.84rem;
+  margin-top: 0.1rem;
   text-align: center;
   position: relative;
 }

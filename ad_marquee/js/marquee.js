@@ -64,7 +64,7 @@ $(function () {
   // 埋点
   sensors.track('marqueeOutclient_view');
 
-  // activityStatus()
+  activityStatus()
 
   getDevice();
 
@@ -72,18 +72,12 @@ $(function () {
   $(".download_btn").on("click", function (e) {
     // 埋点
     sensors.track('marqueeOutclient_click');
-    // e.preventDefault();
     if (isWeixin()) {
       //是微信
       e.preventDefault();
       $(".popup").show();
       $(".black").fadeIn();
     } else {
-      var u = navigator.userAgent;
-      var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
-      if (isiOS) {
-        setpoint("download");
-      }
       window.location.href = download_url
     }
   })
