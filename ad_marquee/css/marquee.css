@@ -227,6 +227,7 @@ a:active{
 }
 .more{
   margin-top: 0.1rem;
+  padding-bottom: 1.5rem;
   text-align: center;
   position: relative;
 }

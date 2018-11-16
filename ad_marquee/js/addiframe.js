@@ -8,7 +8,7 @@ function getUrlParamString(name) {
 
 //添加iframe
 function iframeShow(src) {
-	$(document.body).append('<iframe width="0" height="0" frameborder=0 src="'+ src +'" style="position: absolute; top:0; left: 0; width: 0; height: 0; display: none"></iframe>');
+	$(document.body).append('<iframe width="0" height="0" frameborder=0 src="'+ src +'" style="position: absolute; top:0; left: 0; width: 0; height: 0; display: none; opacity: 0;"></iframe>');
 }
 
 /*function iframeShow(src) {
