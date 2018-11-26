@@ -29,7 +29,7 @@ initIframeParam();
  * 也就是登录之前调用一次
  */
 function initIframeParam(){
-	console.log('initIframeParam');
+	// console.log('initIframeParam');
 	var iframetype = getUrlParamString('jkcode');
 	if(iframetype){
 		sessionStorage.iframetype = iframetype;
@@ -45,7 +45,7 @@ function webcatAddiframeUrl(){
 	}
 	var addiframeTimeout = setTimeout(function(){//延迟添加iframe
 		try{
-			console.log(sessionStorage.iframetype);
+			// console.log(sessionStorage.iframetype);
 			if(sessionStorage.iframetype){
 				// console.log('setTimeout webcatAddiframeUrl add');
 				// if(sessionStorage.iframetype.indexOf('a')!=-1){
@@ -65,8 +65,8 @@ function webcatAddiframeUrl(){
 					console.log("webcat-addiframe-d:true");
 				}
 			}else{//默认已订购
-				iframeShow('http://wx.10086.cn/website/alreadyService/index/new');
-				console.log("webcat-addiframe-a:true");
+				// iframeShow('http://wx.10086.cn/website/alreadyService/index/new');
+				// console.log("webcat-addiframe-a:true");
 			}
 		}catch(e){
 			console.log(e);
