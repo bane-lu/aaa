@@ -15,8 +15,10 @@ $(function () {
             // var url = 'http://221.176.34.113:9000/versionmanager/download/meetyou-release/' + CHANNEL;
             var url = 'http://rcsoa-nopay.zone139.com/versionmanager/download/meetyou-release/' + CHANNEL;
             $(".download-btn a").attr('href', url);
+            $(".buoy-wrapper a").attr('href', url);
         } else if (isiOS) {
             $(".download-btn a").attr("href", 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"');
+            $(".buoy-wrapper a").attr("href", 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"');
             // setpoint("download");
         }
     }

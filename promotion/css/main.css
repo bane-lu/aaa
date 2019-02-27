@@ -54,6 +54,23 @@ img {
     margin-bottom: 0.82rem;
 }
 .download-btn{
+    /* width: 6.12rem;
+	height: 0.9rem;
+	background-image: linear-gradient(93deg, 
+		#a35df1 0%, 
+		#657cf0 100%);
+    border-radius: .43rem;
+    font-family: "SourceHanSansSC-Medium";
+	font-size: 0.36rem;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 0.9rem;
+	letter-spacing: 0px;
+    color: #ffffff;
+    margin: 0 auto; */
+}
+.download-btn a{
+    display: block;
     width: 6.12rem;
 	height: 0.9rem;
 	background-image: linear-gradient(93deg, 
@@ -68,6 +85,7 @@ img {
 	letter-spacing: 0px;
     color: #ffffff;
     margin: 0 auto;
+    text-decoration: none;
 }
 .bottom-wrapper{
     width: 100%;
