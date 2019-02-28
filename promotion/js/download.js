@@ -35,6 +35,19 @@ $(function () {
         }
     }
 
+    // 点击效果
+    $('.btn-wrapper').on('touchstart',function(){
+        $('.btn-wrapper a').css('opacity','0.7')
+    })
+    $('.btn-wrapper').on('touchend',function(){
+        $('.btn-wrapper a').css('opacity','1')
+    })
+    $('.buoy-wrapper').on('touchstart',function(){
+        $('.buoy-wrapper a').css('opacity','0.7')
+    })
+    $('.buoy-wrapper').on('touchend',function(){
+        $('.buoy-wrapper a').css('opacity','1')
+    })
     //点击下载
     $(".btn-wrapper").on("click", function (e) {
         $(".pv_btn").remove();
