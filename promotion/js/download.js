@@ -111,6 +111,11 @@ $(window).load(function(){
 })
 })
 
+// 遮罩层点击消失
+$('.mask').on("click",function(){
+    $('.mask').fadeOut();
+})
+
 var PDD = {};
 var DEVICE = phonetype();
 var CHANNEL = getUrlParam("channel");
