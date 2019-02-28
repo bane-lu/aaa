@@ -13,7 +13,8 @@ $(function () {
         if (isAndroid) {
             console.log("sdf");
             // var url = 'http://221.176.34.113:9000/versionmanager/download/meetyou-release/' + CHANNEL;
-            var url = 'http://rcsoa-nopay.zone139.com/versionmanager/download/meetyou-release/' + CHANNEL;
+            // var url = 'http://rcsoa-nopay.zone139.com/versionmanager/download/meetyou-release/' + CHANNEL;
+            var url = 'http://a.10086.cn/c/a/s.do?requestid=zndxzh&channelid=5410453499&cid=300011040393&gid=300011040393/' + CHANNEL;
             $(".btn-wrapper a").attr('href', url);
             $(".buoy-wrapper a").attr('href', url);
         } else if (isiOS) {
