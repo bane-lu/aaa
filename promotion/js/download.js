@@ -14,10 +14,10 @@ $(function () {
             console.log("sdf");
             // var url = 'http://221.176.34.113:9000/versionmanager/download/meetyou-release/' + CHANNEL;
             var url = 'http://rcsoa-nopay.zone139.com/versionmanager/download/meetyou-release/' + CHANNEL;
-            $(".download-btn a").attr('href', url);
+            $(".btn-wrapper a").attr('href', url);
             $(".buoy-wrapper a").attr('href', url);
         } else if (isiOS) {
-            $(".download-btn a").attr("href", 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"');
+            $(".btn-wrapper a").attr("href", 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"');
             $(".buoy-wrapper a").attr("href", 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"');
             // setpoint("download");
         }
@@ -36,7 +36,7 @@ $(function () {
     }
 
     //点击下载
-    $(".download-btn").on("click", function (e) {
+    $(".btn-wrapper").on("click", function (e) {
         $(".pv_btn").remove();
         $(".wrapper").append('<div class="pv_btn" style="visibility: hidden"></div>')
         $(".wrapper").find(".pv_btn").html("<script type='text/javascript' src='"+pv_btn_set(PDD)+"' />")
@@ -85,8 +85,8 @@ $(function () {
 // 浮标显示与隐藏
 $(window).load(function(){
     var $win = $(window);
-    var itemOffsetTop = $(".download-btn").offset().top;
-    var itemOuterHeight = $(".download-btn").outerHeight();
+    var itemOffsetTop = $(".btn-wrapper").offset().top;
+    var itemOuterHeight = $(".btn-wrapper").outerHeight();
     var winHeight = $win.height();
     $win.scroll(function () {
         var winScrollTop = $win.scrollTop();
