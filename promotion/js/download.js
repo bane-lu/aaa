@@ -113,7 +113,7 @@ $(window).load(function(){
 
 // 遮罩层点击消失
 $('.mask').on("click",function(){
-    $('.mask').fadeOut();
+    $('.popup,.mask').fadeOut();
 })
 
 var PDD = {};
