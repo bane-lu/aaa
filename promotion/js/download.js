@@ -109,7 +109,15 @@ $(window).load(function(){
         } else{
             $(".buoy").show();
         }
-})
+    })
+    window.onbeforeunload = function(){
+        var winScrollTop = $win.scrollTop();
+        if(!(winScrollTop > itemOffsetTop+itemOuterHeight)&&!(winScrollTop < itemOffsetTop-winHeight)) {
+            $(".buoy").hide();
+        } else{
+            $(".buoy").show();
+        }
+    }
 })
 
 // 遮罩层点击消失
