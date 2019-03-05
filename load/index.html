@@ -10,12 +10,40 @@
     <meta http-equiv="Cache-Control" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <title>新手引导</title>
-    <link rel="stylesheet" type="text/css" href="./css/get8g.css?version=0516"/>
+    <link rel="stylesheet" type="text/css" href="./css/load.css"/>
+    <script type="text/javascript">
+        (function (doc, win) {// 动态修改root 的 font-size
+            var docEl = doc.documentElement,
+                resizeEvt = 'onorientationchange' in window ? 'onorientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    if (clientWidth >= 750) {
+                        docEl.style.fontSize = '100px';
+                    } else {
+                        docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                    }
+                };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
 </head>
 
 <body>
-    <img src="./images/8g@2x.gif" alt="" class="bg">
+    <div class="wrap">
+        <ul class="box">
+                <li><div class="box1"><img src="./images/8g@2x.gif" alt="" class="bg"></div></li>
+                <li><div class="box1"><img src="./images/8g@2x.gif" alt="" class="bg"></div></li>
+                <li><div class="box1"><img src="./images/8g@2x.gif" alt="" class="bg"></div></li>
+        </div>
+    </div>
     <script src="./js/jquery-2.1.4.min.js"></script>
-    <script src="./js/get8g.js"></script>
+    <script src="./js/load.js"></script>
+    <!-- <li><img src="./images/8g@2x.gif" alt="" class="bg"></li>
+    <li><img src="./images/8g@2x.gif" alt="" class="bg"></li>
+    <li><img src="./images/8g@2x.gif" alt="" class="bg"></li> -->
 </body>
 </html>

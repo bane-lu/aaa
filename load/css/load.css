@@ -1,9 +1,9 @@
 /*初始化类*/
-@charset "UTF-8";
+/* @charset "UTF-8";
 html{
     font-family: "PingFangSC-Regular", Helvetica, sans-serif;
     font-size: 20px;
-}
+} */
 html,body {
     -webkit-touch-callout:none;
     -webkit-text-size-adjust:none;
@@ -34,32 +34,6 @@ html,body,header,section,footer,div,ul,ol,li,img,a,span,em,del,legend,center,str
     -webkit-tap-highlight-color: transparent;
     outline: none;
 }
-@media only screen and (min-width: 320px) {
-    html {
-        /*font-size: 17.0666666px !important;*/
-        font-size: 17.5666666px !important;
-    }
-}
-@media only screen and (min-width: 375px) {
-    html {
-        font-size: 20px !important;
-    }
-}
-@media only screen and (min-width: 400px) {
-    html {
-        font-size: 21.33333333px !important;
-    }
-}
-@media only screen and (min-width: 414px) {
-    html {
-        font-size: 21px !important;
-    }
-}
-@media only screen and (min-width: 480px) {
-    html {
-        font-size: 25.6px !important;
-    }
-}
 ul, li {
     list-style: none;
 }
@@ -73,7 +47,7 @@ a {
     background-color: transparent;
 }
 textarea {
-    overflow: hidden;
+    /* overflow: hidden; */
     resize: none;
 }
 button {
@@ -97,7 +71,7 @@ html{
 body{
   width: 100%;
   height: 100%;
-  background-color: green;
+  /* background-color: green; */
   position: relative;
   text-align: center;
   overflow: hidden;
@@ -105,10 +79,26 @@ body{
 a:active{
     opacity: 0.7;
 }
+.wrap{position: relative;overflow: hidden;}
+.box{
+    position: relative;
+    height: 2000px;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fffaaa;
+}
+.box{position: absolute;list-style: none;left:0;top:0;padding:0;margin:0;}
+.box li{float:left;}
+.box1{
+    height: 2000px;
+}
 .bg{
-  display: block;
-  margin: auto;
-  margin-top: 5%;
+  /* display: block; */
+   /* margin: auto; */
+  margin-top: 5%; 
   width: 80%;
   /* min-height: 100%; */
-}
+} 
