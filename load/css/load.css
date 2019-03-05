@@ -88,12 +88,21 @@ a:active{
     bottom: 0;
     left: 0;
     right: 0;
-    background: #fffaaa;
+    /* background: #fffaaa; */
 }
 .box{position: absolute;list-style: none;left:0;top:0;padding:0;margin:0;}
 .box li{float:left;}
 .box1{
     height: 2000px;
+}
+.box2{
+    background: #fffaaa;
+}
+.box3{
+    background: gray;
+}
+.box4{
+    background: #0062cc;
 }
 .bg{
   /* display: block; */
