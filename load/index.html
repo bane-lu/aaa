@@ -11,6 +11,7 @@
     <meta http-equiv="Expires" content="0">
     <title>新手引导</title>
     <link rel="stylesheet" type="text/css" href="./css/load.css"/>
+    <script src="js/load.js"></script>
     <script type="text/javascript">
         (function (doc, win) {// 动态修改root 的 font-size
             var docEl = doc.documentElement,
@@ -33,17 +34,34 @@
 </head>
 
 <body>
-    <div class="wrap">
-        <ul class="box">
-                <li class="box2"><div class="box1"><img src="./images/8g@2x.gif" alt="" class="bg"></div></li>
-                <li class="box3"><div class="box1"><img src="./images/8g@2x.gif" alt="" class="bg"></div></li>
-                <li class="box4"><div class="box1"><img src="./images/8g@2x.gif" alt="" class="bg"></div></li>
+    <div class="container">   
+        <div id="viewport" class="viewport">
+          <div class="pageview" style="background: #3b76c0" >
+              <h3 >页面-1</h3>
+              <button id="testbtn" style="display:none"></button>
+          </div>
+          <div class="pageview" style="background: #58c03b;">
+              <h3>页面-2</h3>
+          </div>
+          <div class="pageview" style="background: #c03b25;">
+              <h3>页面-3</h3>
+          </div>
+          <div class="pageview" style="background: #e0a718;">
+              <h3>页面-4</h3>
+          </div>
+          <div class="pageview" style="background: #c03eac;">
+              <h3>页面-5</h3>
+          </div>
         </div>
-    </div>
+        <div class="pagenumber">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>  
+    
     <script src="./js/jquery-2.1.4.min.js"></script>
-    <script src="./js/load.js"></script>
-    <!-- <li><img src="./images/8g@2x.gif" alt="" class="bg"></li>
-    <li><img src="./images/8g@2x.gif" alt="" class="bg"></li>
-    <li><img src="./images/8g@2x.gif" alt="" class="bg"></li> -->
 </body>
 </html>
