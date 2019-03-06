@@ -1,8 +1,6 @@
 $(function () {
-  // var DEVICE = phonetype();
   var CHANNEL = getUrlParam("channel");
 
-  //window.location.href = 'meetyou://'; 
   setpoint("visitor");
 
   //识别浏览器是否为微信
@@ -60,7 +58,6 @@ function setpoint(type) {
   var device = DEVICE;
   var channel = CHANNEL;
   var phone = getPhone();
-  // alert(phone);
   var paramData = {
     "systemType": device,
     "channel": channel,
