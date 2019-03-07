@@ -40,12 +40,13 @@ $(window).load(function(){
     var desTxtHeight = tempY - desTxtY;
     var blackHeight = bottomPicY - tempY;
 
-    console.log(titleHeight+"/"+desTxtHeight+"/"+blackHeight)
+    // console.log(titleHeight+"/"+desTxtHeight+"/"+blackHeight)
     if(blackHeight > 0){
       $(".title").css('margin-top',blackHeight*0.4+'px')
     }else{
       $(".title").css('margin-top','0px');
     }
+    $(".temp").remove();
     // $(".bg-dot").css('margin-top',blackHeight*0.3+'px')
 
 
