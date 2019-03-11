@@ -3,7 +3,7 @@
     var currentPoint = -1;   // 记录当前点的位置
     var pageNow = 1;   // 当前页码
     var points = null; // 页码数
-
+    var start = new Date();
     var app = {
         init: function () {
         //    if (/(windows)/i.test(navigator.userAgent)) {
@@ -125,6 +125,15 @@
                         translate = translate > 0 ? 0 : translate; 
                         // 右边界
                         translate = translate < maxWidth ? maxWidth : translate; 
+                        var end = new Date();
+                        // 如果用户一直不关闭页面，可能出现超大值，可以根据业务需要处理，例如设置一个上限
+                        var duration = (end.getTime() - start.getTime()) / 1000;
+                        // 定义一个记录页面停留时间的事件pageView,并且保存需要的属性(停留时间和当前页面的地址)
+                        sensors.track('pageclose', {
+                            pageStayTime: duration,
+                            pageUrl: window.location.href
+                        });
+                        start = new Date();
                     } else {
                         // 如果滑动距离小于屏幕的50%，则退回到上一页
                         if (Math.abs(moveLength) / pageWidth < 0.5) {
@@ -136,6 +145,15 @@
                             : currentPosition + pageWidth - moveLength;
                             translate = translate > 0 ? 0 : translate;
                             translate = translate < maxWidth ? maxWidth : translate;
+                            var end = new Date();
+                            // 如果用户一直不关闭页面，可能出现超大值，可以根据业务需要处理，例如设置一个上限
+                            var duration = (end.getTime() - start.getTime()) / 1000;
+                            // 定义一个记录页面停留时间的事件pageView,并且保存需要的属性(停留时间和当前页面的地址)
+                            sensors.track('pageclose', {
+                                pageStayTime: duration,
+                                pageUrl: window.location.href
+                            });
+                            start = new Date();
                         }
                     }
                    
@@ -151,5 +169,5 @@
                 }
            }.bind(this), false);
        }
-    }
+    };
 })(window, document);
