@@ -7,7 +7,7 @@ html,body {
 }
 body {
     line-height: 1.5;
-    font-size: 0.8rem;
+    font-size: 0.4rem;
     color: #212121;
     outline: 0;
     -webkit-text-size-adjust: 100% !important;
@@ -31,7 +31,7 @@ ul, li {
     list-style: none;
 }
 p {
-    font-size: 0.7rem;
+    font-size: 0.35rem;
     color: #757575;
 }
 a {
@@ -78,7 +78,7 @@ html,body{
 .container{
    position:absolute;
    height: 100%;
-   top: 0.52rem;
+   top: 0.26rem;
    /* margin-top:-100px; */
 }
 .viewport{
@@ -94,37 +94,39 @@ html,body{
 .pageview{
     -webkit-box-flex: 1;
     width: 0;
-    margin: 0 5px;
+    /* margin: 0 5px; */
 }
 .pageview img{
-    width: 66%;
+    width: 66.4%;
     display: block;
     margin: 0 auto;
 }
-.pageview h6{
+.pageview span{
     font-family: "PingFangSC-Regular";
-    font-size: 0.4rem;
+    font-size: 0.2rem;
     color: #FFFFFF;
     letter-spacing: 0;
     text-align: center;
-    margin-top: 0.362rem;
-    margin-bottom: 0.24rem;
+    margin-top: 0.181rem;
+    margin-bottom: 0.12rem;
+    display: block;
 }
 .pageview p{
     opacity: 0.72;
     font-family: "PingFangSC-Regular";
-    font-size: 0.26rem;
+    font-size: 0.13rem;
     color: #FFFFFF;
     letter-spacing: 0;
-    margin-bottom: 0.24rem;
+    margin-bottom: 0.12rem;
+    margin-left: 0.24rem;
+    margin-right: 0.27rem;
 }
 .pagenumber{
     display: -webkit-box;
     /* margin: 0 auto; */
     position: fixed;
     left: 43%;
-    bottom: 0.28rem;
-    height: 1em;
+    bottom: 0.14rem;
     width: 14%;
 }
 .pagenumber div{
