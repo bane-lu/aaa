@@ -12,19 +12,19 @@
            document.addEventListener('DOMContentLoaded', function () {
                points = document.querySelectorAll('.pagenumber div');
                app.bindTouchEvent(); // 绑定触摸事件
-               app.bindBtnClick();   // 绑定按钮点击事件
+            //    app.bindBtnClick();   // 绑定按钮点击事件
                app.setPageNow();     // 设置初始页码
            }.bind(app), false);
         }(),
 
 
-        bindBtnClick: function () {
-            var button = document.querySelector('#testbtn');
-            button.addEventListener('touchstart', function(){
-                console.log('touch');
-            })
+        // bindBtnClick: function () {
+        //     var button = document.querySelector('#testbtn');
+        //     button.addEventListener('touchstart', function(){
+        //         console.log('touch');
+        //     })
              
-        },
+        // },
 
 
         // 页面平移
