@@ -107,8 +107,8 @@ html,body{
     color: #FFFFFF;
     letter-spacing: 0;
     text-align: center;
-    margin-top: 0.161rem;
-    margin-bottom: 0.1rem;
+    margin-top: 0.151rem;
+    margin-bottom: 0.09rem;
     display: block;
     line-height: 0.28rem;
 }
@@ -118,9 +118,9 @@ html,body{
     font-size: 0.13rem;
     color: #FFFFFF;
     letter-spacing: 0;
-    margin-bottom: 0.1rem;
-    margin-left: 0.24rem;
-    margin-right: 0.27rem;
+    margin-bottom: 0.09rem;
+    margin-left: 0.17rem;
+    margin-right: 0.2rem;
     line-height: 0.18rem;
 }
 .pagenumber{
