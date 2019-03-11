@@ -14,7 +14,8 @@ $(function () {
   }
 
   //点击下载
-  $(".download-btn").on("click", function (e) {
+  $(document).on("click",'.download-btn', function (e) {
+
       $(".pv_btn").remove();
       let clickNum = $(this).attr('class').substr(13,1)
       $(".wrapper").append('<div class="pv_btn" style="visibility: hidden"></div>')
@@ -27,11 +28,37 @@ $(function () {
       $(".popup,.mask").fadeIn();
 
     } else {
-      setpoint("download");
+
       var u = navigator.userAgent;
+      var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
       var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
-      // if (isiOS) {
-      // }
+      if (isiOS) {
+        setpoint("download");
+      }
+    }
+  })
+  // 浮标下载
+  $(document).on("click",'.download-dot', function (e) {
+
+      $(".pv_btn").remove();
+      let clickNum = $(this).attr('class').substr(13,1)
+      $(".wrapper").append('<div class="pv_btn" style="visibility: hidden"></div>')
+      $(".wrapper").find(".pv_btn").html("<script type='text/javascript' src='"+pv_btn_set(PDD,clickNum)+"' />")
+
+    if (isWeixin()) {
+      //是微信
+      e.preventDefault();
+      $(".popup").show();
+      $(".popup,.mask").fadeIn();
+
+    } else {
+
+      var u = navigator.userAgent;
+      var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+      var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+      if (isiOS) {
+        setpoint("download");
+      }
     }
   })
 
@@ -72,12 +99,8 @@ function setpoint(type) {
     data: $.param(paramData),
     dataType: 'json',
     success: function (res) {
-      // alert("success")
-      // console.log(res);
     },
     error: function (res) {
-      // console.log(res);
-      // alert("error")
     }
   });
 
@@ -140,18 +163,3 @@ function pv_btn_set(pd,clickNum){
   var src="http://120.197.233.121/udata/u.gif?h="+document.body.clientHeight+"&w="+document.body.clientWidth+"&ct="+new Date().getTime()+"&si="+appid+"&cu="+encodeURIComponent(window.location.host)+"&v=1.0&s=1500347894640218363&f=4&c=1428456744583&et="+event+"&lv="+ encodeURIComponent(label);
   return src
 }
-/**
- * 图片进行预加载
- * **/
-// var images = new Array();
-// function preload() {
-//   for (var i = 0; i < preload.arguments.length; i++) {
-//     images[i] = new Image()
-//     images[i].src = preload.arguments[i]
-//   }
-// }
-//    preload(
-//      'img/pic_1@2x.png',
-//      'img/pic_2@2x.png',
-//      'img/pic_3@2x.png'
-//    )

@@ -13,7 +13,6 @@
   <title>密友圈</title>
 
   <link rel="stylesheet" href="css/jquery.fullPage.css">
-  <!-- <link rel="stylesheet" href="css/animate.min.css"> -->
   <link rel="stylesheet" href="css/main.css?version=001">
   <script src="js/jquery-1.11.3.min.js"></script>
   <script src="js/jquery.fullPage.js"></script>
@@ -39,7 +38,7 @@
   <!-- <script src="https://www.w3cways.com/demo/vconsole/vconsole.min.js?v=2.2.0"></script> -->
 </head>
 <body>
-<div class="download-dot"></div>
+<a class="download-dot" onclick="download()"></a>
 <ul class="right-bar">
   <li></li>
   <li></li>
@@ -51,9 +50,10 @@
     <img class="bg-dot" src="./img/dot.png" alt="">
     <div class="logo"></div>
     <div class="big-title">打电话就用密友圈</div>
-    <button class="download-btn">立即下载</button>
+    <a class="download-btn">立即下载</a>
     <img class="des-pic" src="./img/main-pic.png" alt="">
     <img class="bottom-pic" src="./img/main-bottom-pic.png" alt="">
+    <div class="next"></div>
   </div>
 
   <div class="section page2">
@@ -61,22 +61,20 @@
     <p class="title">亲人朋友任撩</p>
     <p class="des-txt">添加不限时长成员&nbsp;&nbsp;&nbsp;&nbsp;打电话给TA不要钱</p>
     <img class="center-pic" src="./img/bg2.png" alt="">
-    <div class="next"></div>
   </div>
     
   <div class="section page3">
     <img class="bg-dot" src="./img/dot.png" alt="">
     <p class="title">打遍全国</p>
     <p class="des-txt">全国号码拨打&nbsp;&nbsp;&nbsp;&nbsp;任你聊</p>
-    <img class="center-pic" src="./img/bg2.png" alt="">
-    <div class="next"></div>
+    <img class="center-pic" src="./img/bg3.png" alt="">
   </div>
 
   <div class="section page4">
     <img class="bg-dot" src="./img/dot.png" alt="">
     <p class="title">流量全免</p>
     <p class="des-txt">移动用户密友圈内流量全免&nbsp;&nbsp;看点任你刷</p>
-    <img class="center-pic" src="./img/bg2.png" alt="">
+    <img class="center-pic" src="./img/bg4.png" alt="">
   </div>
 
 </div>
@@ -102,10 +100,11 @@
     if (isAndroid) {
       // var url = 'http://rcsoa-nopay.zone139.com/versionmanager/download/meetyou-release/' + CHANNEL;
       var url = 'http://a.10086.cn/c/a/s.do?requestid=zndxzh&channelid=5410453499&cid=300011040393&gid=300011040393/';
-      $(".download-btn a").attr('href', url);
+      $(".download-btn").attr('href', url);
+      $(".download-dot").attr('href', url);
     } else if (isiOS) {
-      $(".download-btn a").attr("href", 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"');
-      // setpoint("download");
+      $(".download-btn").attr("href", 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"');
+      $(".download-dot").attr("href", 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"');
     }
   }
 
@@ -124,7 +123,7 @@
       verticalCentered: false, //取消垂直居中
       afterLoad: function (anchorLink, index) {
         $(".download-dot").addClass("dot-up")
-        console.log(index)
+        // console.log(index)
         if (index > 1) {
           $(".right-bar").show();
           if(index == 2){
@@ -159,11 +158,15 @@
               $(".page4").find(".des-txt").removeClass("up-show");
             },500)
 
-          }else{
-            $(".right-bar").hide();
           }
 
         }else{
+          $(".title").addClass("down-show");
+          $(".des-txt").addClass("up-show");
+          $("ul li").removeClass("checked");
+          
+          $(".right-bar").hide();
+
           $(".download-dot").removeClass("dot-up")
         }
       }
