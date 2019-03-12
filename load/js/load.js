@@ -131,7 +131,7 @@
                         // 定义一个记录页面停留时间的事件pageView,并且保存需要的属性(停留时间和当前页面的地址)
                         sensors.track('pageclose', {
                             pageStayTime: duration,
-                            pageUrl: window.location.href
+                            pageUrl: window.location.href + "?page=" + pageNow 
                         });
                         start = new Date();
                     } else {
@@ -151,7 +151,7 @@
                             // 定义一个记录页面停留时间的事件pageView,并且保存需要的属性(停留时间和当前页面的地址)
                             sensors.track('pageclose', {
                                 pageStayTime: duration,
-                                pageUrl: window.location.href
+                                pageUrl: window.location.href + "?page=" + pageNow 
                             });
                             start = new Date();
                         }
