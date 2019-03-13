@@ -68,12 +68,12 @@ body{
   position: relative;
   text-align: center;
   overflow: hidden;
+  background-color: rgba(0, 0, 0,0.72);
 }
 a:active{
     opacity: 0.7;
 }
 html,body{
-    background: rgba(0,0,0,0.72);
 }
 .container{
    position:absolute;
