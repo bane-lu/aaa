@@ -73,12 +73,12 @@ a:active{
     opacity: 0.7;
 }
 html,body{
-    background: rgba(0,0,0,0.58);
+    background: rgba(0,0,0,0.72);
 }
 .container{
    position:absolute;
    height: 100%;
-   top: 0.23rem;
+   top: 0.3rem;
    /* margin-top:-100px; */
 }
 .viewport{
@@ -97,7 +97,7 @@ html,body{
     /* margin: 0 5px; */
 }
 .pageview img{
-    width: 63.4%;
+    width: 66.4%;
     display: block;
     margin: 0 auto;
 }
