@@ -85,7 +85,7 @@ html,body{
     -webkit-transform: translate3d(0,0,0);
     backface-visibility: hidden;
     position: relative;
-    padding-top: 2%;
+    padding-top: 3%;
 }
 .pageview{
     height: 100%;
