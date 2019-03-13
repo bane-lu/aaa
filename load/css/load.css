@@ -65,7 +65,7 @@ body{
     position: relative;
     text-align: center;
     overflow: hidden;
-    background-color: rgba(0, 0, 0,0.72);
+    background-color: #363531;
 }
 a:active{
     opacity: 0.7;
@@ -105,7 +105,7 @@ html,body{
     letter-spacing: 0;
     text-align: center;
     /* margin-top: 0.151rem; */
-    margin-top: 10%;
+    margin-top: 6%;
     margin-bottom: 3%;
     display: block;
     line-height: 0.28rem;
@@ -125,9 +125,9 @@ html,body{
     display: -webkit-box;
     /* margin: 0 auto; */
     position: fixed;
-    left: 43%;
+    left: 45%;
     bottom: 2%;
-    width: 14%;
+    width: 10%;
 }
 .pagenumber div{
     -webkit-box-flex: 1;
