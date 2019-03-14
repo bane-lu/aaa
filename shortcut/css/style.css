@@ -1,0 +1,97 @@
+html, div, ul, li, dl, dt, dd, p, h1, h2, h3, h4, h5, h6, img, form, embed, label {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: normal;
+}
+
+body {
+  background: #fff;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box; /* Firefox 1, probably can drop this */
+  -webkit-box-sizing: border-box; /* Safari 3-4, also probably droppable */
+  box-sizing: border-box; /* Everything else */
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  outline: 0;
+}
+
+img {
+  border: none;
+  display: block;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+h2{
+  font-weight: bold;
+  text-align: left;
+  font-size: 0.34rem;
+  color: #404040;
+}
+p{
+  text-align: left;
+  font-size: 0.30rem;
+  color: #404040;
+}
+
+.main{
+  width: 100%;
+  padding-left: 0.32rem;
+  padding-right: 0.32rem;
+  padding-bottom: 0.6rem;
+}
+.top-info{
+  padding-top: 0.32rem;
+  padding-bottom: 0.32rem;
+}
+
+.content{
+  padding-bottom: 0.48rem;
+}
+.content > .item{
+  margin-top: 0.32rem;
+}
+.item > .title{
+  font-weight: bold;
+  text-align: left;
+  font-size: 0.34rem;
+  color: #404040; 
+}
+.item > .detail{
+  margin-top: 0.16rem;
+  line-height: 0.42rem;
+}
+
+.example{
+  position: relative;
+  overflow: hidden;
+  padding-top: 0.4rem;
+}
+.example > li{
+  width: 47%;
+}
+.example > li:nth-child(1){
+  float: left;
+}
+.example > li:nth-child(2){
+  float: right;
+}
+.example > li > img{
+  width: 100%;
+}
+.example > li > .tip{
+  margin-top: 0.16rem;
+  font-size: 0.26rem;
+  color: #888;
+}

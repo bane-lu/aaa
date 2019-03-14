@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>如何开启权限</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="icon" id="favicon" href="./images/favicon.ico" type="image/x-icon" />
+  <meta name="author" content="//feixin.10086.cn/miyou/">
+  <meta name="description" content="密友圈">
+  <meta name="keywords" content="密友圈">
+</head>
+<script>
+  (function (doc, win) {// 动态修改root 的 font-size
+
+    var docEl = doc.documentElement,
+      resizeEvt = 'onorientationchange' in window ? 'onorientationchange' : 'resize',
+      recalc = function () {
+        var clientWidth = docEl.clientWidth;
+        if (!clientWidth) return;
+        if (clientWidth >= 750) {
+          docEl.style.fontSize = '100px';
+        } else {
+          docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+        }
+      };
+
+    if (!doc.addEventListener) return;
+    win.addEventListener(resizeEvt, recalc, false);
+    doc.addEventListener('DOMContentLoaded', recalc, false);
+
+  })(document, window);
+</script>
+<body>
+  <div class="main">
+    <p class="top-info">开启桌面快捷方式权限，有助于用户直接在桌面进行快捷拨打电话。</p>
+
+    <h2>主流机型如何开启权限？</h2>
+
+    <div class="content">
+
+      <div class="item">
+        <p class="title">华为</p>
+        <p class="detail">方式1：设置--应用和通知--权限管理--权限--创建桌面快捷方式--密友圈</p>
+        <p class="detail">方式2：手机管家--权限隐私--应用权限管理--权限--创建桌面快捷方式--密友圈</p>
+      </div>
+
+      <div class="item">
+        <p class="title">vivo</p>
+        <p class="detail">方式1：设置--更多设置--权限管理--权限--桌面快捷方式--密友圈</p>
+        <p class="detail">方式2：I管家--权限管理--桌面快捷方式--密友圈</p>
+      </div>
+
+      <div class="item">
+        <p class="title">小米</p>
+        <p class="detail">方式1：设置--授权管理--应用权限管理-权限管理--桌面快捷方式--密友圈</p>
+        <p class="detail">方式2：安全中心--应用管理--权限-应用权限管理--权限管理--桌面快捷方式--密友圈</p>
+      </div>
+
+    </div>
+    <h2>以小米设置快捷方式为例</h2>
+    <ul class="example">
+      <li>
+        <img src="./images/my_giftcall_guide01.png" alt="">
+        <p class="tip">1、打开[设置]应用</p>
+      </li>
+      <li>
+        <img src="./images/my_giftcall_guide02.png" alt="">
+        <p class="tip">2、找到授权管理模块</p>
+      </li>
+    </ul>
+    <ul class="example">
+      <li>
+        <img src="./images/my_giftcall_guide03.png" alt="">
+        <p class="tip">3、选择“应用权限管理”</p>
+      </li>
+      <li>
+        <img src="./images/my_giftcall_guide04.png" alt="">
+        <p class="tip">4、切换至“权限管理”模块，为密友圈设置“桌面快捷方式”</p>
+      </li>
+    </ul>
+  </div>
+  
+</body>
+</html>
