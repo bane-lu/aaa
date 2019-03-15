@@ -6,9 +6,6 @@
     var start = new Date();
     var app = {
         init: function () {
-        //    if (/(windows)/i.test(navigator.userAgent)) {
-        //        location.href = 'views/pc.html';
-        //    }
            document.addEventListener('DOMContentLoaded', function () {
                points = document.querySelectorAll('.pagenumber div');
                app.bindTouchEvent(); // 绑定触摸事件
@@ -27,15 +24,6 @@
               };
            }.bind(app), false);
         }(),
-
-
-        // bindBtnClick: function () {
-        //     var button = document.querySelector('#testbtn');
-        //     button.addEventListener('touchstart', function(){
-        //         console.log('touch');
-        //     })
-             
-        // },
 
 
         // 页面平移
