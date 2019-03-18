@@ -11,17 +11,6 @@
                app.bindTouchEvent(); // 绑定触摸事件
             //    app.bindBtnClick();   // 绑定按钮点击事件
                app.setPageNow();     // 设置初始页码
-
-               window.onunload = function() {
-                var end = new Date();
-                // 如果用户一直不关闭页面，可能出现超大值，可以根据业务需要处理，例如设置一个上限
-                var duration = (end.getTime() - start.getTime()) / 1000;
-                // 定义一个记录页面停留时间的事件pageView,并且保存需要的属性(停留时间和当前页面的地址)
-                sensors.track('pageclose', {
-                  pageStayTime: duration,
-                  pageNumber: pageNow 
-                });
-              };
            }.bind(app), false);
         }(),
 
@@ -128,9 +117,9 @@
                         // 如果用户一直不关闭页面，可能出现超大值，可以根据业务需要处理，例如设置一个上限
                         var duration = (end.getTime() - start.getTime()) / 1000;
                         // 定义一个记录页面停留时间的事件pageView,并且保存需要的属性(停留时间和当前页面的地址)
-                        sensors.track('pageclose', {
-                            pageStayTime: duration,
-                            pageNumber: pageNow
+                        sensors.track('GuideBrowsePage', {
+                            guide_page_duration: duration,
+                            guide_page_mark: pageNow
                         });
                         start = new Date();
                     } else {
@@ -148,9 +137,9 @@
                             // 如果用户一直不关闭页面，可能出现超大值，可以根据业务需要处理，例如设置一个上限
                             var duration = (end.getTime() - start.getTime()) / 1000;
                             // 定义一个记录页面停留时间的事件pageView,并且保存需要的属性(停留时间和当前页面的地址)
-                            sensors.track('pageclose', {
-                                pageStayTime: duration,
-                                pageNumber: pageNow
+                            sensors.track('GuideBrowsePage', {
+                                guide_page_duration: duration,
+                                guide_page_mark: pageNow
                             });
                             start = new Date();
                         }
