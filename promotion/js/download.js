@@ -7,26 +7,26 @@ $(function () {
     var url = '';
 
     //判断是安卓还是ios
-    function getDevice() {
-        var u = navigator.userAgent;
-        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
-        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
-        if (isAndroid) {
-            console.log("sdf");
-            // var url = 'http://221.176.34.113:9000/versionmanager/download/meetyou-release/' + CHANNEL;
-            // var url = 'http://rcsoa-nopay.zone139.com/versionmanager/download/meetyou-release/' + CHANNEL;
-            url = 'http://a.10086.cn/c/a/s.do?requestid=zndxzh&channelid=5410453499&cid=300011040393&gid=300011040393/' + CHANNEL;
-            // $(".btn-wrapper a").attr('href', url);
-            $(".buoy-wrapper a").attr('href', url);
-        } else if (isiOS) {
-            url = 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8'
-            // $(".btn-wrapper a").attr("href", 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"');
-            $(".buoy-wrapper a").attr("href", 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"');
-            // setpoint("download");
-        }
-    }
+    // function getDevice() {
+    //     var u = navigator.userAgent;
+    //     var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+    //     var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+    //     if (isAndroid) {
+    //         console.log("sdf");
+    //         // var url = 'http://221.176.34.113:9000/versionmanager/download/meetyou-release/' + CHANNEL;
+    //         // var url = 'http://rcsoa-nopay.zone139.com/versionmanager/download/meetyou-release/' + CHANNEL;
+    //         url = 'http://a.10086.cn/c/a/s.do?requestid=zndxzh&channelid=5410453499&cid=300011040393&gid=300011040393/' + CHANNEL;
+    //         // $(".btn-wrapper a").attr('href', url);
+    //         $(".buoy-wrapper a").attr('href', url);
+    //     } else if (isiOS) {
+    //         url = 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8'
+    //         // $(".btn-wrapper a").attr("href", 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"');
+    //         $(".buoy-wrapper a").attr("href", 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"');
+    //         // setpoint("download");
+    //     }
+    // }
 
-    getDevice();
+    // getDevice();
 
     //识别浏览器是否为微信
     function isWeixin() {
@@ -64,30 +64,24 @@ $(function () {
             $(".popup,.mask").fadeIn();
 
         } else {
-            var timeout;
-            var t = 1000;
-            var hasApp = true; 
-            setTimeout(function () { 
-                if (!hasApp) { 
-                    //没有安装支付宝
-                    window.location.href=url;
-                }else{
-                    //安装支付宝
-                }
-                document.body.removeChild(ifr); 
-            }, 2000) 
-            
-            var t1 = Date.now(); 
-            var ifr = document.createElement("iframe"); 
-            ifr.src = 'meetyou://';
-            ifr.style.display = 'none'; 
-            document.body.appendChild(ifr); 
-            timeout = setTimeout(function () { 
-                var t2 = Date.now(); 
-                if (!t1 || t2 - t1 < t + 100) { 
-                hasApp = false; 
-                } 
-            }, t); 
+            var u = navigator.userAgent;
+            var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+            var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+            if (isAndroid) {
+                url = 'http://a.10086.cn/c/a/s.do?requestid=zndxzh&channelid=5410453499&cid=300011040393&gid=300011040393/' + CHANNEL;
+                window.location.href ="meetyou://";
+				window.setTimeout(function() {
+					window.location.href = url;
+                }, 2000)
+                return
+            } else if (isiOS) {
+                url = 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8';
+                window.location.href ="meetyou://";
+				window.setTimeout(function() {
+					window.location.href = url;
+                }, 2000)
+                return
+            }
 
             // var u = navigator.userAgent;
             // var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
