@@ -50,7 +50,7 @@ $(function () {
         $('.buoy-wrapper a').css('opacity','1')
     })
     //点击下载
-    $(".btn-wrapper").on("click", function (e) {
+    $("#download").on("click", function (e) {
         $(".pv_btn").remove();
         $(".wrapper").append('<div class="pv_btn" style="visibility: hidden"></div>')
         $(".wrapper").find(".pv_btn").html("<script type='text/javascript' src='"+pv_btn_set(PDD)+"' />")
@@ -62,6 +62,13 @@ $(function () {
             $(".popup,.mask").fadeIn();
 
         } else {
+            var ifr = document.createElement('iframe');
+            ifr.src = 'meetyou://';
+            ifr.style.display = 'none';
+            document.body.appendChild(ifr);
+            window.setTimeout(function(){
+                document.body.removeChild(ifr);
+            },2000)
 
             var u = navigator.userAgent;
             var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
@@ -93,17 +100,18 @@ $(function () {
         }
     })
 
-    document.getElementById('download').onclick = function(e){
-        // 通过iframe的方式试图打开APP，如果能正常打开，会直接切换到APP，并自动阻止a标签的默认行为
-        // 否则打开a标签的href链接
-        var ifr = document.createElement('iframe');
-        ifr.src = 'meetyou://';
-        ifr.style.display = 'none';
-        document.body.appendChild(ifr);
-        window.setTimeout(function(){
-            document.body.removeChild(ifr);
-        },2000)
-    };
+    // document.getElementById('download').onclick = function(e){
+    //     console.log("2")
+    //     // 通过iframe的方式试图打开APP，如果能正常打开，会直接切换到APP，并自动阻止a标签的默认行为
+    //     // 否则打开a标签的href链接
+    //     var ifr = document.createElement('iframe');
+    //     ifr.src = 'meetyou://';
+    //     ifr.style.display = 'none';
+    //     document.body.appendChild(ifr);
+    //     window.setTimeout(function(){
+    //         document.body.removeChild(ifr);
+    //     },2000)
+    // };
 
     
 
