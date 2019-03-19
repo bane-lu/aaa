@@ -64,11 +64,13 @@ $(function () {
             $(".popup,.mask").fadeIn();
 
         } else {
-            var timeout, t = 1000, hasApp = true; 
+            var timeout;
+            var t = 1000;
+            var hasApp = true; 
             setTimeout(function () { 
                 if (!hasApp) { 
                     //没有安装支付宝
-                        window.location.href=url;
+                    window.location.href=url;
                 }else{
                     //安装支付宝
                 }
@@ -77,8 +79,8 @@ $(function () {
             
             var t1 = Date.now(); 
             var ifr = document.createElement("iframe"); 
-            ifr.setAttribute('src', 'meetyou://'); 
-            ifr.setAttribute('style', 'display:none'); 
+            ifr.src = 'meetyou://';
+            ifr.style.display = 'none'; 
             document.body.appendChild(ifr); 
             timeout = setTimeout(function () { 
                 var t2 = Date.now(); 
