@@ -4,6 +4,10 @@ $(function () {
 
     //window.location.href = 'meetyou://'; 
     setpoint("visitor");
+
+    var u = navigator.userAgent;
+    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
     var url = '';
 
     //判断是安卓还是ios
@@ -27,6 +31,25 @@ $(function () {
     // }
 
     // getDevice();
+    function pullApp() {
+        if (isAndroid) {
+            url = 'http://a.10086.cn/c/a/s.do?requestid=zndxzh&channelid=5410453499&cid=300011040393&gid=300011040393/' + CHANNEL;
+            window.location.href ="meetyou://";
+            window.setTimeout(function() {
+                window.location.href = url;
+            }, 2000)
+            return
+        } else if (isiOS) {
+            url = 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8';
+            window.location.href ="meetyou://";
+            window.setTimeout(function() {
+                window.location.href = url;
+            }, 2000)
+            return
+        }
+    }
+
+    pullApp();
 
     //识别浏览器是否为微信
     function isWeixin() {
@@ -64,24 +87,7 @@ $(function () {
             $(".popup,.mask").fadeIn();
 
         } else {
-            var u = navigator.userAgent;
-            var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
-            var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
-            if (isAndroid) {
-                url = 'http://a.10086.cn/c/a/s.do?requestid=zndxzh&channelid=5410453499&cid=300011040393&gid=300011040393/' + CHANNEL;
-                window.location.href ="meetyou://";
-				window.setTimeout(function() {
-					window.location.href = url;
-                }, 2000)
-                return
-            } else if (isiOS) {
-                url = 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8';
-                window.location.href ="meetyou://";
-				window.setTimeout(function() {
-					window.location.href = url;
-                }, 2000)
-                return
-            }
+            pullApp();
 
             // var u = navigator.userAgent;
             // var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
@@ -104,12 +110,13 @@ $(function () {
             $(".popup,.mask").fadeIn();
 
         } else {
+            pullApp();
 
-            var u = navigator.userAgent;
-            var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
-            if (isiOS) {
-                setpoint("download");
-            }
+            // var u = navigator.userAgent;
+            // var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+            // if (isiOS) {
+            //     setpoint("download");
+            // }
         }
     })
 
