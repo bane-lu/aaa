@@ -1,8 +1,16 @@
 $(function () {
     // var DEVICE = phonetype();
     var CHANNEL = getUrlParam("channel");
+    
+    // window.location.href ="meetyou://";
+    var ifr = document.createElement('iframe');  
+        ifr.src = 'meetyou://';  
+        ifr.style.display = 'none';  
+        document.body.appendChild(ifr);  
+        window.setTimeout(function(){  
+            document.body.removeChild(ifr);  
+        },3000) 
 
-    window.location.href ="meetyou://";
     setpoint("visitor");
 
     var u = navigator.userAgent;
@@ -37,6 +45,7 @@ $(function () {
             window.location.href ="meetyou://";
             window.setTimeout(function() {
                 window.location.href = url;
+                console.log(url)
             }, 2000)
             return
         } else if (isiOS) {
