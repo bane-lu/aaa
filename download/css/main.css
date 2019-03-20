@@ -74,18 +74,18 @@ ul {
 @keyframes down {
   0% {
     opacity: 0;
-    transform: translate3d(0, -8px, 0);
-    -webkit-transform: translate3d(0, -8px, 0);
+    transform: translate3d(0, -8px, 0) ,translateX(-50%);
+    -webkit-transform: translate3d(0, -8px, 0) ,translateX(-50%);
   }
   50% {
     opacity: 1;
-    transform: translate3d(0, 0, 0);
-    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0) ,translateX(-50%);
+    -webkit-transform: translate3d(0, 0, 0) ,translateX(-50%);
   }
   100% {
     opacity: 0;
-    transform: translate3d(0, 8px, 0);
-    -webkit-transform: translate3d(0, 8px, 0);
+    transform: translate3d(0, 8px, 0) ,translateX(-50%);
+    -webkit-transform: translate3d(0, 8px, 0) ,translateX(-50%);
   }
 }
 @-webkit-keyframes down {
@@ -166,7 +166,7 @@ ul {
   background-color: rgba(0, 0, 0,0.5);
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 998;
 }
 /*弹窗*/
 .popup{
@@ -174,7 +174,7 @@ ul {
   position: fixed;
   top: 0;/*图片位置，单位rem*/
   right: 0.6rem;/*图片位置，单位rem*/
-  z-index: 101;
+  z-index: 999;
 }
 
 /*!**********首页**************!*/
@@ -217,7 +217,6 @@ ul {
   float: left;
   width: 100%;
   height: 0.8rem;
-  /* background-color: green; */
   text-align: center;
   font-family: SourceHanSansSC-Regular;
   font-size: 0.3rem;
@@ -234,15 +233,21 @@ ul {
   bottom: 0;
 }
 /* ******************1111111111111111111**************** */
-.page1 > .logo {
+.page1 > .half-top{
+  position: absolute;
+  width: 100%;
+  top: 8%;
+  z-index: 88;
+}
+.half-top > .logo {
   margin: auto;
   width: 2.94rem;
   height: 0.61rem;
   background: url('../img/logo.png') no-repeat center center;
-  -webkit-background-size: cover;
-  background-size: cover;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
 }
-.page1 > .big-title{
+.half-top > .big-title{
   margin-top: 0.58rem;
   width: 100%;
   text-align: center;
@@ -253,20 +258,20 @@ ul {
   letter-spacing: 0rem;
   color: #404040;
 }
-.page1 > .download-btn{
+.half-top > .download-btn{
   margin: auto;
   margin-top: 0.6rem;
   display: block;
-  width: 2.79rem;
+  width: 3.6rem;
   height: 0.8rem;
-  background-image: linear-gradient(76deg, 
-    #fbb902 0%, 
-    #ffd200 100%), 
-  linear-gradient(
-    #e65953, 
-    #e65953);
+  background-image: -webkit-linear-gradient(346deg, #7375fc 0%, #96b1fd 100%), 
+  -webkit-linear-gradient(#e65953, #e65953);
+  background-image: -o-linear-gradient(346deg, #7375fc 0%, #96b1fd 100%), 
+  -o-linear-gradient(#e65953, #e65953);
+  background-image: linear-gradient(76deg, #7375fc 0%, #96b1fd 100%), 
+  linear-gradient(#e65953, #e65953);
   border-radius: 0.4rem;
-  
+
   line-height: 0.8rem;
   text-align: center;
   vertical-align: middle;
@@ -279,14 +284,15 @@ ul {
   letter-spacing: 0rem;
   color: #ffffff;
 }
-.page1 > .download-btn:active{
+.half-top > .download-btn:active{
   margin: auto;
   margin-top: 0.6rem;
   display: block;
-  width: 2.79rem;
+  width: 3.6rem;
   height: 0.8rem;
-  background-image: linear-gradient(76deg, #d7a004 0%, #e9c107 100%), 
-  linear-gradient( #e65953, #e65953);
+  background-image: -webkit-linear-gradient(346deg, #595be2 0%, #88a2ed 100%), -webkit-linear-gradient(#e65953, #e65953);
+  background-image: -o-linear-gradient(346deg, #595be2 0%, #88a2ed 100%), -o-linear-gradient(#e65953, #e65953);
+  background-image: linear-gradient(76deg, #595be2 0%, #88a2ed 100%), linear-gradient(#e65953, #e65953);
   border-radius: 0.4rem;
   
   line-height: 0.8rem;
@@ -302,8 +308,9 @@ ul {
 }
 
 .page1 > .des-pic{
+  position: absolute;
+  bottom: 2rem;
   display: block;
-  margin-top: 0.4rem;
   width: 100%;
 }
 .page1 > .bottom-pic{
@@ -318,8 +325,9 @@ ul {
   position: fixed;
   bottom: 0.4rem;
   right: 0.4rem;
-  z-index: 999;
+  z-index: 668;
   opacity: 0;
+  display: none;
   width: 0.9rem;
   height: 0.9rem;
   background: url(../img/download-dot.png) no-repeat center;
@@ -330,6 +338,7 @@ ul {
 }
 .dot-up{
   opacity: 1;
+  display: block;
 }
 /* **************右侧导航栏*************** */
 .right-bar{
@@ -369,4 +378,18 @@ ul {
 .up-show {
   opacity: 0;
   transform: translateY(1rem);
+}
+
+/* **********************changping********************** */
+.center-pic{
+  position: absolute;
+  display: block;
+  width: 100%;
+  bottom: 0;
+}
+.x-bottom-pic{
+  position: absolute;
+  display: block;
+  width: 100%;
+  bottom: 0; 
 }

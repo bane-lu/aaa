@@ -13,11 +13,47 @@
   <title>密友圈</title>
 
   <link rel="stylesheet" href="css/jquery.fullPage.css">
-  <link rel="stylesheet" href="css/main.css?version=001">
+  <link rel="stylesheet" href="css/main.css?version=0311">
   <script src="js/jquery-1.11.3.min.js"></script>
   <script src="js/jquery.fullPage.js"></script>
   <script>
+    (function(para) {
+      var p = para.sdk_url, n = para.name, w = window, d = document, s = 'script',x = null,y = null;
+      w['sensorsDataAnalytic201505'] = n;
+      w[n] = w[n] || function(a) {return function() {(w[n]._q = w[n]._q || []).push([a, arguments]);}};
+      var ifs = ['track','quick','register','registerPage','registerOnce','trackSignup', 'trackAbtest', 'setProfile','setOnceProfile','appendProfile', 'incrementProfile', 'deleteProfile', 'unsetProfile', 'identify','login','logout','trackLink','clearAllRegister','getAppStatus'];
+      for (var i = 0; i < ifs.length; i++) {
+        w[n][ifs[i]] = w[n].call(null, ifs[i]);
+      }
+      if (!w[n]._t) {
+        x = d.createElement(s), y = d.getElementsByTagName(s)[0];
+        x.async = 1;
+        x.src = p;
+        x.setAttribute('charset','UTF-8');
+        y.parentNode.insertBefore(x, y);
+        w[n].para = para;
+      }
+    })({
+      sdk_url: '//static.sensorsdata.cn/sdk/1.11.9/sensorsdata.min.js',
+      heatmap_url: '//static.sensorsdata.cn/sdk/1.11.9/heatmap.min.js',
+      name: 'sensors',
+      web_url: '//cmsouth.cloud.sensorsdata.cn/',
+      use_app_track: true,   // isConnect with app
+      // server_url: '//cmsouth.datasink.sensorsdata.cn/sa?token=5709691ef0ee8ea8',  // test adress
+      server_url: '//cmsouth.datasink.sensorsdata.cn/sa?project=production&token=5709691ef0ee8ea8', // product adress
+      heatmap:{
+        clickmap:'default',
+        scroll_notice_map:'default'
+      }
+    });
+    //调用设置公共属性的方法，来保证之后的事件都有这属性。
+    sensors.registerPage({
+      // activity_name: "春节锦鲤活动",   //活动名称
+      // enterance_platform: "端外"    //入口平台    端内、端外
+    });
+    // sensors.quick('autoTrack');
     (function (doc, win) {// 动态修改root 的 font-size
+
       var docEl = doc.documentElement,
         resizeEvt = 'onorientationchange' in window ? 'onorientationchange' : 'resize',
         recalc = function () {
@@ -33,24 +69,28 @@
       if (!doc.addEventListener) return;
       win.addEventListener(resizeEvt, recalc, false);
       doc.addEventListener('DOMContentLoaded', recalc, false);
+
     })(document, window);
   </script>
   <!-- <script src="https://www.w3cways.com/demo/vconsole/vconsole.min.js?v=2.2.0"></script> -->
 </head>
 <body>
-<a class="download-dot" onclick="download()"></a>
+<a class="download-dot" href="javascript:download1(this)"></a>
 <ul class="right-bar">
   <li></li>
   <li></li>
   <li></li>
 </ul>
-<div id="fullpage">
+<div class="medium-screen" style="display: none">
 
   <div class="section active page1">
     <img class="bg-dot" src="./img/dot.png" alt="">
-    <div class="logo"></div>
-    <div class="big-title">打电话就用密友圈</div>
-    <a class="download-btn">立即下载</a>
+    <div class="half-top">
+      <div class="logo"></div>
+      <div class="big-title">打电话就用密友圈</div>
+      <a class="download-btn" href="javascript:download1(this)">立即下载</a>
+
+    </div>
     <img class="des-pic" src="./img/main-pic.png" alt="">
     <img class="bottom-pic" src="./img/main-bottom-pic.png" alt="">
     <div class="next"></div>
@@ -78,6 +118,47 @@
   </div>
 
 </div>
+<!-- 兼容长屏 -->
+<div class="max-screen" style="display: none">
+
+  <div class="section active page1">
+    <img class="bg-dot" src="./img/dot.png" alt="">
+    <div class="half-top">
+      <div class="logo"></div>
+      <div class="big-title">打电话就用密友圈</div>
+      <a class="download-btn">立即下载</a>
+
+    </div>
+    <img class="des-pic" src="./img/main-pic.png" alt="">
+    <img class="bottom-pic" src="./img/main-bottom-pic.png" alt="">
+    <div class="next"></div>
+  </div>
+
+  <div class="section page2">
+    <img class="bg-dot" src="./img/dot.png" alt="">
+    <p class="title">亲人朋友任撩</p>
+    <p class="des-txt">添加不限时长成员&nbsp;&nbsp;&nbsp;&nbsp;打电话给TA不要钱</p>
+    <img class="center-pic" src="./img/bg2-x.png" alt="">
+    <img class="x-bottom-pic" src="./img/x-bottm.png" alt="">
+  </div>
+    
+  <div class="section page3">
+    <img class="bg-dot" src="./img/dot.png" alt="">
+    <p class="title">打遍全国</p>
+    <p class="des-txt">全国号码拨打&nbsp;&nbsp;&nbsp;&nbsp;任你聊</p>
+    <img class="center-pic" src="./img/bg3-x.png" alt="">
+    <img class="x-bottom-pic" src="./img/x-bottm.png" alt="">
+  </div>
+
+  <div class="section page4">
+    <img class="bg-dot" src="./img/dot.png" alt="">
+    <p class="title">流量全免</p>
+    <p class="des-txt">移动用户密友圈内流量全免&nbsp;&nbsp;看点任你刷</p>
+    <img class="center-pic" src="./img/bg4-x.png" alt="">
+    <img class="x-bottom-pic" src="./img/x-bottm.png" alt="">
+  </div>
+
+</div>
 <div class="wrapper">
   <!-- 点击插码 -->
   <div class="pv_btn" style="visibility: hidden"></div>
@@ -93,32 +174,26 @@
   <img src="img/popup.png" alt="">
 </div>
 <script>
-  function getDevice() {
-    var u = navigator.userAgent;
-    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
-    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
-    if (isAndroid) {
-      // var url = 'http://rcsoa-nopay.zone139.com/versionmanager/download/meetyou-release/' + CHANNEL;
-      var url = 'http://a.10086.cn/c/a/s.do?requestid=zndxzh&channelid=5410453499&cid=300011040393&gid=300011040393/';
-      $(".download-btn").attr('href', url);
-      $(".download-dot").attr('href', url);
-    } else if (isiOS) {
-      $(".download-btn").attr("href", 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"');
-      $(".download-dot").attr("href", 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"');
-    }
-  }
 
-  getDevice();
 </script>
-<script type="text/javascript" src="js/autofit.js"></script>
 <script type="text/javascript" src="js/pvData.js"></script>
-<script type="text/javascript" src="js/download.js"></script>
+<script type="text/javascript" src="js/download.js?version=0311"></script>
 <script>
   $(document).ready(function () {
     $(".right-bar").hide();
     $(".title").addClass("down-show")
     $(".des-txt").addClass("up-show")
 
+    var $win = $(window);
+    window.ratio = $win.width()/$win.height()
+    if(ratio >0.56){
+      $(".medium-screen").attr('id','fullpage').css('display','block');
+      $(".max-screen").remove();
+    }else{
+      $(".max-screen").attr('id','fullpage').css('display','block');
+      $(".medium-screen").remove();
+    }
+    console.log(ratio)
     $("#fullpage").fullpage({
       verticalCentered: false, //取消垂直居中
       afterLoad: function (anchorLink, index) {
@@ -171,9 +246,10 @@
         }
       }
     });
+
   }); 
 
-  // window.location.href = "meetyou://";
 </script>
+<script type="text/javascript" src="js/autofit.js?version=0311"></script>
 </body>
 </html>
