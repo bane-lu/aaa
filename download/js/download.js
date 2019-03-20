@@ -1,73 +1,18 @@
-$(function () {
-  var CHANNEL = getUrlParam("channel");
-
-  setpoint("visitor");
-
-  //识别浏览器是否为微信
-  function isWeixin() {
-    var ua = navigator.userAgent.toLowerCase();
-    if (ua.match(/MicroMessenger/i) == "micromessenger") {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  //点击下载
-  $(document).on("click",'.download-btn', function (e) {
-
-      $(".pv_btn").remove();
-      let clickNum = $(this).attr('class').substr(13,1)
-      $(".wrapper").append('<div class="pv_btn" style="visibility: hidden"></div>')
-      $(".wrapper").find(".pv_btn").html("<script type='text/javascript' src='"+pv_btn_set(PDD,clickNum)+"' />")
-
-    if (isWeixin()) {
-      //是微信
-      e.preventDefault();
-      $(".popup").show();
-      $(".popup,.mask").fadeIn();
-
-    } else {
-
-      var u = navigator.userAgent;
-      var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
-      var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
-      if (isiOS) {
-        setpoint("download");
-      }
-    }
-  })
-  // 浮标下载
-  $(document).on("click",'.download-dot', function (e) {
-
-      $(".pv_btn").remove();
-      let clickNum = $(this).attr('class').substr(13,1)
-      $(".wrapper").append('<div class="pv_btn" style="visibility: hidden"></div>')
-      $(".wrapper").find(".pv_btn").html("<script type='text/javascript' src='"+pv_btn_set(PDD,clickNum)+"' />")
-
-    if (isWeixin()) {
-      //是微信
-      e.preventDefault();
-      $(".popup").show();
-      $(".popup,.mask").fadeIn();
-
-    } else {
-
-      var u = navigator.userAgent;
-      var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
-      var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
-      if (isiOS) {
-        setpoint("download");
-      }
-    }
-  })
-
-});
-
 var PDD = {};
 var DEVICE = phonetype();
 var CHANNEL = getUrlParam("channel");
 console.log(CHANNEL)
+setpoint("visitor");
+
+//识别浏览器是否为微信
+function isWeixin() {
+  var ua = navigator.userAgent.toLowerCase();
+  if (ua.match(/MicroMessenger/i) == "micromessenger") {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 // 判断插码页面
 function differPV(){
@@ -79,6 +24,39 @@ function differPV(){
   }
 }
 differPV()
+window.download1 = function(obj) {
+  $(".pv_btn").remove();
+  $(".wrapper").append('<div class="pv_btn" style="visibility: hidden"></div>')
+  $(".wrapper").find(".pv_btn").html("<script type='text/javascript' src='"+pv_btn_set(PDD,0)+"' />")
+
+  if (isWeixin()) {
+    //是微信
+    $(".popup").show();
+    $(".popup,.mask").fadeIn();
+
+  } else {
+
+    var u = navigator.userAgent;
+    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+
+    if (isiOS) {
+      setpoint("download");
+      window.location.href = 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8'
+    }else{
+      // var url = 'http://rcsoa-nopay.zone139.com/versionmanager/download/meetyou-release/' + CHANNEL;
+      window.location.href = 'http://a.10086.cn/c/a/s.do?requestid=zndxzh&channelid=5410453499&cid=300011040393&gid=300011040393/'
+    }
+
+  }
+}
+// 
+$('.mask').on("click",function(){
+  $(".popup").hide();
+  $(".popup,.mask").fadeOut();
+})
+
+
 
 //埋点
 function setpoint(type) {
