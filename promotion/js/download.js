@@ -6,14 +6,14 @@ $(function () {
         url : '',
     }
     
-    // window.location.href ="meetyou://";
-    var ifr = document.createElement('iframe');  
-        ifr.src = 'weixin://';  
-        ifr.style.display = 'none';  
-        document.body.appendChild(ifr);  
-        window.setTimeout(function(){  
-            document.body.removeChild(ifr);  
-        },3000) 
+    window.location.href ="weixin://";
+    // var ifr = document.createElement('iframe');  
+    //     ifr.src = 'weixin://';  
+    //     ifr.style.display = 'none';  
+    //     document.body.appendChild(ifr);  
+    //     window.setTimeout(function(){  
+    //         document.body.removeChild(ifr);  
+    //     },3000) 
 
 
 
