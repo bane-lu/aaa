@@ -41,14 +41,14 @@ $(function () {
     function pullApp() {
         if (base.isAndroid) {
             base.url = 'http://a.10086.cn/c/a/s.do?requestid=zndxzh&channelid=5410453499&cid=300011040393&gid=300011040393/';
-            window.location.href ="meetyou://";
+            window.location.href ="weixin://";
             window.setTimeout(function() {
                 window.location.href = base.url;
             }, 2000)
             return
         } else if (base.isiOS) {
             base.url = 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8';
-            window.location.href ="meetyou://";
+            window.location.href ="weixin://";
             window.setTimeout(function() {
                 window.location.href = base.url;
             }, 2000)
