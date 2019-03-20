@@ -2,7 +2,7 @@ $(function () {
     // var DEVICE = phonetype();
     var CHANNEL = getUrlParam("channel");
 
-    //window.location.href = 'meetyou://'; 
+    window.location.href ="meetyou://";
     setpoint("visitor");
 
     var u = navigator.userAgent;
@@ -58,15 +58,6 @@ $(function () {
         } else {
             return false;
         }
-    }
-
-    if (isWeixin()) {
-        //是微信
-        $(".popup").show();
-        $(".popup,.mask").fadeIn();
-
-    } else {
-        window.location.href = 'meetyou://';
     }
 
     // 点击效果
