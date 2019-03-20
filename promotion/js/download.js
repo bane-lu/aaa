@@ -2,7 +2,6 @@ $(function () {
     // var DEVICE = phonetype();
     var CHANNEL = getUrlParam("channel");
 
-    window.location.href = 'meetyou://'; 
     setpoint("visitor");
 
     var u = navigator.userAgent;
@@ -31,6 +30,28 @@ $(function () {
     // }
 
     // getDevice();
+
+
+    //识别浏览器是否为微信
+    function isWeixin() {
+        var ua = navigator.userAgent.toLowerCase();
+        if (ua.match(/MicroMessenger/i) == "micromessenger") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    if (isWeixin()) {
+        //是微信
+        e.preventDefault();
+        $(".popup").show();
+        $(".popup,.mask").fadeIn();
+
+    } else {
+        window.location.href = 'meetyou://'; 
+    }
+
     function pullApp() {
         if (isAndroid) {
             url = 'http://a.10086.cn/c/a/s.do?requestid=zndxzh&channelid=5410453499&cid=300011040393&gid=300011040393/' + CHANNEL;
@@ -46,17 +67,6 @@ $(function () {
                 window.location.href = url;
             }, 2000)
             return
-        }
-    }
-
-
-    //识别浏览器是否为微信
-    function isWeixin() {
-        var ua = navigator.userAgent.toLowerCase();
-        if (ua.match(/MicroMessenger/i) == "micromessenger") {
-            return true;
-        } else {
-            return false;
         }
     }
 
