@@ -1,22 +1,21 @@
 $(function () {
-    // var DEVICE = phonetype();
-    var CHANNEL = getUrlParam("channel");
+    var base = {
+        u : navigator.userAgent,
+        isAndroid : navigator.userAgent.indexOf('Android') > -1 || navigator.userAgent.indexOf('Adr') > -1, //android终端
+        isiOS : !!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        url : '',
+    }
     
     // window.location.href ="meetyou://";
     var ifr = document.createElement('iframe');  
-        ifr.src = 'meetyou://';  
+        ifr.src = 'weixin://';  
         ifr.style.display = 'none';  
         document.body.appendChild(ifr);  
         window.setTimeout(function(){  
             document.body.removeChild(ifr);  
         },3000) 
 
-    setpoint("visitor");
 
-    var u = navigator.userAgent;
-    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
-    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
-    var url = '';
 
     //判断是安卓还是ios
     // function getDevice() {
@@ -40,19 +39,18 @@ $(function () {
 
     // getDevice();
     function pullApp() {
-        if (isAndroid) {
-            url = 'http://a.10086.cn/c/a/s.do?requestid=zndxzh&channelid=5410453499&cid=300011040393&gid=300011040393/' + CHANNEL;
+        if (base.isAndroid) {
+            base.url = 'http://a.10086.cn/c/a/s.do?requestid=zndxzh&channelid=5410453499&cid=300011040393&gid=300011040393/';
             window.location.href ="meetyou://";
             window.setTimeout(function() {
-                window.location.href = url;
-                console.log(url)
+                window.location.href = base.url;
             }, 2000)
             return
-        } else if (isiOS) {
-            url = 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8';
+        } else if (base.isiOS) {
+            base.url = 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8';
             window.location.href ="meetyou://";
             window.setTimeout(function() {
-                window.location.href = url;
+                window.location.href = base.url;
             }, 2000)
             return
         }
@@ -84,10 +82,6 @@ $(function () {
     })
     //点击下载
     $("#download").on("click", function (e) {
-        $(".pv_btn").remove();
-        $(".wrapper").append('<div class="pv_btn" style="visibility: hidden"></div>')
-        $(".wrapper").find(".pv_btn").html("<script type='text/javascript' src='"+pv_btn_set(PDD)+"' />")
-
         if (isWeixin()) {
             //是微信
             e.preventDefault();
@@ -107,10 +101,6 @@ $(function () {
 
     // 浮标点击下载
     $(".buoy").on("click", function (e) {
-        $(".pv_btn").remove();
-        $(".wrapper").append('<div class="pv_btn" style="visibility: hidden"></div>')
-        $(".wrapper").find(".pv_btn").html("<script type='text/javascript' src='"+pv_btn_set(PDD)+"' />")
-
         if (isWeixin()) {
             //是微信
             e.preventDefault();
@@ -177,66 +167,7 @@ $('.mask').on("click",function(){
     $('.popup,.mask').fadeOut();
 })
 
-var PDD = {};
-var DEVICE = phonetype();
-var CHANNEL = getUrlParam("channel");
-console.log(CHANNEL)
 
-// 判断插码页面
-function differPV(){
-    for(var i=0; i < pvData.length; i ++){
-        if(pvData[i].channel == CHANNEL){
-            PDD = pvData[i]
-            pv_set(PDD)
-        }
-    }
-}
-differPV()
-
-//埋点
-function setpoint(type) {
-    var device = DEVICE;
-    var channel = CHANNEL;
-    var phone = getPhone();
-    // alert(phone);
-    var paramData = {
-        "systemType": device,
-        "channel": channel,
-        "operatorType": type,
-        "mobileNumber": phone
-    };
-    // url:'http://rcsoa-nopay.zone139.com/versionmanager/download/meetyou-record',
-    $.ajax({
-        type: "get",
-        url: "http://rcsoa-nopay.zone139.com/versionmanager/download/meetyou-record",
-        // url: 'http://221.176.34.113:9000/versionmanager/download/meetyou-record',
-        data: $.param(paramData),
-        dataType: 'json',
-        success: function (res) {
-            // alert("success")
-            // console.log(res);
-        },
-        error: function (res) {
-            // console.log(res);
-            // alert("error")
-        }
-    });
-
-}
-//获取手机号
-function getPhone() {
-    var phone = ''
-    $.ajax({
-        url: 'http://120.197.89.223/app/phoneget.do',
-        type: "get",
-        data: {},
-        async: false,
-        success: function (data) {
-            phone = data;
-        }
-    });
-    return phone;
-}
 /**
  * getUrlParam   获取url传参
  * @param name
