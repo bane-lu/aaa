@@ -2,7 +2,7 @@ $(function () {
     // var DEVICE = phonetype();
     var CHANNEL = getUrlParam("channel");
 
-    //window.location.href = 'meetyou://'; 
+    window.location.href = 'meetyou://'; 
     setpoint("visitor");
 
     var u = navigator.userAgent;
@@ -49,7 +49,6 @@ $(function () {
         }
     }
 
-    pullApp();
 
     //识别浏览器是否为微信
     function isWeixin() {
