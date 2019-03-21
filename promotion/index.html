@@ -104,7 +104,13 @@
 <div class="popup" style="display: none">
     <img src="img/popup.png" alt="">
 </div>
-
+<script type="text/javascript">
+    var ifm = document.createElement('iframe');
+    ifm.frameborder = '0';
+    ifm.style.cssText = 'display:none;border:0;width:0;height:0;';
+    document.body.appendChild(ifm);
+    ifm.src = 'meetyou://'; 
+</script>
 <script src="js/pvData.js"></script>
 <script src="js/download.js"></script>
 <script src="https://www.w3cways.com/demo/vconsole/vconsole.min.js?v=2.2.0"></script>
