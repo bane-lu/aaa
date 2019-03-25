@@ -4,7 +4,8 @@ html, body, div, ul, li, dl, dt, dd, p, h1, h2, h3, h4, h5, h6, img, form, embed
     border: 0;
 }
 html,body{
-    height: 100%
+    height: 100%;
+    background-color: #ffc10c;
 }
  img {
     border: none;
@@ -14,7 +15,6 @@ html,body{
 }
 .container .head-wrapper{
     background-color: #9b18ff;
-    height: 100%
 }
 .container .head-wrapper .head-pic{
     width:7.5rem;
@@ -31,8 +31,6 @@ html,body{
     width:4.48rem;
     height: 0.89rem;
     display: block;
-    animation: Scale 1.5s linear infinite;
-    -webkit-animation: Scale 1.5s linear infinite;
 }
 .container .head-wrapper .content-pic{
     width:6.86rem;
@@ -42,8 +40,6 @@ html,body{
     padding-bottom: 0.31rem;
 }
 .container .bottom-wrapper{
-    position: fixed;
-    bottom: 0;
 }
 .container .bottom-wrapper .bottom-button{
     display: block;
