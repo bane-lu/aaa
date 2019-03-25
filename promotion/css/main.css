@@ -55,8 +55,8 @@ html,body{
 .container .bottom-wrapper .bottom-button .button-pic{
     width:6.08rem;
     margin: 0 auto;
-    margin-top: 0.36rem;
-    margin-bottom: 0.33rem;
+    margin-top: 0.46rem;
+    margin-bottom: 0.43rem;
     display: block;
     animation: Scale 1.5s linear infinite;
     -webkit-animation: Scale 1.5s linear infinite;
