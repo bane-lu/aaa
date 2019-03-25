@@ -31,8 +31,6 @@ html,body{
     width:4.48rem;
     height: 0.89rem;
     display: block;
-    animation: Scale 1.5s linear infinite;
-    -webkit-animation: Scale 1.5s linear infinite;
 }
 .container .head-wrapper .content-pic{
     width:6.86rem;
