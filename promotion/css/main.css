@@ -14,7 +14,6 @@ html,body{
     height: 100%
 }
 .container .head-wrapper{
-    margin-bottom: 2.68rem;
 }
 .container .head-wrapper .head-pic{
     width:7.5rem;
@@ -38,6 +37,10 @@ html,body{
     margin: 0 auto;
     display: block;
 }
+.container .head-wrapper .useless{
+    width: 7.5rem;
+    height: 2.08rem;
+}
 .container .bottom-wrapper{
     position: fixed;
     bottom: 0;
@@ -45,15 +48,15 @@ html,body{
 .container .bottom-wrapper .bottom-button{
     display: block;
     width: 7.5rem;
-    height: 1.37rem;
+    height: 1.77rem;
     background-color: #ffc10c;
 	border-top: solid 0.04rem #020202;
 }
 .container .bottom-wrapper .bottom-button .button-pic{
     width:6.08rem;
     margin: 0 auto;
-    margin-top: 0.26rem;
-    margin-bottom: 0.23rem;
+    margin-top: 0.36rem;
+    margin-bottom: 0.33rem;
     display: block;
     animation: Scale 1.5s linear infinite;
     -webkit-animation: Scale 1.5s linear infinite;
