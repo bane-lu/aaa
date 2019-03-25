@@ -15,6 +15,7 @@ html,body{
 }
 .container .head-wrapper{
     background-color: #9b18ff;
+    height: 100%;
 }
 .container .head-wrapper .head-pic{
     width:7.5rem;
@@ -37,9 +38,11 @@ html,body{
     height: 5.99rem;
     margin: 0 auto;
     display: block;
-    padding-bottom: 0.31rem;
+    margin-bottom: 1.68rem;
 }
 .container .bottom-wrapper{
+    position: fixed;
+    bottom: 0;
 }
 .container .bottom-wrapper .bottom-button{
     display: block;
