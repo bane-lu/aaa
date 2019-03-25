@@ -1,12 +1,12 @@
 $(function () {
-    var u = navigator.userAgent;
-    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
-    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
-    if(isAndroid){
-        window.location.href = "http://a.10086.cn/c/a/s.do?requestid=zndxzh&channelid=5410453499&cid=300011040393&gid=300011040393/"
-    }else if(isiOS){
-        window.location.href = 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"'
-    }
+    // var u = navigator.userAgent;
+    // var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+    // var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+    // if(isAndroid){
+    //     window.location.href = "http://a.10086.cn/c/a/s.do?requestid=zndxzh&channelid=5410453499&cid=300011040393&gid=300011040393/"
+    // }else if(isiOS){
+    //     window.location.href = 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"'
+    // }
 
     //判断是安卓还是ios
     function getDevice() {
@@ -37,18 +37,18 @@ $(function () {
     }
 
     // 点击效果
-    $('.btn-wrapper').on('touchstart',function(){
-        $('.btn-wrapper a').css('opacity','0.7')
-    })
-    $('.btn-wrapper').on('touchend',function(){
-        $('.btn-wrapper a').css('opacity','1')
-    })
-    $('.buoy-wrapper').on('touchstart',function(){
-        $('.buoy-wrapper a').css('opacity','0.7')
-    })
-    $('.buoy-wrapper').on('touchend',function(){
-        $('.buoy-wrapper a').css('opacity','1')
-    })
+    // $('.btn-wrapper').on('touchstart',function(){
+    //     $('.btn-wrapper a').css('opacity','0.7')
+    // })
+    // $('.btn-wrapper').on('touchend',function(){
+    //     $('.btn-wrapper a').css('opacity','1')
+    // })
+    // $('.buoy-wrapper').on('touchstart',function(){
+    //     $('.buoy-wrapper a').css('opacity','0.7')
+    // })
+    // $('.buoy-wrapper').on('touchend',function(){
+    //     $('.buoy-wrapper a').css('opacity','1')
+    // })
     //点击下载
     $(".head-button,.bottom-button").on("click", function (e) {
         if (isWeixin()) {
