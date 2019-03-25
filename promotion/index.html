@@ -73,30 +73,18 @@
 </head>
 <body>
 <div class="container">
-    <div class="buoy-wrapper"><a name="下载浮标"><img src="img/buoy.png" class="buoy"></a></div>
     <div class="head-wrapper">
-        <img src="img/main.png" class="head-pic">
-    </div>
-    <div class="content-wrapper">
-        <img src="img/1.png" class="content-top">
-        <img src="img/2.png" class="content-middle">
-        <img src="img/3.png" class="content-bottom">
-    </div>
-    <div class="btn-wrapper">
-        <a name="下载体验" id="download">下载体验</a>
+        <img src="img/head.png" class="head-pic">
+        <a class="head-button" name="顶部下载按钮"><img src="img/head-button.png"></a>
+        <img src="img/content.png" class="content-pic">
+        <div class="content">
+        </div>
     </div>
     <div class="bottom-wrapper">
-        <img src="img/bottomTitle.png" class="bottom-title">
-        <img src="img/bottomContent.png" class="bottom-content">
-        <img src="img/bottomBg.png" class="bottom-bg">
+        <a class="bottom-button" name="底部按钮"><img src="img/button.png" class="button-pic"></a>
     </div>
 </div>
-<div class="wrapper">
-    <!-- 点击插码 -->
-    <div class="pv_btn" style="visibility: hidden"></div>
-</div>
-<!-- 加载插码 -->
-<div id="PV" style="visibility: hidden"></div>
+
 <!--遮罩层-->
 <div class="mask"></div>
 
@@ -104,13 +92,6 @@
 <div class="popup" style="display: none">
     <img src="img/popup.png" alt="">
 </div>
-<script type="text/javascript">
-    var ifm = document.createElement('iframe');
-    ifm.frameborder = '0';
-    ifm.style.cssText = 'display:none;border:0;width:0;height:0;';
-    document.body.appendChild(ifm);
-    ifm.src = 'meetyou://'; 
-</script>
 <script src="js/pvData.js"></script>
 <script src="js/download.js"></script>
 <script src="https://www.w3cways.com/demo/vconsole/vconsole.min.js?v=2.2.0"></script>

@@ -3,113 +3,103 @@ html, body, div, ul, li, dl, dt, dd, p, h1, h2, h3, h4, h5, h6, img, form, embed
     padding: 0;
     border: 0;
 }
-body{
+html,body{
+    height: 100%
 }
-img {
+ img {
     border: none;
 }
 .container{
+    height: 100%
 }
-.buoy{
-    width:0.9rem;
+.container .head-wrapper{
+    background-color: #9b18ff;
+    height: 100%
+}
+.container .head-wrapper .head-pic{
+    width:7.5rem;
+    height: 4.17rem;
+    margin-bottom: 0.21rem;
+    display: block;
+}
+.container .head-wrapper .head-button{
+    position: absolute;
+    top: 3.21rem;
+    left: 1.51rem;
+}
+.container .head-wrapper .head-button img{
+    width:4.48rem;
+    height: 0.89rem;
+    display: block;
+    animation: Scale 1.5s linear infinite;
+    -webkit-animation: Scale 1.5s linear infinite;
+}
+.container .head-wrapper .content-pic{
+    width:6.86rem;
+    height: 5.99rem;
+    margin: 0 auto;
+    display: block;
+    padding-bottom: 0.31rem;
+}
+.container .bottom-wrapper{
     position: fixed;
-    bottom: 0.4rem;
-    right: 0.4rem;
+    bottom: 0;
 }
-.head-wrapper{
-    margin-bottom: 0.45rem;
-}
-.head-pic{
+.container .bottom-wrapper .bottom-button{
+    display: block;
     width: 7.5rem;
-    height: 5.2rem;
+    height: 1.37rem;
+    background-color: #ffc10c;
+	border-top: solid 0.04rem #020202;
+}
+.container .bottom-wrapper .bottom-button .button-pic{
+    width:6.08rem;
+    margin: 0 auto;
+    margin-top: 0.26rem;
+    margin-bottom: 0.23rem;
     display: block;
-    margin: 0 auto;
+    animation: Scale 1.5s linear infinite;
+    -webkit-animation: Scale 1.5s linear infinite;
 }
-.content-wrapper{
-    text-align: center;
-    margin-bottom: 0.71rem;
+@keyframes Scale {
+  0% {
+      transform: scale(1, 1);
+      -webkit-transform: scale(1, 1);
+  }
+
+  10%{
+      transform: scale(1.01, 1.01);
+      -webkit-transform: scale(1.01, 1.01);
+  }
+
+  70%{
+      transform: scale(1.06, 1.065);
+      -webkit-transform: scale(1.06, 1.065);
+  }
+  100%{
+      transform: scale(1, 1);
+      -webkit-transform: scale(1, 1);
+  }
 }
-.content-top{
-    width: 6.31rem;
-    height: 8.06rem;
-    display: block;
-    margin: 0 auto;
-    margin-bottom: 0.43rem;
-}
-.content-middle{
-    width: 6.21rem;
-    height: 7.25rem;
-    display: block;
-    margin: 0 auto;
-    margin-bottom: 0.45rem;
-}
-.content-bottom{
-    width: 6.38rem;
-    height: 7.29rem;
-    display: block;
-    margin: 0 auto;
-}
-.btn-wrapper{
-    text-align: center;
-    margin-bottom: 0.82rem;
-}
-/* .download-btn{
-    width: 6.12rem;
-	height: 0.9rem;
-	background-image: linear-gradient(93deg, 
-		#a35df1 0%, 
-		#657cf0 100%);
-    border-radius: .43rem;
-    font-family: "SourceHanSansSC-Medium";
-	font-size: 0.36rem;
-	font-weight: normal;
-	font-stretch: normal;
-	line-height: 0.9rem;
-	letter-spacing: 0px;
-    color: #ffffff;
-    margin: 0 auto;
-} */
-.btn-wrapper a{
-    display: block;
-    width: 6.12rem;
-	height: 0.9rem;
-	background-image: linear-gradient(93deg, 
-		#a35df1 0%, 
-		#657cf0 100%);
-    border-radius: .43rem;
-    font-family: "SourceHanSansSC-Medium";
-	font-size: 0.36rem;
-	font-weight: normal;
-	font-stretch: normal;
-	line-height: 0.9rem;
-	letter-spacing: 0px;
-    color: #ffffff;
-    margin: 0 auto;
-    text-decoration: none;
-}
-.bottom-wrapper{
-    width: 100%;
-    text-align: center;
-}
-.bottom-title{
-    width: 5.81rem;
-    height: 0.34rem;
-    display: block;
-    margin: 0 auto;
-    margin-bottom: 0.50rem;
-}
-.bottom-content{
-    width: 5.73rem;
-    height: 2.74rem;
-    display: block;
-    margin: 0 auto;
-}
-.bottom-bg{
-    width: 7.5rem;
-    height: 1.73rem;
-    display: block;
-    margin: 0 auto;
-    margin-top: -0.53rem;
+@-webkit-keyframes Scale {
+  0% {
+      transform: scale(1, 1);
+      -webkit-transform: scale(1, 1);
+  }
+
+  10%{
+      transform: scale(1.01, 1.01);
+      -webkit-transform: scale(1.01, 1.01);
+  }
+
+  70%{
+      transform: scale(1.06, 1.065);
+      -webkit-transform: scale(1.06, 1.065);
+  }
+  100%{
+      transform: scale(1, 1);
+      -webkit-transform: scale(1, 1);
+  }
 }
 
 /*遮罩层*/
