@@ -5,7 +5,7 @@ html, body, div, ul, li, dl, dt, dd, p, h1, h2, h3, h4, h5, h6, img, form, embed
 }
 html,body{
     height: 100%;
-    background-color: #ffc10c;
+    background-color: #9b18ff;
 }
  img {
     border: none;
@@ -14,8 +14,7 @@ html,body{
     height: 100%
 }
 .container .head-wrapper{
-    background-color: #9b18ff;
-    height: 100%;
+    margin-bottom: 1.68rem
 }
 .container .head-wrapper .head-pic{
     width:7.5rem;
@@ -38,7 +37,6 @@ html,body{
     height: 5.99rem;
     margin: 0 auto;
     display: block;
-    margin-bottom: 1.68rem;
 }
 .container .bottom-wrapper{
     position: fixed;
