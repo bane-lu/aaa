@@ -62,12 +62,12 @@ $('.mask').on("click",function(){
 function setpoint(type) {
   var device = DEVICE;
   var channel = CHANNEL;
-  var phone = getPhone();
+  // var phone = getPhone();
   var paramData = {
     "systemType": device,
     "channel": channel,
     "operatorType": type,
-    "mobileNumber": phone
+    // "mobileNumber": phone
   };
   // url:'http://rcsoa-nopay.zone139.com/versionmanager/download/meetyou-record',
   $.ajax({
@@ -84,19 +84,19 @@ function setpoint(type) {
 
 }
 //获取手机号
-function getPhone() {
-  var phone = ''
-  $.ajax({
-    url: 'http://120.197.89.223/app/phoneget.do',
-    type: "get",
-    data: {},
-    async: false,
-    success: function (data) {
-      phone = data;
-    }
-  });
-  return phone;
-}
+// function getPhone() {
+//   var phone = ''
+//   $.ajax({
+//     url: 'http://120.197.89.223/app/phoneget.do',
+//     type: "get",
+//     data: {},
+//     async: false,
+//     success: function (data) {
+//       phone = data;
+//     }
+//   });
+//   return phone;
+// }
 /**
  * getUrlParam   获取url传参
  * @param name
