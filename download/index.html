@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
-  <meta name="format-detection" content="telephone=no"/>
-  <meta name="apple-mobile-web-app-capable" content="yes"/>
-  <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
-  <meta http-equiv="Expires" content="-1"/>
-  <meta http-equiv="Cache-Control" content="no-cache"/>
-  <meta http-equiv="Pragma" content="no-cache"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta http-equiv="Expires" content="-1" />
+  <meta http-equiv="Cache-Control" content="no-cache" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>密友圈</title>
   <link rel="stylesheet" href="css/jquery.fullPage.css">
   <link rel="stylesheet" href="css/main.css?version=0311">
   <script>
-    (function(para) {
-      var p = para.sdk_url, n = para.name, w = window, d = document, s = 'script',x = null,y = null;
+    (function (para) {
+      var p = para.sdk_url, n = para.name, w = window, d = document, s = 'script', x = null, y = null;
       w['sensorsDataAnalytic201505'] = n;
-      w[n] = w[n] || function(a) {return function() {(w[n]._q = w[n]._q || []).push([a, arguments]);}};
-      var ifs = ['track','quick','register','registerPage','registerOnce','trackSignup', 'trackAbtest', 'setProfile','setOnceProfile','appendProfile', 'incrementProfile', 'deleteProfile', 'unsetProfile', 'identify','login','logout','trackLink','clearAllRegister','getAppStatus'];
+      w[n] = w[n] || function (a) { return function () { (w[n]._q = w[n]._q || []).push([a, arguments]); } };
+      var ifs = ['track', 'quick', 'register', 'registerPage', 'registerOnce', 'trackSignup', 'trackAbtest', 'setProfile', 'setOnceProfile', 'appendProfile', 'incrementProfile', 'deleteProfile', 'unsetProfile', 'identify', 'login', 'logout', 'trackLink', 'clearAllRegister', 'getAppStatus'];
       for (var i = 0; i < ifs.length; i++) {
         w[n][ifs[i]] = w[n].call(null, ifs[i]);
       }
@@ -26,7 +27,7 @@
         x = d.createElement(s), y = d.getElementsByTagName(s)[0];
         x.async = 1;
         x.src = p;
-        x.setAttribute('charset','UTF-8');
+        x.setAttribute('charset', 'UTF-8');
         y.parentNode.insertBefore(x, y);
         w[n].para = para;
       }
@@ -38,9 +39,9 @@
       use_app_track: true,   // isConnect with app
       server_url: '//cmsouth.datasink.sensorsdata.cn/sa?token=5709691ef0ee8ea8',  // test adress
       // server_url: '//cmsouth.datasink.sensorsdata.cn/sa?project=production&token=5709691ef0ee8ea8', // product adress
-      heatmap:{
-        clickmap:'default',
-        scroll_notice_map:'default'
+      heatmap: {
+        clickmap: 'default',
+        scroll_notice_map: 'default'
       }
     });
     //调用设置公共属性的方法，来保证之后的事件都有这属性。
@@ -72,183 +73,183 @@
   <!-- <script src="https://www.w3cways.com/demo/vconsole/vconsole.min.js?v=2.2.0"></script> -->
 </head>
 <body>
-<a class="download-dot" href="javascript:download1(this)"></a>
-<ul class="right-bar">
-  <li></li>
-  <li></li>
-  <li></li>
-</ul>
-<div class="medium-screen" style="display: none">
+  <a class="download-dot" href="javascript:download1(this)"></a>
+  <ul class="right-bar">
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <div class="medium-screen" style="display: none">
 
-  <div class="section active page1">
-    <img class="bg-dot" src="./img/dot.png" alt="">
-    <div class="half-top">
-      <div class="logo"></div>
-      <div class="big-title">打电话就用密友圈</div>
-      <a class="download-btn" href="javascript:download1(this)">立即下载</a>
+    <div class="section active page1">
+      <img class="bg-dot" src="./img/dot.png" alt="">
+      <div class="half-top">
+        <div class="logo"></div>
+        <div class="big-title">打电话就用密友圈</div>
+        <a class="download-btn" href="javascript:download1(this)">立即下载</a>
 
+      </div>
+      <img class="des-pic" src="./img/main-pic.png" alt="">
+      <img class="bottom-pic" src="./img/main-bottom-pic.png" alt="">
+      <div class="next"></div>
     </div>
-    <img class="des-pic" src="./img/main-pic.png" alt="">
-    <img class="bottom-pic" src="./img/main-bottom-pic.png" alt="">
-    <div class="next"></div>
-  </div>
 
-  <div class="section page2">
-    <img class="bg-dot" src="./img/dot.png" alt="">
-    <p class="title">亲人朋友任撩</p>
-    <p class="des-txt">添加不限时长成员&nbsp;&nbsp;&nbsp;&nbsp;打电话给TA不要钱</p>
-    <img class="center-pic" src="./img/bg2.png" alt="">
-  </div>
-    
-  <div class="section page3">
-    <img class="bg-dot" src="./img/dot.png" alt="">
-    <p class="title">打遍全国</p>
-    <p class="des-txt">全国号码拨打&nbsp;&nbsp;&nbsp;&nbsp;任你聊</p>
-    <img class="center-pic" src="./img/bg3.png" alt="">
-  </div>
-
-  <div class="section page4">
-    <img class="bg-dot" src="./img/dot.png" alt="">
-    <p class="title">流量全免</p>
-    <p class="des-txt">移动用户密友圈内流量全免&nbsp;&nbsp;看点任你刷</p>
-    <img class="center-pic" src="./img/bg4.png" alt="">
-  </div>
-
-</div>
-<!-- 兼容长屏 -->
-<div class="max-screen" style="display: none">
-
-  <div class="section active page1">
-    <img class="bg-dot" src="./img/dot.png" alt="">
-    <div class="half-top">
-      <div class="logo"></div>
-      <div class="big-title">打电话就用密友圈</div>
-      <a class="download-btn">立即下载</a>
-
+    <div class="section page2">
+      <img class="bg-dot" src="./img/dot.png" alt="">
+      <p class="title">亲人朋友任撩</p>
+      <p class="des-txt">添加不限时长成员&nbsp;&nbsp;&nbsp;&nbsp;打电话给TA不要钱</p>
+      <img class="center-pic" src="./img/bg2.png" alt="">
     </div>
-    <img class="des-pic" src="./img/main-pic.png" alt="">
-    <img class="bottom-pic" src="./img/main-bottom-pic.png" alt="">
-    <div class="next"></div>
+
+    <div class="section page3">
+      <img class="bg-dot" src="./img/dot.png" alt="">
+      <p class="title">打遍全国</p>
+      <p class="des-txt">全国号码拨打&nbsp;&nbsp;&nbsp;&nbsp;任你聊</p>
+      <img class="center-pic" src="./img/bg3.png" alt="">
+    </div>
+
+    <div class="section page4">
+      <img class="bg-dot" src="./img/dot.png" alt="">
+      <p class="title">流量全免</p>
+      <p class="des-txt">移动用户密友圈内流量全免&nbsp;&nbsp;看点任你刷</p>
+      <img class="center-pic" src="./img/bg4.png" alt="">
+    </div>
+
+  </div>
+  <!-- 兼容长屏 -->
+  <div class="max-screen" style="display: none">
+
+    <div class="section active page1">
+      <img class="bg-dot" src="./img/dot.png" alt="">
+      <div class="half-top">
+        <div class="logo"></div>
+        <div class="big-title">打电话就用密友圈</div>
+        <a class="download-btn">立即下载</a>
+
+      </div>
+      <img class="des-pic" src="./img/main-pic.png" alt="">
+      <img class="bottom-pic" src="./img/main-bottom-pic.png" alt="">
+      <div class="next"></div>
+    </div>
+
+    <div class="section page2">
+      <img class="bg-dot" src="./img/dot.png" alt="">
+      <p class="title">亲人朋友任撩</p>
+      <p class="des-txt">添加不限时长成员&nbsp;&nbsp;&nbsp;&nbsp;打电话给TA不要钱</p>
+      <img class="center-pic" src="./img/bg2-x.png" alt="">
+      <img class="x-bottom-pic" src="./img/x-bottm.png" alt="">
+    </div>
+
+    <div class="section page3">
+      <img class="bg-dot" src="./img/dot.png" alt="">
+      <p class="title">打遍全国</p>
+      <p class="des-txt">全国号码拨打&nbsp;&nbsp;&nbsp;&nbsp;任你聊</p>
+      <img class="center-pic" src="./img/bg3-x.png" alt="">
+      <img class="x-bottom-pic" src="./img/x-bottm.png" alt="">
+    </div>
+
+    <div class="section page4">
+      <img class="bg-dot" src="./img/dot.png" alt="">
+      <p class="title">流量全免</p>
+      <p class="des-txt">移动用户密友圈内流量全免&nbsp;&nbsp;看点任你刷</p>
+      <img class="center-pic" src="./img/bg4-x.png" alt="">
+      <img class="x-bottom-pic" src="./img/x-bottm.png" alt="">
+    </div>
+
+  </div>
+  <!--<div class="wrapper">
+
+    <div class="pv_btn" style="visibility: hidden"></div>
   </div>
 
-  <div class="section page2">
-    <img class="bg-dot" src="./img/dot.png" alt="">
-    <p class="title">亲人朋友任撩</p>
-    <p class="des-txt">添加不限时长成员&nbsp;&nbsp;&nbsp;&nbsp;打电话给TA不要钱</p>
-    <img class="center-pic" src="./img/bg2-x.png" alt="">
-    <img class="x-bottom-pic" src="./img/x-bottm.png" alt="">
+  <div id="PV" style="visibility: hidden"></div>-->
+  <!--</div>-->
+  <!--遮罩层-->
+  <div class="mask"></div>
+
+  <!--弹窗-->
+  <div class="popup" style="display: none">
+    <img src="img/popup.png" alt="">
   </div>
-    
-  <div class="section page3">
-    <img class="bg-dot" src="./img/dot.png" alt="">
-    <p class="title">打遍全国</p>
-    <p class="des-txt">全国号码拨打&nbsp;&nbsp;&nbsp;&nbsp;任你聊</p>
-    <img class="center-pic" src="./img/bg3-x.png" alt="">
-    <img class="x-bottom-pic" src="./img/x-bottm.png" alt="">
-  </div>
+  <script>
 
-  <div class="section page4">
-    <img class="bg-dot" src="./img/dot.png" alt="">
-    <p class="title">流量全免</p>
-    <p class="des-txt">移动用户密友圈内流量全免&nbsp;&nbsp;看点任你刷</p>
-    <img class="center-pic" src="./img/bg4-x.png" alt="">
-    <img class="x-bottom-pic" src="./img/x-bottm.png" alt="">
-  </div>
+  </script>
+  <script src="js/jquery-1.11.3.min.js"></script>
+  <script src="js/jquery.fullPage.js"></script>
+  <!--<script type="text/javascript" src="js/pvData.js"></script>-->
+  <script type="text/javascript" src="js/download.js?version=0311"></script>
+  <script>
+    $(document).ready(function () {
+      $(".right-bar").hide();
+      $(".title").addClass("down-show")
+      $(".des-txt").addClass("up-show")
 
-</div>
-<div class="wrapper">
-  <!-- 点击插码 -->
-  <div class="pv_btn" style="visibility: hidden"></div>
-  </div>
-  <!-- 加载插码 -->
-  <div id="PV" style="visibility: hidden"></div>
-</div>
-<!--遮罩层-->
-<div class="mask"></div>
-
-<!--弹窗-->
-<div class="popup" style="display: none">
-  <img src="img/popup.png" alt="">
-</div>
-<script>
-
-</script>
-<script src="js/jquery-1.11.3.min.js"></script>
-<script src="js/jquery.fullPage.js"></script>
-<script type="text/javascript" src="js/pvData.js"></script>
-<script type="text/javascript" src="js/download.js?version=0311"></script>
-<script>
-  $(document).ready(function () {
-    $(".right-bar").hide();
-    $(".title").addClass("down-show")
-    $(".des-txt").addClass("up-show")
-
-    var $win = $(window);
-    window.ratio = $win.width()/$win.height()
-    if(ratio >0.56){
-      $(".medium-screen").attr('id','fullpage').css('display','block');
-      $(".max-screen").remove();
-    }else{
-      $(".max-screen").attr('id','fullpage').css('display','block');
-      $(".medium-screen").remove();
-    }
-    console.log(ratio)
-    $("#fullpage").fullpage({
-      verticalCentered: false, //取消垂直居中
-      afterLoad: function (anchorLink, index) {
-        $(".download-dot").addClass("dot-up")
-        // console.log(index)
-        if (index > 1) {
-          $(".right-bar").show();
-          if(index == 2){
-            $(".title").addClass("down-show");
-            $(".des-txt").addClass("up-show");
-            $("ul li").removeClass("checked");
-
-            $("ul li:nth-child(1)").addClass("checked");
-            $(".page2").find(".title").removeClass("down-show");
-            setTimeout(function(){
-              $(".page2").find(".des-txt").removeClass("up-show");
-            },500)
-          }else if(index == 3){
-            $(".title").addClass("down-show");
-            $(".des-txt").addClass("up-show");
-            $("ul li").removeClass("checked");
-
-            $("ul li:nth-child(2)").addClass("checked");
-            $(".page3").find(".title").removeClass("down-show");
-            setTimeout(function(){
-              $(".page3").find(".des-txt").removeClass("up-show");
-            },500)
-
-          }else if(index == 4){
-            $(".title").addClass("down-show");
-            $(".des-txt").addClass("up-show");
-            $("ul li").removeClass("checked");
-
-            $("ul li:nth-child(3)").addClass("checked");
-            $(".page4").find(".title").removeClass("down-show");
-            setTimeout(function(){
-              $(".page4").find(".des-txt").removeClass("up-show");
-            },500)
-
-          }
-
-        }else{
-          $(".title").addClass("down-show");
-          $(".des-txt").addClass("up-show");
-          $("ul li").removeClass("checked");
-          
-          $(".right-bar").hide();
-
-          $(".download-dot").removeClass("dot-up")
-        }
+      var $win = $(window);
+      window.ratio = $win.width() / $win.height()
+      if (ratio > 0.56) {
+        $(".medium-screen").attr('id', 'fullpage').css('display', 'block');
+        $(".max-screen").remove();
+      } else {
+        $(".max-screen").attr('id', 'fullpage').css('display', 'block');
+        $(".medium-screen").remove();
       }
+      console.log(ratio)
+      $("#fullpage").fullpage({
+        verticalCentered: false, //取消垂直居中
+        afterLoad: function (anchorLink, index) {
+          $(".download-dot").addClass("dot-up")
+          // console.log(index)
+          if (index > 1) {
+            $(".right-bar").show();
+            if (index == 2) {
+              $(".title").addClass("down-show");
+              $(".des-txt").addClass("up-show");
+              $("ul li").removeClass("checked");
+
+              $("ul li:nth-child(1)").addClass("checked");
+              $(".page2").find(".title").removeClass("down-show");
+              setTimeout(function () {
+                $(".page2").find(".des-txt").removeClass("up-show");
+              }, 500)
+            } else if (index == 3) {
+              $(".title").addClass("down-show");
+              $(".des-txt").addClass("up-show");
+              $("ul li").removeClass("checked");
+
+              $("ul li:nth-child(2)").addClass("checked");
+              $(".page3").find(".title").removeClass("down-show");
+              setTimeout(function () {
+                $(".page3").find(".des-txt").removeClass("up-show");
+              }, 500)
+
+            } else if (index == 4) {
+              $(".title").addClass("down-show");
+              $(".des-txt").addClass("up-show");
+              $("ul li").removeClass("checked");
+
+              $("ul li:nth-child(3)").addClass("checked");
+              $(".page4").find(".title").removeClass("down-show");
+              setTimeout(function () {
+                $(".page4").find(".des-txt").removeClass("up-show");
+              }, 500)
+
+            }
+
+          } else {
+            $(".title").addClass("down-show");
+            $(".des-txt").addClass("up-show");
+            $("ul li").removeClass("checked");
+
+            $(".right-bar").hide();
+
+            $(".download-dot").removeClass("dot-up")
+          }
+        }
+      });
+
     });
-
-  }); 
-
-</script>
-<script type="text/javascript" src="js/autofit.js?version=0311"></script>
+  </script>
+  <script type="text/javascript" src="js/autofit.js?version=0311"></script>
 </body>
+
 </html>
