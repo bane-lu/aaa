@@ -38,6 +38,7 @@ function openApp(url, callback) {
         var openScript = setTimeout(function () {
             if (!hasApp) {
                 callback && callback()
+                // location.href = url;
             }
             document.body.removeChild(ifr);
         }, 5000)
@@ -83,5 +84,6 @@ function openApp(url, callback) {
 //     }
 // }
 window.onload = function () {
+    alert(1)
     openApp("meetyou://")
 }
