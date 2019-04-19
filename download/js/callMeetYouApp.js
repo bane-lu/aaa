@@ -86,4 +86,3 @@ function openApp(url, callback) {
 // window.onload = function () {
     
 // }
-openApp("meetyou://")
