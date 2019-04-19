@@ -6,9 +6,14 @@ html, div, ul, li, dl, dt, dd, p, h1, h2, h3, h4, h5, h6, img, form, embed, labe
 }
 
 body {
-  background: #fdf8ef;
+  background: #ffcc01;
   overflow: hidden;
 }
+
+/*html, body{*/
+/*width: 100%;*/
+/*height: 100%;*/
+/*}*/
 
 *, *:before, *:after {
   -moz-box-sizing: border-box; /* Firefox 1, probably can drop this */
@@ -54,15 +59,124 @@ ul {
   font-size: 0px !important;
 }
 
+
+/******设置背景*********/
+.container{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  justify-content: space-around;
+  -webkit-justify-content: space-around;
+  /*align-items: center;*/
+  /*-webkit-align-items: center;*/
+}
+
+.head-wrapper{
+  width: 100%;
+  height: 0.9rem;
+  padding-top: 0.3rem;
+  box-sizing: border-box;
+  padding-left: 0.6rem;
+}
+
+.head-wrapper img {
+  display: block;
+  width: 1.5rem;
+  height: 0.6rem;
+}
+
+.page-wrapper{
+  margin: auto;
+  /*width: 5.4rem;
+  height: 7.6rem;*/
+}
+.page-wrapper-1{
+  width: 6.23rem;
+  height: 7.64rem;
+}
+.page-wrapper-2{
+  width: 6.97rem;
+  height: 7.60rem;
+}
+.page-wrapper-3{
+  width: 6.60rem;
+  height: 7.62rem;
+}
+.btn-wrapper{
+  width: 6.2rem;
+  height: 2.3rem;
+  padding-bottom: 0.3rem;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+}
+.btn-wrapper-last{
+  height: 1.2rem;
+}
+
+/**********第一屏**************/
+
+.page-wrapper img {
+  display: block;
+  width: 100%;
+  /*height: 100%;*/
+}
+
+/*********按钮*********/
+#page1 .download-btn {
+  width: 6.2rem;
+  height: 1.4rem;
+  background: url(../img/btn.png) no-repeat;
+  background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  position: fixed;
+  bottom: 0.5rem;
+}
+
+#page2 .download-btn {
+  width: 6.2rem;
+  height: 1.4rem;
+  background: url(../img/btn.png) no-repeat;
+  background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  position: fixed;
+  bottom: 0.5rem;
+}
+
+#page3 .download-btn {
+  width: 6.2rem;
+  height: 1.4rem;
+  background: url(../img/btn.png) no-repeat;
+  background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  position: fixed;
+  bottom: 0.5rem;
+}
+
+.download-btn a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 0.9rem;
+  text-align: center;
+  color: #fff;
+  font-size: 0.4rem;
+}
+
 /*****next*****/
 .next {
-  width: 0.6rem;
-  height: 0.4rem;
+  width: 0.4rem;
+  height: 0.3rem;
   background: url(../img/arrow.png) no-repeat;
   background-size: 100% 100%;
   -webkit-background-size: 100% 100%;
-  position: absolute;
-  bottom: 0.6rem;
+  position: relative;
+  top: 0rem;
   left: 50%;
   transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
@@ -74,18 +188,18 @@ ul {
 @keyframes down {
   0% {
     opacity: 0;
-    transform: translate3d(0, -8px, 0) ,translateX(-50%);
-    -webkit-transform: translate3d(0, -8px, 0) ,translateX(-50%);
+    transform: translate3d(0, -8px, 0);
+    -webkit-transform: translate3d(0, -8px, 0);
   }
   50% {
     opacity: 1;
-    transform: translate3d(0, 0, 0) ,translateX(-50%);
-    -webkit-transform: translate3d(0, 0, 0) ,translateX(-50%);
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
   }
   100% {
     opacity: 0;
-    transform: translate3d(0, 8px, 0) ,translateX(-50%);
-    -webkit-transform: translate3d(0, 8px, 0) ,translateX(-50%);
+    transform: translate3d(0, 8px, 0);
+    -webkit-transform: translate3d(0, 8px, 0);
   }
 }
 @-webkit-keyframes down {
@@ -166,7 +280,7 @@ ul {
   background-color: rgba(0, 0, 0,0.5);
   top: 0;
   left: 0;
-  z-index: 998;
+  z-index: 100;
 }
 /*弹窗*/
 .popup{
@@ -174,222 +288,29 @@ ul {
   position: fixed;
   top: 0;/*图片位置，单位rem*/
   right: 0.6rem;/*图片位置，单位rem*/
-  z-index: 999;
+  z-index: 101;
 }
 
-/*!**********首页**************!*/
-#fullpage{
-  margin: auto;
-}
-.section{
-  position: relative;
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-.page1{
-  padding-top: 0.89rem;
-}
-.bg-dot{
-  position: absolute;
-  width: 0.59rem;
-  height: 1.06rem;
-  left: 0.74rem;
-  top: 0.51rem;
-  z-index: -1;
-}
-.title{
-  float: left;
-  width: 100%;
-  height: 0.9rem;
-  /* background-color: red; */
-  text-align: center;
-  font-family: SourceHanSansSC-Medium;
-  font-size: 0.42rem;
-  font-weight: 500;
-  font-stretch: normal;
-  letter-spacing: 0rem;
-  color: #404040;
-  transition: top 0.6s cubic-bezier(0.42,0,0.58,0.2), opacity 0.6s cubic-bezier(0.42,0,0.58,0.2), transform 0.6s cubic-bezier(0.3,0,0.6,0.1), bottom 0.6s cubic-bezier(0.42,0,0.58,0.2);
-}
-.des-txt{
-  float: left;
-  width: 100%;
-  height: 0.8rem;
-  text-align: center;
-  font-family: SourceHanSansSC-Regular;
-  font-size: 0.3rem;
-  font-weight: 500;
-  font-stretch: normal;
-  letter-spacing: 0rem;
-  color: rgba(0,0,0,0.6);
-  transition: top 0.6s cubic-bezier(0.42,0,0.58,0.2), opacity 0.6s cubic-bezier(0.42,0,0.58,0.2), transform 0.6s cubic-bezier(0.42,0,0.58,0.2), bottom 0.6s cubic-bezier(0.42,0,0.58,0.2);
-}
-.center-pic{
-  position: absolute;
-  display: block;
-  width: 100%;
-  bottom: 0;
-}
-/* ******************1111111111111111111**************** */
-.page1 > .half-top{
-  position: absolute;
-  width: 100%;
-  top: 8%;
-  z-index: 88;
-}
-.half-top > .logo {
-  margin: auto;
-  width: 2.94rem;
-  height: 0.61rem;
-  background: url('../img/logo.png') no-repeat center center;
-  -webkit-background-size: 100% 100%;
-  background-size: 100% 100%;
-}
-.half-top > .big-title{
-  margin-top: 0.58rem;
-  width: 100%;
-  text-align: center;
-  font-family: SourceHanSansSC-Medium;
-  font-size: 0.66rem;
-  font-weight: bold;
-  font-stretch: normal;
-  letter-spacing: 0rem;
-  color: #404040;
-}
-.half-top > .download-btn{
-  margin: auto;
-  margin-top: 0.6rem;
-  display: block;
-  width: 3.6rem;
-  height: 0.8rem;
-  background-image: -webkit-linear-gradient(346deg, #7375fc 0%, #96b1fd 100%), 
-  -webkit-linear-gradient(#e65953, #e65953);
-  background-image: -o-linear-gradient(346deg, #7375fc 0%, #96b1fd 100%), 
-  -o-linear-gradient(#e65953, #e65953);
-  background-image: linear-gradient(76deg, #7375fc 0%, #96b1fd 100%), 
-  linear-gradient(#e65953, #e65953);
-  border-radius: 0.4rem;
+/*!**********第二屏**************!*/
+/*#page2 .pg2_wrapper{ position: absolute; left: 25px; top: 0.5rem;}*/
+/*#page3 .pg3_wrapper{ position: absolute; left: 25px; top: 0.5rem;}*/
+/*#page4 .pg4_wrapper{ position: absolute; left: 25px; top: 0.5rem;}*/
 
-  line-height: 0.8rem;
-  text-align: center;
-  vertical-align: middle;
-  border: 0;
-  outline: 0;
-  font-family: SourceHanSansSC-Regular;
-  font-size: 0.3rem;
-  font-weight: normal;
-  font-stretch: normal;
-  letter-spacing: 0rem;
-  color: #ffffff;
-}
-.half-top > .download-btn:active{
-  margin: auto;
-  margin-top: 0.6rem;
-  display: block;
-  width: 3.6rem;
-  height: 0.8rem;
-  background-image: -webkit-linear-gradient(346deg, #595be2 0%, #88a2ed 100%), -webkit-linear-gradient(#e65953, #e65953);
-  background-image: -o-linear-gradient(346deg, #595be2 0%, #88a2ed 100%), -o-linear-gradient(#e65953, #e65953);
-  background-image: linear-gradient(76deg, #595be2 0%, #88a2ed 100%), linear-gradient(#e65953, #e65953);
-  border-radius: 0.4rem;
-  
-  line-height: 0.8rem;
-  text-align: center;
-  border: 0;
-  outline: 0;
-  font-family: SourceHanSansSC-Regular;
-  font-size: 0.3rem;
-  font-weight: normal;
-  font-stretch: normal;
-  letter-spacing: 0rem;
-  color: #ffffff;
-}
+/*#page2 .pg2_wrapper .title{ font-size: 0.56rem; color: #f8c92c; }*/
+/*#page3 .pg3_wrapper .title{ font-size: 0.56rem; color: #f8c92c; }*/
+/*#page4 .pg4_wrapper .title{ font-size: 0.56rem; color: #f8c92c; }*/
 
-.page1 > .des-pic{
-  position: absolute;
-  bottom: 2rem;
-  display: block;
-  width: 100%;
-}
-.page1 > .bottom-pic{
-  position: absolute;
-  display: block;
-  width: 100%;
-  bottom: 0;
-}
+/*#page2 .pg2_wrapper .desc{ margin-top: 0.2rem; font-size: 0.32rem; color: #8f8b88;}*/
+/*#page3 .pg3_wrapper .desc{ margin-top: 0.2rem; font-size: 0.32rem; color: #8f8b88;}*/
+/*#page4 .pg4_wrapper .desc{ margin-top: 0.2rem; font-size: 0.32rem; color: #8f8b88;}*/
 
-/* *************2222222222222222222********** */
-.download-dot{
-  position: fixed;
-  bottom: 0.4rem;
-  right: 0.4rem;
-  z-index: 668;
-  opacity: 0;
-  display: none;
-  width: 0.9rem;
-  height: 0.9rem;
-  background: url(../img/download-dot.png) no-repeat center;
-  -webkit-background-size: cover;
-  background-size: cover;
-  
-  transition: top 0.6s cubic-bezier(0.42,0,0.58,0.2), opacity 0.6s cubic-bezier(0.42,0,0.58,0.2), transform 0.6s cubic-bezier(0.42,0,0.58,0.2), bottom 0.6s cubic-bezier(0.42,0,0.58,0.2);
-}
-.dot-up{
-  opacity: 1;
-  display: block;
-}
-/* **************右侧导航栏*************** */
-.right-bar{
-  position: absolute;
-  right: 0.5rem;
-  top: 35%;
-
-  width: 0.1rem;
-  height: 0.84rem;
-  border-radius: 0.05rem;
-  /* background-color: green; */
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  flex-direction: column;
-  -webkit-flex-direction: column;
-  justify-content: space-around;
-  -webkit-justify-content: space-around;
-}
-.right-bar > li{
-  
-  width: 0.1rem;
-  height: 0.1rem;
-  border-radius: 0.05rem;
-  background-color: #ffd994;
-  transition: height 0.5s cubic-bezier(0.42,0,0.58,1), opacity 0.5s cubic-bezier(0.42,0,0.58,1);
-}
-.checked{
-  height: 0.25rem !important;
-}
-/* ***************************** */
-.down-show {
-  opacity: 0;
-  transform: translateY(-1rem);
-}
-
-.up-show {
-  opacity: 0;
-  transform: translateY(1rem);
-}
-
-/* **********************changping********************** */
-.center-pic{
-  position: absolute;
-  display: block;
-  width: 100%;
-  bottom: 0;
-}
-.x-bottom-pic{
-  position: absolute;
-  display: block;
-  width: 100%;
-  bottom: 0; 
-}
+/*.pg_mid{*/
+/*width: 3.2rem;*/
+/*left: 50%;*/
+/*top:20%;*/
+/*-webkit-transform: translate(-50%, 0);*/
+/*-moz-transform: translate(-50%, 0);*/
+/*-ms-transform: translate(-50%, 0);*/
+/*-o-transform: translate(-50%, 0);*/
+/*transform: translate(-50%, 0);*/
+/*}*/
