@@ -83,7 +83,6 @@ function openApp(url, callback) {
 //         window.location.href = 'http://a.10086.cn/c/a/s.do?requestid=zndxzh&channelid=5410453499&cid=300011040393&gid=300011040393/'
 //     }
 // }
-window.onload = function () {
-    alert(1)
-    openApp("meetyou://")
-}
+// window.onload = function () {
+    
+// }
