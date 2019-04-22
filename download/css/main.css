@@ -134,8 +134,6 @@ ul {
   background: url(../img/btn.png) no-repeat;
   background-size: 100% 100%;
   -webkit-background-size: 100% 100%;
-  position: fixed;
-  bottom: 0.5rem;
 }
 
 #page2 .download-btn {
@@ -144,8 +142,6 @@ ul {
   background: url(../img/btn.png) no-repeat;
   background-size: 100% 100%;
   -webkit-background-size: 100% 100%;
-  position: fixed;
-  bottom: 0.5rem;
 }
 
 #page3 .download-btn {
@@ -154,8 +150,6 @@ ul {
   background: url(../img/btn.png) no-repeat;
   background-size: 100% 100%;
   -webkit-background-size: 100% 100%;
-  position: fixed;
-  bottom: 0.5rem;
 }
 
 .download-btn a {
