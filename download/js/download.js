@@ -23,7 +23,8 @@ $(function () {
       if(isiOS){
         window.location.href = "https://a.app.qq.com/o/simple.jsp?pkgname=com.cmic.college"; 
       }else{
-        window.location.href = "http://a.10086.cn/c/a/s.do?requestid=zndxzh&channelid=5410453499&cid=300011040393&gid=300011040393/";
+        $(".popup").show();
+        $(".popup,.mask").fadeIn();
       }
     } else {
       // setpoint("download");
