@@ -33,11 +33,12 @@ $(function () {
     //点击下载
     $(".head-button,.bottom-button").on("click", function (e) {
         if (isWeixin()) {
-            //是微信
-            e.preventDefault();
-            $(".popup").show();
-            $(".popup,.mask").fadeIn();
-
+            if(!isiOS){
+                //是微信
+                e.preventDefault();
+                $(".popup").show();
+                $(".popup,.mask").fadeIn();
+            }
         }
     })
     
