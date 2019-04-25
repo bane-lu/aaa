@@ -12,13 +12,20 @@ $(function () {
 
   //点击下载
   $(".download-btn").on("click", function (e) {
-
+    var u = navigator.userAgent;
+    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
     if (isWeixin()) {
       //是微信
       e.preventDefault();
-      $(".popup").show();
-      $(".popup,.mask").fadeIn();
-
+      // $(".popup").show();
+      // $(".popup,.mask").fadeIn();
+      if(isiOS){
+        window.location.href = "https://a.app.qq.com/o/simple.jsp?pkgname=com.cmic.college"; 
+      }else{
+        $(".popup").show();
+        $(".popup,.mask").fadeIn();
+      }
     } else {
       // setpoint("download");
       var u = navigator.userAgent;
