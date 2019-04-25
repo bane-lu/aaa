@@ -173,7 +173,13 @@
       }
     }
   });
-  openApp("meetyou://")
+  try {
+    setTimeout(function () {
+      openApp("meetyou://")
+    }, 500)
+  } catch (err) {
+    console.log('调起app失败 ')
+  }
   // window.location.href = "meetyou://";
 </script>
 </body>
