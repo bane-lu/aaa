@@ -29,9 +29,11 @@
   <link rel="stylesheet" href="css/jquery.fullPage.css">
   <link rel="stylesheet" href="css/animate.min.css">
   <link rel="stylesheet" href="css/main.css?version=001">
+  <script src="https://www.w3cways.com/demo/vconsole/vconsole.min.js?v=2.2.0"></script>
   <script src="js/jquery-1.11.3.min.js"></script>
   <script src="js/jquery.fullPage.js"></script>
   <script>
+    console.log(111111);
     (function (para) {
         var p = para.sdk_url, n = para.name, w = window, d = document, s = 'script', x = null, y = null;
         w['sensorsDataAnalytic201505'] = n;
@@ -72,6 +74,7 @@
         resizeEvt = 'onorientationchange' in window ? 'onorientationchange' : 'resize',
         recalc = function () {
           var clientWidth = docEl.clientWidth;
+          console.log('onorientationchange' in window)
           if (!clientWidth) return;
           if (clientWidth >= 750) {
             docEl.style.fontSize = '100px';
@@ -98,9 +101,7 @@
       </div>
       <div class="btn-wrapper">
         <div class="next"></div>
-        <div class="download-btn 1">
-          <a href="#">下载体验</a>
-        </div>
+        <div class="download-btn 1" onclick="toDownload();"></div>
       </div>
     </div>
   </div>
@@ -114,9 +115,7 @@
       </div>
       <div class="btn-wrapper">
         <div class="next"></div>
-        <div class="download-btn 2">
-          <a href="#">下载体验</a>
-        </div>
+        <div class="download-btn 2" onclick="toDownload();"></div>
       </div>
     </div>
   </div>
@@ -130,9 +129,7 @@
       </div>
       <div class="btn-wrapper">
         <div class="prev"></div>
-        <div class="download-btn 3">
-          <a href="#">下载体验</a>
-        </div>
+        <div class="download-btn 3" onclick="toDownload();"></div>
       </div>
     </div>
   </div>
@@ -140,27 +137,21 @@
 
 <!--遮罩层-->
 <div class="mask"></div>
-
 <!--弹窗-->
 <div class="popup" style="display: none">
   <img src="img/popup.png" alt="">
 </div>
 <script>
+  var downloadUrl=""
   function getDevice() {
     var u = navigator.userAgent;
     var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
     var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
-    if (isAndroid) {
-      // var url = 'http://rcsoa-nopay.zone139.com/versionmanager/download/meetyou-release/' + CHANNEL;
-      var url = 'http://a.10086.cn/c/a/s.do?requestid=zndxzh&channelid=5410453499&cid=300011040393&gid=300011040393/';
-      $(".download-btn a").attr('href', url);
-    } else if (isiOS) {
-      $(".download-btn a").attr("href", 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"');
-      // setpoint("download");
-    }else{
-      var url = 'http://a.10086.cn/c/a/s.do?requestid=zndxzh&channelid=5410453499&cid=300011040393&gid=300011040393/';
-      $(".download-btn a").attr('href', url);
-    }
+    downloadUrl=isiOS?'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"':"http://a.10086.cn/c/a/s.do?requestid=zndxzh&channelid=5410453499&cid=300011040393&gid=300011040393/"
+   
+  }
+  function toDownload(){
+    window.location.href=downloadUrl
   }
 
   getDevice();
@@ -185,6 +176,6 @@
   }
   // window.location.href = "meetyou://";
 </script>
-<script src="https://www.w3cways.com/demo/vconsole/vconsole.min.js?v=2.2.0"></script>
+
 </body>
 </html>
