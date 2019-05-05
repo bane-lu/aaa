@@ -1,0 +1,123 @@
+html, body, div, ul, li, dl, dt, dd, p, h1, h2, h3, h4, h5, h6, img, form, embed, label {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+html,body{
+    height: 100%;
+    background-color: #9b18ff;
+}
+ img {
+    border: none;
+}
+.container{
+    height: 100%
+}
+.container .head-wrapper{
+}
+.container .head-wrapper .head-pic{
+    width:7.5rem;
+    height: 4.17rem;
+    margin-bottom: 0.21rem;
+    display: block;
+}
+.container .head-wrapper .head-button{
+    position: absolute;
+    top: 3.21rem;
+    left: 1.51rem;
+}
+.container .head-wrapper .head-button img{
+    width:4.48rem;
+    height: 0.89rem;
+    display: block;
+}
+.container .head-wrapper .content-pic{
+    width:6.86rem;
+    height: 5.99rem;
+    margin: 0 auto;
+    display: block;
+}
+.container .head-wrapper .useless{
+    width: 7.5rem;
+    height: 2.08rem;
+}
+.container .bottom-wrapper{
+    position: fixed;
+    bottom: 0;
+}
+.container .bottom-wrapper .bottom-button{
+    display: block;
+    width: 7.5rem;
+    height: 1.77rem;
+    background-color: #ffc10c;
+	border-top: solid 0.04rem #020202;
+}
+.container .bottom-wrapper .bottom-button .button-pic{
+    width:6.08rem;
+    margin: 0 auto;
+    margin-top: 0.46rem;
+    margin-bottom: 0.43rem;
+    display: block;
+    animation: Scale 1.5s linear infinite;
+    -webkit-animation: Scale 1.5s linear infinite;
+}
+@keyframes Scale {
+  0% {
+      transform: scale(1, 1);
+      -webkit-transform: scale(1, 1);
+  }
+
+  10%{
+      transform: scale(1.01, 1.01);
+      -webkit-transform: scale(1.01, 1.01);
+  }
+
+  70%{
+      transform: scale(1.06, 1.065);
+      -webkit-transform: scale(1.06, 1.065);
+  }
+  100%{
+      transform: scale(1, 1);
+      -webkit-transform: scale(1, 1);
+  }
+}
+@-webkit-keyframes Scale {
+  0% {
+      transform: scale(1, 1);
+      -webkit-transform: scale(1, 1);
+  }
+
+  10%{
+      transform: scale(1.01, 1.01);
+      -webkit-transform: scale(1.01, 1.01);
+  }
+
+  70%{
+      transform: scale(1.06, 1.065);
+      -webkit-transform: scale(1.06, 1.065);
+  }
+  100%{
+      transform: scale(1, 1);
+      -webkit-transform: scale(1, 1);
+  }
+}
+
+/*遮罩层*/
+.mask{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0,0.5);
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+/*弹窗*/
+.popup{
+    display: none;
+    position: fixed;
+    top: 0;/*图片位置，单位rem*/
+    right: 0.6rem;/*图片位置，单位rem*/
+    z-index: 101;
+}
