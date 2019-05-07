@@ -15,7 +15,7 @@ $(function () {
     //判断是安卓还是ios
     function getDevice() {
         if (isiOS){
-            document.getElementById('url-copy').innerHTML = 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"'
+            document.getElementById('url-copy').innerHTML = 'itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"'
             if (isWeixin()) {
                 $(".head-wrapper a").attr("href", 'https://a.app.qq.com/o/simple.jsp?pkgname=com.cmic.college');
                 $(".bottom-wrapper a").attr("href", 'https://a.app.qq.com/o/simple.jsp?pkgname=com.cmic.college');
