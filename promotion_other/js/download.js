@@ -15,7 +15,7 @@ $(function () {
     //判断是安卓还是ios
     function getDevice() {
         if (isiOS){
-            $(".url-copy").val('itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"')
+            document.getElementById('url-copy').innerHTML = 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"'
             if (isWeixin()) {
                 $(".head-wrapper a").attr("href", 'https://a.app.qq.com/o/simple.jsp?pkgname=com.cmic.college');
                 $(".bottom-wrapper a").attr("href", 'https://a.app.qq.com/o/simple.jsp?pkgname=com.cmic.college');
@@ -28,7 +28,7 @@ $(function () {
             var url = 'http://117.136.240.99/apk/meetyou_V3.4.0_official_2019-05-05_340_jiagu_sign.apk';
             $(".head-wrapper a").attr('href', url);
             $(".bottom-wrapper a").attr('href', url);
-            $(".url-copy").val('http://117.136.240.99/apk/meetyou_V3.4.0_official_2019-05-05_340_jiagu_sign.apk')
+            document.getElementById('url-copy').innerHTML = 'http://117.136.240.99/apk/meetyou_V3.4.0_official_2019-05-05_340_jiagu_sign.apk'
         }
 
     }
@@ -110,14 +110,14 @@ $(function () {
         //     }
         // }
         e.preventDefault();
-        var urlObject = document.getElementById('url-copy')
+        // var urlObject = document.getElementById('url-copy')
         // console.log(urlObject);
-        urlObject.select()
-        // const range = document.createRange();
-        // range.selectNode(document.getElementById('url-copy'));
-        // const selection = window.getSelection();
-        // if (selection.rangeCount > 0) selection.removeAllRanges();
-        // selection.addRange(range);
+        // urlObject.select()
+        var range = document.createRange();
+        range.selectNode(document.getElementById('url-copy'));
+        var selection = window.getSelection();
+        if (selection.rangeCount > 0) selection.removeAllRanges();
+        selection.addRange(range);
         document.execCommand('copy');
         Toast({
             message: "复制成功！"

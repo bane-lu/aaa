@@ -16,6 +16,7 @@ html,body{
 .container .url-copy{
     position: absolute;
     top: -10rem;
+    font-size: 0.13rem;
 }
 .container .head-wrapper{
 }
