@@ -13,6 +13,10 @@ html,body{
 .container{
     height: 100%
 }
+.container .url-copy{
+    position: absolute;
+    top: -10rem;
+}
 .container .head-wrapper{
 }
 .container .head-wrapper .head-pic{
@@ -50,16 +54,30 @@ html,body{
     width: 7.5rem;
     height: 1.77rem;
     background-color: #ffc10c;
-	border-top: solid 0.04rem #020202;
+    border-top: solid 0.04rem #020202;
+    text-decoration: none
 }
 .container .bottom-wrapper .bottom-button .button-pic{
     width:6.08rem;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    color: #ffffff;
     margin: 0 auto;
-    margin-top: 0.46rem;
-    margin-bottom: 0.43rem;
+    text-align: center;
+    margin-top: 0.36rem;
+    margin-bottom: 0.1rem;
     display: block;
     animation: Scale 1.5s linear infinite;
     -webkit-animation: Scale 1.5s linear infinite;
+    font-size: 0.4rem;
+    font-weight: bold;
+    background-image: url('../img/button.png');
+    background-size: 100% 100%;
+}
+.container .bottom-wrapper .bottom-button p{
+    font-size: 0.25rem;
+    color: #ffffff;
+    text-align: center;
 }
 @keyframes Scale {
   0% {

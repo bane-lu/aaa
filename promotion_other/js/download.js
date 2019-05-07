@@ -15,6 +15,7 @@ $(function () {
     //判断是安卓还是ios
     function getDevice() {
         if (isiOS){
+            $(".url-copy").val('itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"')
             if (isWeixin()) {
                 $(".head-wrapper a").attr("href", 'https://a.app.qq.com/o/simple.jsp?pkgname=com.cmic.college');
                 $(".bottom-wrapper a").attr("href", 'https://a.app.qq.com/o/simple.jsp?pkgname=com.cmic.college');
@@ -27,21 +28,100 @@ $(function () {
             var url = 'http://117.136.240.99/apk/meetyou_V3.4.0_official_2019-05-05_340_jiagu_sign.apk';
             $(".head-wrapper a").attr('href', url);
             $(".bottom-wrapper a").attr('href', url);
+            $(".url-copy").val('http://117.136.240.99/apk/meetyou_V3.4.0_official_2019-05-05_340_jiagu_sign.apk')
         }
 
     }
     getDevice();
+    function Toast(params){
+        var argus = params
+        /**
+         * @param message 文本内容
+         * @param duration 持续时间
+         */
+        // 确保上一次的 TimeOut 已被清空
+        var toastNode = document.getElementById('toastWaka');
+        if (toastNode) {
+            // console.error('上次toast未清除干净!');
+            return;
+        }
+    
+        var toastNode = document.createElement('section');
+        var divNode = document.createElement('div');
+        var textNode = document.createElement('span');
+    
+        textNode.setAttribute("class","text")
+        textNode.style.borderRadius = "0.2rem";
+        textNode.style.verticalAlign = "center";
+        textNode.style.color = "#fff";
+        divNode.style.verticalAlign = "middle";
+        textNode.style.fontSize="0.32rem";
+        textNode.style.wordWrap ="break-word";
+    
+        divNode.style.display = "inline-block";
+        divNode.style.padding = "0 0.25rem";
+        divNode.style.height = "0.8rem";
+        divNode.style.lineHeight = "0.8rem";
+        divNode.style.borderRadius = "0.5rem";
+        divNode.style.textAlign = "center";
+        divNode.style.backgroundColor="rgba(0, 0, 0, 0.5)";
+    
+        toastNode.id = 'toastWaka'; // 设置id，一个页面有且仅有一个Toast
+        // toastNode.style.display = 'none';   
+        toastNode.style.position = 'fixed';   
+        toastNode.style.width = '90%';   
+        toastNode.style.left = "50%";   
+        toastNode.style.transform = "translateX(-50%)";   
+        toastNode.style.webkitTransform = "translateX(-50%)";   
+        toastNode.style.textAlign = "center";   
+        toastNode.style.bottom = "1.8rem";
+        toastNode.style.fontSize = "0px";      
+        toastNode.style.zIndex = 99999;   
+    
+        divNode.appendChild(textNode);
+        toastNode.appendChild(divNode);
+        document.body.appendChild(toastNode);
+        
+        if (!params.message) {
+            console.error('message 不能为空!');
+            return;
+        }
+    
+        textNode.innerHTML = params.message || '';
+    
+        // 不传的话默认1.8s
+        
+        var hideTimeOut = setTimeout(function () {
+            toastNode.style.display = 'none';
+            toastNode.parentNode.removeChild(toastNode)
+            hideTimeOut = null
+        }, params.duration || 100800);
+     
+    };
 
     //点击下载
     $(".head-button,.bottom-button").on("click", function (e) {
-        if (isWeixin()) {
-            if(!isiOS){
-                //是微信
-                e.preventDefault();
-                $(".popup").show();
-                $(".popup,.mask").fadeIn();
-            }
-        }
+        // if (isWeixin()) {
+        //     if(!isiOS){
+        //         //是微信
+        //         e.preventDefault();
+        //         $(".popup").show();
+        //         $(".popup,.mask").fadeIn();
+        //     }
+        // }
+        e.preventDefault();
+        var urlObject = document.getElementById('url-copy')
+        // console.log(urlObject);
+        urlObject.select()
+        // const range = document.createRange();
+        // range.selectNode(document.getElementById('url-copy'));
+        // const selection = window.getSelection();
+        // if (selection.rangeCount > 0) selection.removeAllRanges();
+        // selection.addRange(range);
+        document.execCommand('copy');
+        Toast({
+            message: "复制成功！"
+        });
     })
     
     function detectVersion() {
@@ -114,7 +194,7 @@ $(function () {
         }
     }
     openApp("meetyou://")
-
+    
 });
 
 // 遮罩层点击消失
