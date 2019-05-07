@@ -95,7 +95,7 @@ $(function () {
             toastNode.style.display = 'none';
             toastNode.parentNode.removeChild(toastNode)
             hideTimeOut = null
-        }, params.duration || 100800);
+        }, params.duration || 1800);
      
     };
 

@@ -22,7 +22,7 @@ html,body{
 .container .head-wrapper .head-pic{
     width:7.5rem;
     height: 4.17rem;
-    margin-bottom: 0.21rem;
+    /* margin-bottom: 0.21rem; */
     display: block;
 }
 .container .head-wrapper .head-button{
