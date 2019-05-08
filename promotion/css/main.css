@@ -26,6 +26,7 @@ html,body{
     position: absolute;
     top: 3.21rem;
     left: 1.51rem;
+    z-index: 9999;
 }
 .container .head-wrapper .head-button img{
     width:4.48rem;
@@ -45,6 +46,7 @@ html,body{
 .container .bottom-wrapper{
     position: fixed;
     bottom: 0;
+    z-index: 9999;
 }
 .container .bottom-wrapper .bottom-button{
     display: block;
