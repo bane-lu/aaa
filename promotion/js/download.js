@@ -13,22 +13,22 @@ $(function () {
     var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
     var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
     //判断是安卓还是ios
-    function getDevice() {
-        if (isiOS) {
-            if(isWeixin()){
-                $(".head-wrapper a").attr("href", 'https://a.app.qq.com/o/simple.jsp?pkgname=com.cmic.college');
-                $(".bottom-wrapper a").attr("href", 'https://a.app.qq.com/o/simple.jsp?pkgname=com.cmic.college');
-            }else{
-                $(".head-wrapper a").attr("href", 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"');
-                $(".bottom-wrapper a").attr("href", 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"');
-            }
-        }else{
-            var url = 'http://a.10086.cn/c/a/s.do?requestid=zndxzh&channelid=5410453499&cid=300011040393&gid=300011040393/';
-            $(".head-wrapper a").attr('href', url);
-            $(".bottom-wrapper a").attr('href', url);
-        }
-    }
-    getDevice();
+    // function getDevice() {
+        // if (isiOS) {
+        //     if(isWeixin()){
+        //         $(".head-wrapper a").attr("href", 'https://a.app.qq.com/o/simple.jsp?pkgname=com.cmic.college');
+        //         $(".bottom-wrapper a").attr("href", 'https://a.app.qq.com/o/simple.jsp?pkgname=com.cmic.college');
+        //     }else{
+        //         $(".head-wrapper a").attr("href", 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"');
+        //         $(".bottom-wrapper a").attr("href", 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"');
+        //     }
+        // }else{
+        //     var url = 'http://a.10086.cn/c/a/s.do?requestid=zndxzh&channelid=5410453499&cid=300011040393&gid=300011040393/';
+        //     $(".head-wrapper a").attr('href', url);
+        //     $(".bottom-wrapper a").attr('href', url);
+        // }
+    // }
+    // getDevice();
 
     //点击下载
     $(".head-button,.bottom-button").on("click", function (e) {
@@ -38,6 +38,23 @@ $(function () {
                 e.preventDefault();
                 $(".popup").show();
                 $(".popup,.mask").fadeIn();
+            }
+        }else{
+            if (isiOS) {
+                if(isWeixin()){
+                    // $(".head-wrapper a").attr("href", 'https://a.app.qq.com/o/simple.jsp?pkgname=com.cmic.college');
+                    // $(".bottom-wrapper a").attr("href", 'https://a.app.qq.com/o/simple.jsp?pkgname=com.cmic.college');
+                    window.location.href = 'https://a.app.qq.com/o/simple.jsp?pkgname=com.cmic.college'
+                }else{
+                    // $(".head-wrapper a").attr("href", 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"');
+                    // $(".bottom-wrapper a").attr("href", 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"');
+                    window.location.href = 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"'
+                }
+            }else{
+                var url = 'http://a.10086.cn/c/a/s.do?requestid=zndxzh&channelid=5410453499&cid=300011040393&gid=300011040393/';
+                // $(".head-wrapper a").attr('href', url);
+                // $(".bottom-wrapper a").attr('href', url);
+                window.location.href = url;
             }
         }
     })

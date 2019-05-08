@@ -39,27 +39,22 @@ html,body{
     display: block;
 }
 .container .head-wrapper .useless{
-    /* width: 7.5rem; */
-    width: 100%;
+    width: 7.5rem;
     height: 2.08rem;
 }
 .container .bottom-wrapper{
     position: fixed;
-    width: 90%;
-    /* position: absolute; */
     bottom: 0;
 }
 .container .bottom-wrapper .bottom-button{
     display: block;
-    /* width: 7.5rem; */
-    width: 100%;
+    width: 7.5rem;
     height: 1.77rem;
     background-color: #ffc10c;
 	border-top: solid 0.04rem #020202;
 }
 .container .bottom-wrapper .bottom-button .button-pic{
-    /* width:6.08rem; */
-    width: 81%;
+    width:6.08rem;
     margin: 0 auto;
     margin-top: 0.46rem;
     margin-bottom: 0.43rem;
