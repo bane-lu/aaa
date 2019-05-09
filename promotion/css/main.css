@@ -7,12 +7,14 @@ html,body{
     height: 100%;
     background-color: #9b18ff;
 }
+body{
+    padding-bottom: 2.08rem;
+}
  img {
     border: none;
 }
 .container{
     height: 100%;
-    /* position: relative; */
 }
 .container .head-wrapper{
 }
@@ -38,10 +40,6 @@ html,body{
     height: 5.99rem;
     margin: 0 auto;
     display: block;
-}
-.container .head-wrapper .useless{
-    width: 7.5rem;
-    height: 2.08rem;
 }
 .container .bottom-wrapper{
     position: fixed;
