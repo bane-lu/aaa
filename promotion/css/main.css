@@ -112,7 +112,7 @@ body{
     background-color: rgba(0, 0, 0,0.5);
     top: 0;
     left: 0;
-    z-index: 100;
+    z-index: 10000;
 }
 /*弹窗*/
 .popup{
@@ -120,5 +120,5 @@ body{
     position: fixed;
     top: 0;/*图片位置，单位rem*/
     right: 0.6rem;/*图片位置，单位rem*/
-    z-index: 101;
+    z-index: 10001;
 }
