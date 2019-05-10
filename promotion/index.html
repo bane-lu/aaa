@@ -104,13 +104,11 @@
     var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
     function toDownload(){
         if (testWeixin) {
-            if(!isiOS){
-                //是微信
-                e.preventDefault();
+            if(isiOS){
+                window.location.href = 'https://a.app.qq.com/o/simple.jsp?pkgname=com.cmic.college'
+            }else{
                 document.getElementById('popup').style.display = 'block';
                 document.getElementById('mask').style.display = 'block';
-            }else{
-                window.location.href = 'https://a.app.qq.com/o/simple.jsp?pkgname=com.cmic.college'
             }
         }else{
             if (isiOS) {
