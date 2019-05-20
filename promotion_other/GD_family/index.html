@@ -63,7 +63,7 @@
             });
             //调用设置公共属性的方法，来保证之后的事件都有这属性。
             sensors.registerPage({
-            activity_name: "密友圈另一推广页-other",   //活动名称
+            activity_name: "广东家庭网推广页",   //活动名称
             enterance_platform: "端外"    //入口平台    端内、端外
             });
             sensors.quick('autoTrack');
@@ -71,27 +71,60 @@
 </head>
 <body>
 <div class="container">
-    <!-- <input value="http://117.136.240.99/apk/meetyou_V3.4.0_official_2019-05-05_340_jiagu_sign.apk" class="url-copy" id="url-copy"> -->
-    <p class="url-copy" id="url-copy">http://117.136.240.99/apk/meetyou_V3.4.0_official_2019-05-05_340_jiagu_sign.apk</p>
     <div class="head-wrapper">
         <img src="img/head.png" class="head-pic">
-        <!-- <a class="head-button" name="顶部下载按钮"><img src="img/head-button.png"></a> -->
+        <a class="head-button" name="顶部下载按钮" onclick="toDownload()"><img src="img/head-button.png"></a>
         <img src="img/content.png" class="content-pic">
-        <div class="useless"></div>
     </div>
     <div class="bottom-wrapper">
-        <a class="bottom-button" name="底部按钮" id="bottom-button"><div class="button-pic">复制链接去下载</div><p>小程序暂不支持跳转到网页，请复制链接前往浏览器访问</p></a>
-        <!-- <img src="img/button.png" class="button-pic"> -->
+        <a class="bottom-button" name="底部按钮" onclick="toDownload()"><img src="img/button.png" class="button-pic"></a>
     </div>
 </div>
-<!--微信弹窗-->
-<div class="popup" style="display: none">
-    <img src="./img/popup.png" alt="">
-</div>
+
 <!--遮罩层-->
-<div class="mask"></div>
-<script src="js/jquery-1.11.3.min.js"></script>
-<script src="js/download.js"></script>
+<div class="mask" id="mask" onclick="hideMask()"></div>
+<!--弹窗-->
+<div class="popup" id="popup" style="display: none">
+    <img src="img/popup.png" alt="">
+</div>
+
+<script>
+    function isWeixin() {
+        var ua = navigator.userAgent.toLowerCase();
+        if (ua.match(/MicroMessenger/i) == "micromessenger") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    var testWeixin = isWeixin();
+    var u = navigator.userAgent;
+    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+    function toDownload(){
+        if (testWeixin) {
+            if(isiOS){
+                window.location.href = 'https://a.app.qq.com/o/simple.jsp?pkgname=com.cmic.college'
+            }else{
+                document.getElementById('popup').style.display = 'block';
+                document.getElementById('mask').style.display = 'block';
+            }
+        }else{
+            if (isiOS) {
+                window.location.href = 'itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"'
+            }else{
+                window.location.href = 'http://117.136.240.99/apk/meetyou_gdfamily_360_jiagu_sign.apk';
+            }
+        }
+    }
+    function hideMask(){
+        document.getElementById('popup').style.display = 'none'
+        document.getElementById('mask').style.display = 'none'
+    }
+</script>
+<!-- <script src="js/jquery-1.11.3.min.js"></script> -->
+<script src="js/callApp.js"></script>
 <!-- <script src="https://www.w3cways.com/demo/vconsole/vconsole.min.js?v=2.2.0"></script> -->
 </body>
 </html>

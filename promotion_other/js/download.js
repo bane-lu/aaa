@@ -25,10 +25,10 @@ $(function () {
             }
         }else{
             // var url = 'http://a.10086.cn/c/a/s.do?requestid=zndxzh&channelid=5410453499&cid=300011040393&gid=300011040393/';
-            var url = 'http://117.136.240.99/apk/meetyou_V3.6.0_liaohuier_2019-05-13_360_jiagu_sign.apk';
+            var url = 'http://117.136.240.99/apk/meetyou_V3.4.0_official_2019-05-05_340_jiagu_sign.apk';
             $(".head-wrapper a").attr('href', url);
             $(".bottom-wrapper a").attr('href', url);
-            document.getElementById('url-copy').innerHTML = 'http://117.136.240.99/apk/meetyou_V3.6.0_liaohuier_2019-05-13_360_jiagu_sign.apk'
+            document.getElementById('url-copy').innerHTML = 'http://117.136.240.99/apk/meetyou_V3.4.0_official_2019-05-05_340_jiagu_sign.apk'
         }
 
     }
