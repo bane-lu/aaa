@@ -30,16 +30,17 @@ function detectVersion() {
     return { isAndroid, isIOS, isIOS9 }
 }
 // 判断手机上是否安装了app，如果安装直接打开url，如果没安装，执行callback
+var timeout;
 function openApp(url, callback) {
     let { isAndroid, isIOS, isIOS9 } = detectVersion()
     if (isAndroid || isIOS) {
-        var timeout, t = 4000, hasApp = true;
+        var  t = 4000, hasApp = true;
         var openScript = setTimeout(function () {
             if (!hasApp) {
                 callback && callback()
             }
             document.body.removeChild(ifr);
-        }, 5000)
+        }, 4000)
 
         var t1 = Date.now();
         var ifr = document.createElement("iframe");
@@ -50,6 +51,9 @@ function openApp(url, callback) {
         timeout = setTimeout(function () {
             var t2 = Date.now();
             if (t2 - t1 < t + 100) {
+                if(isIOS){
+                    window.location.href='itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"'
+                }
                 hasApp = false;
             }
         }, t);
@@ -57,15 +61,31 @@ function openApp(url, callback) {
 
     if (isIOS9) {
         location.href = url;
-        setTimeout(function () {
+        timeout = setTimeout(function () {
             callback && callback()
-        }, 250);
+            window.location.href='itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"'
+        }, 4000);
         // setTimeout(function () {
         //     // location.reload();
         // }, 1000);
 
 
     }
+    
+
+    function closeTimeout () {
+        document.addEventListener('visibilitychange', function () {
+            var isHidden = document.hidden;
+            if (isHidden) {
+                //document.title = '当焦点不在当前窗口时的网页标题';
+                clearTimeout(timeout);
+            } else {
+                //document.title = '再变回来或者做点其他的';
+            }
+        });
+            isWeixin();
+    };
+    closeTimeout();
 }
 try{
     openApp("meetyou://")
