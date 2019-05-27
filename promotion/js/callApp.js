@@ -68,11 +68,10 @@ function openApp(url, callback) {
     }
 
 }
-var appInterface = JSON.stringify({t:3});
+var appInterface = JSON.stringify({t:0,link:'https://mywx.zone139.com/miyoufront/pointSystem/index.html'});
 var base = new Base64();
 var appEncode = base.encode(appInterface);
 var appUrl = "meetyou://" + appEncode;
-console.log(appUrl)
 try{
     openApp(appUrl)
 }catch(err){
