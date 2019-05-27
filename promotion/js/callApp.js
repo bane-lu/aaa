@@ -68,7 +68,7 @@ function openApp(url, callback) {
     }
 
 }
-var appInterface = JSON.stringify({type:3});
+var appInterface = JSON.stringify({t:3});
 var base = new Base64();
 var appEncode = base.encode(appInterface);
 var appUrl = "meetyou://" + appEncode;
