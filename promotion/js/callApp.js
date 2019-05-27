@@ -68,8 +68,13 @@ function openApp(url, callback) {
     }
 
 }
+var appInterface = JSON.stringify({type:3});
+var base = new Base64();
+var appEncode = base.encode(appInterface);
+var appUrl = "meetyou://" + appEncode;
+console.log(appUrl)
 try{
-    openApp("meetyou://")
+    openApp(appUrl)
 }catch(err){
     console.log('拉起失败')
 }
