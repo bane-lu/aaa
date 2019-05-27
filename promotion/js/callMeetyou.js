@@ -27,13 +27,15 @@ function detectVersion() {
             isIOS = true
         }
     }
+    console.log(isAndroid,isIOS,isIOS9)
     return { isAndroid, isIOS, isIOS9 }
 }
 // 判断手机上是否安装了app，如果安装直接打开url，如果没安装，执行callback
+var timeout;
 function openApp(url, callback) {
     let { isAndroid, isIOS, isIOS9 } = detectVersion()
     if (isAndroid || isIOS) {
-        var timeout, t = 4000, hasApp = true;
+        var t = 4000, hasApp = true;
         var openScript = setTimeout(function () {
             if (!hasApp) {
                 callback && callback()
@@ -50,15 +52,19 @@ function openApp(url, callback) {
         timeout = setTimeout(function () {
             var t2 = Date.now();
             if (t2 - t1 < t + 100) {
+                if(isIOS){
+                    window.location.href='itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"'
+                }
                 hasApp = false;
             }
         }, t);
     }
 
     if (isIOS9) {
-        location.href = url;
-        setTimeout(function () {
-            callback && callback()
+        window.location.href = url;
+        timeout = setTimeout(function () {
+            callback && callback();
+            window.location.href='itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"'
         }, 4000);
         // setTimeout(function () {
         //     // location.reload();
@@ -68,8 +74,28 @@ function openApp(url, callback) {
     }
 
 }
+
+
+function stopTime () {
+
+    document.addEventListener('visibilitychange', function () {
+        var isHidden = document.hidden;
+        if (isHidden) {
+            //document.title = '当焦点不在当前窗口时的网页标题';
+            clearTimeout(timeout);
+        } else {
+            //document.title = '再变回来或者做点其他的';
+        }
+    });
+};
+stopTime();
+
+var appInterface = JSON.stringify({t:0,link:'https://mywx.zone139.com/miyoufront/pointSystem/index.html'});
+var base = new Base64();
+var appEncode = base.encode(appInterface);
+var appUrl = "meetyou://" + appEncode;
 try{
-    openApp("meetyou://")
+    openApp(appUrl)
 }catch(err){
     console.log('拉起失败')
 }
