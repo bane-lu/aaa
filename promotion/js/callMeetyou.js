@@ -90,7 +90,8 @@ function stopTime () {
 };
 stopTime();
 
-var appInterface = JSON.stringify({t:0,link:'https://mywx.zone139.com/miyoufront/pointSystem/index.html'});
+// var appInterface = JSON.stringify({t:0,link:'https://mywx.zone139.com/miyoufront/pointSystem/index.html'});
+var appInterface = JSON.stringify({t:3});
 var base = new Base64();
 var appEncode = base.encode(appInterface);
 var appUrl = "meetyou://" + appEncode;
