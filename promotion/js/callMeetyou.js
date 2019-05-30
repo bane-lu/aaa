@@ -90,10 +90,39 @@ function stopTime () {
 };
 stopTime();
 
-// var appInterface = JSON.stringify({t:0,link:'https://mywx.zone139.com/miyoufront/pointSystem/index.html'});
-var appInterface = JSON.stringify({t:3});
+function getParams(param) {
+    var sHref = window.location.href;
+    var args = sHref.split("?");
+    var retval = "";
+    if (args[0] == sHref) {
+    return retval;
+    }
+    var str = args[1];
+    args = str.split("&");
+    for (var i = 0; i < args.length; i++) {
+    str = args[i];
+    var arg = str.split("=");
+    if (arg.length <= 1) continue;
+    if (arg[0] == param) retval = arg[1];
+    }
+    return retval;
+};
+var type = getParams('type');
+var appInterface = getParams('appInterface')
+console.log(type);
+console.log(appInterface);
+var appEncode = {};
+if(type){
+    if(appInterface){
+        appEncode = JSON.stringify({t:type,link:appInterface});
+    }else{
+        appEncode = JSON.stringify({t:type});
+    }
+}else{
+    appEncode = '';
+};
 var base = new Base64();
-var appEncode = base.encode(appInterface);
+appEncode = base.encode(appEncode);
 var appUrl = "meetyou://" + appEncode;
 try{
     openApp(appUrl)
