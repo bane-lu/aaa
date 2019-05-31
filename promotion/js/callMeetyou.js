@@ -35,13 +35,13 @@ var timeout;
 function openApp(url, callback) {
     let { isAndroid, isIOS, isIOS9 } = detectVersion()
     if (isAndroid || isIOS) {
-        var t = 4000, hasApp = true;
+        var t = 3000, hasApp = true;
         var openScript = setTimeout(function () {
             if (!hasApp) {
                 callback && callback()
             }
             document.body.removeChild(ifr);
-        }, 4000)
+        }, 3000)
 
         var t1 = Date.now();
         var ifr = document.createElement("iframe");
@@ -65,7 +65,7 @@ function openApp(url, callback) {
         timeout = setTimeout(function () {
             callback && callback();
             window.location.href='itms-apps://itunes.apple.com/cn/app/%E5%AF%86%E5%8F%8B%E5%9C%88/id1266608463?mt=8"'
-        }, 4000);
+        }, 3000);
         // setTimeout(function () {
         //     // location.reload();
         // }, 1000);
