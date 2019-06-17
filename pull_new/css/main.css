@@ -1,0 +1,217 @@
+html, body, div, ul, li, dl, dt, dd, p, h1, h2, h3, h4, h5, h6, img, form, embed, label {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    /*overflow: hidden;*/
+    /*background-color: #9b18ff;*/
+}
+/*body{
+    padding-bottom: 1.91rem;
+}*/
+ img {
+    border: none;
+}
+
+a {
+    -webkit-tap-highlight-color: transparent !important;
+    text-decoration: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.container{
+    height: 100%;
+    background-color: #7e4ffe;
+    overflow: scroll;
+}
+
+.container .head-wrapper {
+    width: 100%;
+    background: url('../img/main-bg.png') no-repeat;
+    background-size: contain;
+    padding-top: 6.3rem;
+    padding-bottom: 1.91rem;
+}
+
+.container .head-wrapper .content-pic {
+    display: block;
+    width: 6.53rem;
+    height: 3.87rem;
+    margin: 0 auto;
+}
+
+.container .bottom-wrapper{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 9999;
+}
+
+.container .bottom-wrapper .bottom-button{
+    display: block;
+    width: 100%;
+    height: 1.49rem;
+    padding-top: 0.42rem;
+}
+
+.container .bottom-wrapper .bottom-button .button-pic{
+    width:6.07rem;
+    height: 1.14rem;
+    margin: 0 auto;
+    display: block;
+    animation: Scale 1.5s linear infinite;
+    -webkit-animation: Scale 1.5s linear infinite;
+}
+
+@keyframes Scale {
+  0% {
+      transform: scale(1, 1);
+      -webkit-transform: scale(1, 1);
+  }
+
+  10%{
+      transform: scale(1.01, 1.01);
+      -webkit-transform: scale(1.01, 1.01);
+  }
+
+  70%{
+      transform: scale(1.06, 1.065);
+      -webkit-transform: scale(1.06, 1.065);
+  }
+  100%{
+      transform: scale(1, 1);
+      -webkit-transform: scale(1, 1);
+  }
+}
+@-webkit-keyframes Scale {
+  0% {
+      transform: scale(1, 1);
+      -webkit-transform: scale(1, 1);
+  }
+
+  10%{
+      transform: scale(1.01, 1.01);
+      -webkit-transform: scale(1.01, 1.01);
+  }
+
+  70%{
+      transform: scale(1.06, 1.065);
+      -webkit-transform: scale(1.06, 1.065);
+  }
+  100%{
+      transform: scale(1, 1);
+      -webkit-transform: scale(1, 1);
+  }
+}
+
+/*遮罩层*/
+.mask{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0,0.6);
+    top: 0;
+    left: 0;
+    z-index: 10000;
+}
+/*弹窗*/
+.popup{
+    display: none;
+    position: fixed;
+    width: 5.6rem;
+    height: 7.4rem;
+    top: 50%;
+    left: 50%;
+    margin-left: -2.8rem;
+    margin-top: -3.7rem;
+    z-index: 10001;
+}
+
+.popup .close {
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+}
+
+.popup .close img {
+    display: block;
+    width: 0.46rem;
+    height: 0.46rem;
+}
+
+
+.popup .popup-bg {
+    display: block;
+    width: 100%;
+    height: 2.62rem;
+}
+
+.popup .info {
+    width: 100%;
+    height: 4.83rem;
+    border-radius: 0 0 0.1rem 0.1rem;
+    background-color: #fff;
+}
+
+.popup .info .award-info {
+    padding-top: 0.31rem;;
+}
+
+.popup .info .award-info .text {
+    font-size: 0.36rem;
+    line-height: 0.56rem;
+    text-align: center;
+    font-weight: 600;
+    font-family: SourceHanSansSC-Medium;
+    color: #313131;
+}
+
+.popup .info .award-info .text span {
+    color: red; 
+    font-weight: 700;
+}
+
+.popup .info .load-info {
+    padding-top: 0.33rem;
+}
+
+.popup .info .load-info p {
+    text-align: center;
+    font-size: 0.26rem;
+    line-height: 0.39rem;
+    font-family: SourceHanSansSC-Regular;
+    color: #8a8a8a;
+}
+
+.popup .info .download {
+    padding-top: 0.33rem;
+}
+
+.popup .info .download img {
+    width: 3.76rem;
+    height: 1.08rem;
+    display: block;
+    margin: 0 auto;
+}
+
+
+.popup_android{
+    display: none;
+    position: fixed;
+    top: 0;/*图片位置，单位rem*/
+    right: 0.6rem;/*图片位置，单位rem*/
+    z-index: 10001;
+}
+
+
+
+
+
+

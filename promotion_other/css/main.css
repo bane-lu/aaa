@@ -11,7 +11,7 @@ html,body{
     border: none;
 }
 .container{
-    height: 100%
+    height: 100%;
 }
 .container .url-copy{
     position: absolute;
@@ -56,7 +56,7 @@ html,body{
     height: 1.77rem;
     background-color: #ffc10c;
     border-top: solid 0.04rem #020202;
-    text-decoration: none
+    text-decoration: none;
 }
 .container .bottom-wrapper .bottom-button .button-pic{
     width:6.08rem;
